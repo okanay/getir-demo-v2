@@ -1,0 +1,22 @@
+{
+  "Header" : {
+    "NavigationBrands" : {
+      "brand-1" : "getir",
+      "brand-2" : "getirfood",
+      "brand-3" : "getirmore",
+      "brand-4" : "getirwater",
+      "brand-5" : "getirlocals"
+    }
+  },
+  "Index" : {
+    "title" : "Hello World"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, tr {Turkish} en {English} other {Unknown}}"
+  },
+  "NotFoundPage": {
+    "title": "EN",
+    "description": "EN-DES"
+  }
+}

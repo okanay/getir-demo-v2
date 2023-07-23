@@ -1,0 +1,22 @@
+{
+  "Header" : {
+    "NavigationBrands" : {
+      "brand-1" : "getir",
+      "brand-2" : "getiryemek",
+      "brand-3" : "getirbüyük",
+      "brand-4" : "getirsu",
+      "brand-5" : "getirçarsı"
+    }
+  },
+  "Index" : {
+    "title" : "Merhaba Dunya"
+  },
+  "LocaleSwitcher": {
+    "label": "Dili Değiştir",
+    "locale": "{locale, select, tr {Türkçe} en {İngilizce} other {Bilinmeyen}}"
+  },
+  "NotFoundPage": {
+    "title": "TR",
+    "description": "TR-DES"
+  }
+}
