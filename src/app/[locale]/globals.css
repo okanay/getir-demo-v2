@@ -58,15 +58,15 @@
 }
 
 .font-theme-weight {
-   font-weight: 500;
+   font-weight: 545;
 }
 
 @font-face {
-   font-family: Blackout;
-   src: url("../../../../getir-demo-project/public/fonts/HelvaticeNeue.otf") format("opentype");
+   font-family: Helvetica;
+   src: url("../../../public/fonts/HelvaticeNeue.otf") format("opentype");
 }
 
 @font-face {
    font-family: Jiho;
-   src: url("../../../../getir-demo-project/public/fonts/jiho.otf") format("opentype");
+   src: url("../../../public/fonts/jiho.otf") format("opentype");
 }

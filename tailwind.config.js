@@ -48,7 +48,7 @@ module.exports = {
             },
          },
          fontFamily: {
-            helvatice: 'HelvaticeNeue',
+            helvatice: 'Helvetica',
             jiho: 'Jiho',
             figtree: ['Figtree', 'sans-serif'],
             gloock: ['Gloock', 'serif'],

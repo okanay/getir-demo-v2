@@ -6,11 +6,11 @@ import { LanguageMenuButton } from '@/components/Header-Components/NavigationBra
 export const NavigationBrands = () => {
    return (
       <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between bg-skin-theme-800 font-semibold">
-         <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between gap-4 bg-skin-theme-800 pl-4  pr-8 pt-1 font-semibold">
+         <div className="font-theme-weight mx-auto flex h-full w-full max-w-7xl items-center justify-between gap-4 bg-skin-theme-800 pl-4  pr-8 pt-1 font-helvatice">
             <ul className="no-scrollbar flex items-center justify-start gap-1 overflow-x-scroll baseTablet:overflow-hidden">
                <NavigationLinks />
             </ul>
-            <ul className="hidden items-center justify-end gap-8 text-sm font-normal text-slate-200 baseTablet:flex lgTablet:gap-10">
+            <ul className="hidden items-center justify-end gap-8 text-sm text-slate-200 baseTablet:flex lgTablet:gap-10">
                <LanguageMenuButton />
                <button className={'flex items-center justify-start gap-2'}>
                   <span className={'h-5 w-5 bg-slate-200'} />

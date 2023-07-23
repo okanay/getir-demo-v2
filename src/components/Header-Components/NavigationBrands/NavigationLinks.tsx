@@ -40,7 +40,7 @@ export const NavigationLinks = () => {
          <span
             className={`${
                link.isSelected ? 'text-yellow-400' : 'text-slate-200'
-            } font-openSans smPhone:text-sm baseTablet:text-base`}>
+            }  font-theme-weight tracking-wider smPhone:text-sm baseTablet:text-base`}>
             {t(link.localizationId)}
          </span>
       </li>
