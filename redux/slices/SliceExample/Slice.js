@@ -67,7 +67,6 @@ export const Slice = createSlice({
          })
    },
 })
-
 export const getSlice = state => state.slice
 export const getSlicePosts = state => state.slice.posts
 export const getSliceLoading = state => state.slice.loading
