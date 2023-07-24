@@ -19,6 +19,7 @@ export default function Index({ params }: { params: { locale: string } }) {
    const dispatch = useDispatch()
 
    const handleOnClick = (giftId: number) => {
+      if (gift.selected) return
       dispatch(selectGift({ giftId: giftId }))
 
       if (typeof window !== 'undefined') {
@@ -30,10 +31,10 @@ export default function Index({ params }: { params: { locale: string } }) {
    }
 
    return (
-      <div className={'mx-auto w-full max-w-7xl px-4'}>
-         <div className={'flex flex-col items-center gap-8 pb-16 pt-8 text-center'}>
+      <div className={'mx-auto w-full max-w-7xl px-4 py-12'}>
+         <div className={'flex flex-col items-center gap-12 text-center'}>
             <h1 className={'font-inconsolata text-3xl text-skin-theme-800'}>Okan Ay Hediye Tercihleri</h1>
-            <div className="grid h-full w-full grid-cols-1 items-center gap-12 smTablet:grid-cols-2 baseTablet:grid-cols-3 lgTablet:grid-cols-4">
+            <div className="grid grid-cols-1 items-center gap-12 smTablet:grid-cols-2 baseTablet:grid-cols-3 lgTablet:grid-cols-4">
                <div
                   onClick={() => {
                      handleOnClick(1)
@@ -148,8 +149,8 @@ export default function Index({ params }: { params: { locale: string } }) {
          </div>
 
          {gift.selected && (
-            <div className={'absolute inset-0 top-0 z-40 flex items-center justify-center'}>
-               <div className="flex h-72 w-96 flex-col items-center justify-center border-2 border-slate-200 bg-gradient-to-tr from-sky-100/95 to-sky-400/95 drop-shadow">
+            <div className={'pointer-events-none absolute inset-0 top-0 z-40 flex items-center justify-center px-4'}>
+               <div className="relative flex h-72 w-96 flex-col items-center justify-center border-2 border-slate-200 bg-gradient-to-tr from-sky-100/95 to-sky-400/95 drop-shadow">
                   <Lottie animationData={confettie} loop={true} className={'absolute z-50 h-full w-full'} />
                   {gift.giftId === 1 && (
                      <Image src={seriesX} alt={''} priority className={'absolute z-40 h-64 w-64 object-cover'} />
@@ -168,7 +169,7 @@ export default function Index({ params }: { params: { locale: string } }) {
                   )}
                   <XMarkIcon
                      onClick={handleClose}
-                     className="absolute right-2.5 top-2 z-[60] h-6 w-6 cursor-pointer rounded-full bg-gradient-to-r from-slate-400 to-slate-300 text-slate-800 ring-2 ring-slate-200"
+                     className="pointer-events-auto absolute right-2.5 top-2 z-[60] h-6 w-6 cursor-pointer rounded-full bg-gradient-to-r from-slate-400 to-slate-300 text-slate-800 ring-2 ring-slate-200"
                   />
                </div>
             </div>
