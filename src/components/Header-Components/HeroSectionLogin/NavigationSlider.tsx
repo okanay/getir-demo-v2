@@ -11,13 +11,13 @@ import Image from 'next/image'
 
 export const NavigationSlider = () => {
    const [index, setIndex] = useState(0)
+   const [initial, setInitial] = useState(true)
    const [duration, setDuration] = useState(0.4)
    const [scope, animate] = useAnimate()
 
    useEffect(() => {
       animate(scope.current, { x: index * -12.5 + '%' }, { ease: 'linear', duration: duration })
    }, [index])
-
    useEffect(() => {
       const nextIndex = () => {
          if (index <= 3) {
@@ -29,7 +29,9 @@ export const NavigationSlider = () => {
          }
       }
 
-      const animateTimeout = setTimeout(nextIndex, index === 0 ? 1000 : 4000)
+      const timeout = index === 0 ? (initial ? 4000 : 0) : 4000
+      const animateTimeout = setTimeout(nextIndex, timeout)
+      setInitial(false)
 
       return () => {
          clearTimeout(animateTimeout)
