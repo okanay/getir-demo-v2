@@ -48,8 +48,8 @@ module.exports = {
             },
          },
          fontFamily: {
-            helvatice: 'Helvetica',
-            jiho: 'Jiho',
+            // helvatice: 'helvatice',
+            jiho: 'jiho',
             figtree: ['Figtree', 'sans-serif'],
             gloock: ['Gloock', 'serif'],
             inconsolata: ['Inconsolata', 'monospace'],

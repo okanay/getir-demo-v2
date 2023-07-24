@@ -57,16 +57,31 @@
    }
 }
 
-.font-theme-weight {
-   font-weight: 545;
-}
+/*@font-face {*/
+/*   font-family: helvatice;*/
+/*   src: url('/public/fonts/helvatice.otf') format("opentype");*/
+/*}*/
 
 @font-face {
-   font-family: Helvetica;
-   src: url("../../../public/fonts/HelvaticeNeue.otf") format("opentype");
+   font-family: jiho;
+   src: url('/public/fonts/jiho.otf') format("opentype");
 }
 
-@font-face {
-   font-family: Jiho;
-   src: url("../../../public/fonts/jiho.otf") format("opentype");
+.slider {
+   width: 100%;
+   overflow: hidden;
+}
+
+.slides {
+   animation: slide 4s linear infinite;
+   animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+   0% {
+      transform: translateX(0%);
+   }
+   100% { /* Başlangıçta ve sonunda 1. resim gösteriliyor */
+      transform: translateX(-50%);
+   }
 }
