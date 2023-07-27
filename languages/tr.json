@@ -23,7 +23,8 @@
       "title" : "Dakikalar icinde kapinizda",
       "loginTitle" : "Giriş yap veya kayıt ol",
       "phonePlaceholder" : "Telefon Numarası",
-      "loginButton" : "Telefon numarasi ile devam et"
+      "loginButton" : "Telefon numarasi ile devam et",
+      "deliveryButton" : "Teslimat Adresini Belirle"
 
     },
     "categories" : {

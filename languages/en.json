@@ -23,7 +23,9 @@
       "title" : "At your door in minutes",
       "loginTitle" : "Login or register",
       "phonePlaceholder" : "Mobile Phone",
-      "loginButton" : "Continue with phone number"
+      "loginButton" : "Continue with phone number",
+      "deliveryButton" : "Select Delivery Address"
+
     },
     "categories" : {
       "title" : "Categories",

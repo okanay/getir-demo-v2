@@ -9,15 +9,16 @@ export const Promotions = () => {
 
    return (
       <section id={'promotions'} className={'border-y border-slate-100 bg-slate-100 font-openSans'}>
-         <div className={'mx-auto flex w-full max-w-7xl flex-col items-start justify-start gap-1 px-8 py-12'}>
+         <div
+            className={'mx-auto flex w-full max-w-7xl flex-col items-start justify-start gap-1 baseTablet:px-8 baseTablet:py-12'}>
             {/* Promotions Text*/}
-            <div className="grid h-full w-full grid-cols-4 baseTablet:grid-cols-5 lgTablet:grid-cols-10 lgTablet:gap-4 lgTablet:px-0">
+            <div className="hidden h-full w-full grid-cols-4 baseTablet:grid baseTablet:grid-cols-5 lgTablet:grid-cols-10 lgTablet:gap-4 lgTablet:px-0">
                <div className="flex h-full w-full flex-col items-center py-2 text-center">
                   <h4 className={'text-[14px] font-semibold leading-[19px] text-slate-800'}>{t('title')}</h4>
                </div>
             </div>
             {/* Download Getir! */}
-            <div className={'h-full w-full rounded-lg bg-skin-theme-700 bg-promotions bg-cover pt-10'}>
+            <div className={'h-full w-full bg-skin-theme-700 bg-promotions bg-cover pt-10 baseTablet:rounded-lg'}>
                <div className={'flex h-full w-full flex-row justify-between gap-4'}>
                   <div className={'flex flex-col items-start justify-center px-8 baseTablet:flex-shrink-0'}>
                      <h2 className={'text-[26px] font-bold text-white'}>{t('altTitle')}</h2>
@@ -41,7 +42,7 @@ export const Promotions = () => {
                </div>
             </div>
             {/* Cards List*/}
-            <div className={'mb-6 mt-12 grid h-full w-full grid-cols-1 gap-4 baseTablet:grid-cols-3'}>
+            <div className={'mb-6 mt-12 grid h-full w-full grid-cols-1 gap-4 px-4 baseTablet:grid-cols-3 baseTablet:px-0'}>
                {CardsList.map(card => (
                   <div
                      key={card.key}

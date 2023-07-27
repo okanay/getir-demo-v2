@@ -8,12 +8,13 @@ import { XMarkIcon } from '@heroicons/react/20/solid'
 import { FlagIcon } from 'react-flag-kit'
 import { useDispatch, useSelector } from 'react-redux'
 import { getLanguageMenuStatus, setLanguageMenuStatus } from '../../../redux/slices/LanguageMenuSlice'
+import { motion } from 'framer-motion'
 export const LanguageSelect = () => {
-   const menuStatus: boolean = useSelector(getLanguageMenuStatus)
-
-   const dispatch = useDispatch()
    const t = useTranslations('Header.LanguageMenu')
-   const [isPending, startTransition] = useTransition()
+
+   const menuStatus: boolean = useSelector(getLanguageMenuStatus)
+   const dispatch = useDispatch()
+   const [_, startTransition] = useTransition()
    const locale = useLocale()
    const router = useRouter()
    const pathname = usePathname()
@@ -41,10 +42,13 @@ export const LanguageSelect = () => {
 
    return (
       menuStatus && (
-         <div className={'fixed left-0 top-0 z-40 h-screen w-full bg-black/40 font-openSans'}>
-            <div className={'flex h-full w-full flex-col items-center justify-center'}>
-               <div className="flex w-[28rem] flex-col items-center justify-center rounded-lg border border-slate-200 bg-white px-8 py-12">
-                  <div className={'flex h-full w-full flex-row items-center justify-between'}>
+         <motion.div
+            initial={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
+            animate={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
+            className={'fixed left-0 top-0 z-40 h-screen w-full font-openSans'}>
+            <div className={'flex h-full w-full flex-col items-center justify-start baseTablet:justify-center'}>
+               <div className="flex h-screen w-full flex-col items-center justify-start border border-slate-200 bg-white px-8 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center baseTablet:rounded-lg">
+                  <div className={'flex h-fit w-full flex-row items-center justify-between baseTablet:h-full'}>
                      <div id={'flex-empty'} />
                      <h2 className={'text-[15px] text-skin-theme-700'}>{t('title')}</h2>
                      <button onClick={handleOnClose} className={'flex items-center justify-center rounded-lg bg-slate-100 p-1.5'}>
@@ -96,7 +100,7 @@ export const LanguageSelect = () => {
                   </button>
                </div>
             </div>
-         </div>
+         </motion.div>
       )
    )
 }

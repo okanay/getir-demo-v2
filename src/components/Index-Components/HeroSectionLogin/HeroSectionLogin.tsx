@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import getirMutluluk from '../../../../public/images/HeroLoginImages/getir-mutluluk-en.svg'
 import { SelectShipmentAddress } from '@/components/Index-Components/HeroSectionLogin/SelectShipmentAddress'
 import { HeroSectionForm } from '@/components/Index-Components/HeroSectionLogin/HeroSectionForm'
 import { NavigationSlider } from '@/components/Index-Components/HeroSectionLogin/NavigationSlider'
