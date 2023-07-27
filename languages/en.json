@@ -11,6 +11,10 @@
       "selectedLanguage" : "English (EN)",
       "login" : "Login",
       "signUp" : "Sign Up"
+    },
+    "LanguageMenu" : {
+      "title" : "Change Language",
+      "button" : "Update"
     }
   },
   "Index" : {

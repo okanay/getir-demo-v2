@@ -11,6 +11,10 @@
       "selectedLanguage" : "Türkçe (TR)",
       "login" : "Giriş Yap",
       "signUp" : "Kayıt Ol"
+    },
+    "LanguageMenu" : {
+      "title" : "Dil Değiştir",
+      "button" : "Güncelle"
     }
   },
   "Index" : {
