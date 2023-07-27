@@ -6,10 +6,73 @@
       "brand-3" : "getirmore",
       "brand-4" : "getirwater",
       "brand-5" : "getirlocals"
+    },
+    "Options" : {
+      "selectedLanguage" : "English (EN)",
+      "login" : "Login",
+      "signUp" : "Sign Up"
     }
   },
   "Index" : {
-    "title" : "Hello World"
+    "landing" : {
+      "image" : "/images/HeroLoginImages/getir-mutluluk-en.svg",
+      "title" : "At your door in minutes",
+      "loginTitle" : "Login or register",
+      "phonePlaceholder" : "Mobile Phone",
+      "loginButton" : "Continue with phone number"
+    },
+    "categories" : {
+      "title" : "Categories",
+      "categoriesItems" : {
+        "category-1" : "Beverages",
+        "category-2" : "Fruits & Veg",
+        "category-3" : "Baked Goods",
+        "category-4" : "Food",
+
+        "category-5" : "Snacks",
+        "category-6" : "Ice Cream",
+        "category-7" : "Milk & Dairy",
+        "category-8" : "Breakfast",
+
+        "category-9" : "Ready to Eat",
+        "category-10" : "Fit & Form",
+        "category-11" : "Personal Care",
+        "category-12" : "Home Care",
+
+        "category-13" : "Home & Living",
+        "category-14" : "Tech",
+        "category-15" : "Pet Food",
+        "category-16" : "Baby Care",
+
+        "category-17" : "Sex Health"
+      }
+    },
+    "promotions" : {
+      "title" : "Promotions",
+      "altTitle" : "Download Getir!",
+      "altText" : "Let us deliver your order to your door in minutes.",
+      "images" : {
+        "appleDownload" : "/images/PromotionImages/appstore-app-image-en.svg",
+        "googleDownload" : "/images/PromotionImages/googleplay-app-image-en.svg",
+        "huaweiDownload" : "/images/PromotionImages/huawei-app-image-en.svg",
+        "landingPoster" : "/images/PromotionImages/image-getir-landing-en.png"
+      },
+      "cards" : [
+        {
+          "cardTitle" : "A promotion for every order",
+          "cardAlt" : "At Getir, you can find a promotion for every order."
+        },
+        {
+          "cardTitle" : "At your door in minutes",
+          "cardAlt" : "Your order is at your door in minutes with Getir."
+        },
+        {
+          "cardTitle" : "Thousand kinds of happiness\n",
+          "cardAlt" : "At Getir, you can choose from thousands of varieties."
+        }
+      ]
+    }
+
   },
   "LocaleSwitcher": {
     "label": "Change language",

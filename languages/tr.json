@@ -6,10 +6,73 @@
       "brand-3" : "getirbüyük",
       "brand-4" : "getirsu",
       "brand-5" : "getirçarsı"
+    },
+    "Options" : {
+      "selectedLanguage" : "Türkçe (TR)",
+      "login" : "Giriş Yap",
+      "signUp" : "Kayıt Ol"
     }
   },
   "Index" : {
-    "title" : "Merhaba Dunya"
+    "landing" : {
+      "image" : "/images/HeroLoginImages/getir-mutluluk-tr.svg",
+      "title" : "Dakikalar icinde kapinizda",
+      "loginTitle" : "Giriş yap veya kayıt ol",
+      "phonePlaceholder" : "Telefon Numarası",
+      "loginButton" : "Telefon numarasi ile devam et"
+
+    },
+    "categories" : {
+      "title" : "Kategoriler",
+      "categoriesItems" : {
+        "category-1" : "Su & İçecek",
+        "category-2" : "Meyve & Sebze",
+        "category-3" : "Fırından",
+        "category-4" : "Temel Gıda",
+
+        "category-5" : "Atıştırmalık",
+        "category-6" : "Dondurma",
+        "category-7" : "Süt Ürünleri",
+        "category-8" : "Kahvaltılık",
+
+        "category-9" : "Yiyecek",
+        "category-10" : "Fit & Form",
+        "category-11" : "Kişisel Bakım",
+        "category-12" : "Ev Bakım",
+
+        "category-13" : "Ev & Yaşam",
+        "category-14" : "Teknoloji",
+        "category-15" : "Evcil Hayvan",
+        "category-16" : "Bebek",
+
+        "category-17" : "Cinsel Sağlık"
+      }
+    },
+    "promotions" : {
+      "title" : "Kampanyalar",
+      "altTitle" : "Getir'i indirin!",
+      "altText" : "İstediğiniz ürünleri dakikalar içinde kapınıza getirelim.",
+      "images" : {
+        "appleDownload" : "/images/PromotionImages/appstore-app-image-tr.svg",
+        "googleDownload" : "/images/PromotionImages/googleplay-app-image-tr.svg",
+        "huaweiDownload" : "/images/PromotionImages/huawei-app-image-tr.svg",
+        "landingPoster" : "/images/PromotionImages/image-getir-landing-tr.png"
+      },
+      "cards" : [
+        {
+          "cardTitle" : "Her siparişinize bir kampanya\n",
+          "cardAlt" : "Getir’de vereceğiniz her siparişe uygun bir kampanya bulabilirsiniz."
+        },
+        {
+          "cardTitle" : "Dakikalar içinde kapınızda\n",
+          "cardAlt" : "Getir’le siparişiniz dakikalar içinde kapınıza gelir."
+        },
+        {
+          "cardTitle" : "Binlerce çeşit mutluluk\n",
+          "cardAlt" : "Getir’de binlerce çeşit arasından seçiminizi yapabilirsiniz."
+        }
+      ]
+    }
   },
   "LocaleSwitcher": {
     "label": "Dili Değiştir",

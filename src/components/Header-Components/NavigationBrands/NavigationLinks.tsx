@@ -39,8 +39,8 @@ export const NavigationLinks = () => {
          } px-2.5 baseTablet:px-4`}>
          <span
             className={`${
-               link.isSelected ? 'text-yellow-400' : 'text-slate-200'
-            }  font-theme-weight tracking-wider smPhone:text-sm baseTablet:text-base`}>
+               link.isSelected ? 'text-yellow-400' : 'text-slate-300'
+            }  -tracking-wide smPhone:text-sm baseTablet:text-base`}>
             {t(link.localizationId)}
          </span>
       </li>

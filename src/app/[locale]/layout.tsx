@@ -30,8 +30,9 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
    const messages = await getMessages(locale)
 
    return (
-      <html className="h-full" lang={locale}>
+      <html className="" lang={locale}>
          <body>
+            {/*<body className={'overflow-hidden'}>*/}
             <NextIntlClientProvider locale={locale} messages={messages}>
                <Providers>
                   <Header />

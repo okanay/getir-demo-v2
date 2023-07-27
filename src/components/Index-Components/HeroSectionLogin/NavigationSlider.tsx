@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react'
 import { useAnimate } from 'framer-motion'
 
-import Image1 from '../../../../public/getir-mainpage-1.jpg'
-import Image2 from '../../../../public/getir-mainpage-2.jpg'
-import Image3 from '../../../../public/getir-mainpage-3.jpg'
-import Image4 from '../../../../public/getir-mainpage-4.jpg'
+import Image1 from '../../../../public/images/IndexNavigationSlideImages/SlideImageFirst.jpg'
+import Image2 from '../../../../public/images/IndexNavigationSlideImages/SlideImageSecond.jpg'
+import Image3 from '../../../../public/images/IndexNavigationSlideImages/SlideImageThird.jpg'
+import Image4 from '../../../../public/images/IndexNavigationSlideImages/SlideImageFourth.jpg'
 import Image from 'next/image'
 
 export const NavigationSlider = () => {
@@ -29,7 +29,7 @@ export const NavigationSlider = () => {
          }
       }
 
-      const timeout = index === 0 ? (initial ? 4000 : 0) : 4000
+      const timeout = index === 0 ? (initial ? 4000 : 250) : 4000
       const animateTimeout = setTimeout(nextIndex, timeout)
       setInitial(false)
 
@@ -45,10 +45,10 @@ export const NavigationSlider = () => {
             <Image src={Image2} alt={'image-2'} priority className="h-full w-screen object-cover object-center" />
             <Image src={Image3} alt={'image-3'} priority className="h-full w-screen object-cover object-center" />
             <Image src={Image4} alt={'image-4'} priority className="h-full w-screen object-cover object-center" />
-            <Image src={Image1} alt={'image-1'} priority className="h-full w-screen object-cover object-center" />
-            <Image src={Image2} alt={'image-2'} priority className="h-full w-screen object-cover object-center" />
-            <Image src={Image3} alt={'image-3'} priority className="h-full w-screen object-cover object-center" />
-            <Image src={Image4} alt={'image-4'} priority className="h-full w-screen object-cover object-center" />
+            <Image src={Image1} alt={'image-1-copy'} priority className="h-full w-screen object-cover object-center" />
+            <Image src={Image2} alt={'image-2-copy'} priority className="h-full w-screen object-cover object-center" />
+            <Image src={Image3} alt={'image-3-copy'} priority className="h-full w-screen object-cover object-center" />
+            <Image src={Image4} alt={'image-4-copy'} priority className="h-full w-screen object-cover object-center" />
          </div>
       </div>
    )
