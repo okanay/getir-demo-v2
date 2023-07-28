@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import { SelectShipmentAddress } from '@/components/Index-Components/HeroSectionLogin/SelectShipmentAddress'
-import { HeroSectionForm } from '@/components/Index-Components/HeroSectionLogin/HeroSectionForm'
+import { MobilePhoneAuthorization } from '@/components/Index-Components/HeroSectionLogin/MobilePhoneAuthorization'
 import { NavigationSlider } from '@/components/Index-Components/HeroSectionLogin/NavigationSlider'
 import { useTranslations } from 'next-intl'
+import { FlagIcon } from 'react-flag-kit'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 export const HeroSectionLogin = () => {
    const t = useTranslations('Index.landing')
@@ -22,7 +24,10 @@ export const HeroSectionLogin = () => {
                   <Image src={t('image')} width={160} height={160} alt={'getir bir mutluluk'} className={'scale-110'} priority />
                   <p className={'max-w-[460px] text-[36px] leading-10 tracking-wide text-white'}>{t('title')}</p>
                </div>
-               <HeroSectionForm />
+               <div className="flex flex-col items-center justify-center bg-gray-100 p-4 text-center text-[16px] font-semibold baseTablet:rounded-lg baseTablet:px-5  baseTablet:py-6">
+                  <h2 className={'mb-2 text-[16px] text-skin-theme-800'}>{t('loginTitle')}</h2>
+                  <MobilePhoneAuthorization />
+               </div>
             </div>
          </div>
       </section>
