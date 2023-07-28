@@ -8,7 +8,7 @@ export const Promotions = () => {
    const t = useTranslations('Index.promotions')
 
    return (
-      <section id={'promotions'} className={'border-y border-slate-100 bg-slate-100 font-openSans'}>
+      <section id={'promotions'} className={'border-y border-gray-100 bg-gray-100 font-openSans'}>
          <div
             className={'mx-auto flex w-full max-w-7xl flex-col items-start justify-start gap-1 baseTablet:px-8 baseTablet:py-12'}>
             {/* Promotions Text*/}
