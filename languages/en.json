@@ -80,6 +80,40 @@
     }
 
   },
+  "Footer" : {
+    "Navigations" : [
+      {
+        "title" : "Download Getir!",
+        "imageSrc1" : "/images/PromotionImages/appstore-app-image-en.svg",
+        "imageSrc2" : "/images/PromotionImages/googleplay-app-image-en.svg",
+        "imageSrc3" : "/images/PromotionImages/huawei-app-image-en.svg"
+      },
+      {
+        "title" : "Discover Getir",
+        "link1" : "About us",
+        "link2" : "Careers",
+        "link3" : "Technology Careers",
+        "link4" : "Contact us",
+        "link5" : "Social Responsibility Projects"
+      },
+      {
+        "title" : "Need help?",
+        "link1" : "FAQ",
+        "link2" : "Protection of Personal",
+        "link3" : "Privacy Policy",
+        "link4" : "Terms & Conditions",
+        "link5" : "Cookie Policy"
+      },
+      {
+        "title" : "Become Our Business Partner",
+        "link1" : "Become a Franchisee",
+        "link2" : "Rent Your Warehouse",
+        "link3" : "Become a GetirFood Restaurant",
+        "link4" : "Become a GetirLocals Business",
+        "link5" : "Chain Restaurants"
+      }
+    ]
+  },
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, tr {Turkish} en {English} other {Unknown}}"
@@ -89,3 +123,16 @@
     "description": "EN-DES"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

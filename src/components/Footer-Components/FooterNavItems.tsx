@@ -8,76 +8,76 @@ export const FooterNavItems = () => {
 const footerNavigation: FooterNavigation = {
    data: [
       {
-         title: "Getir'i keşfedin",
+         title: '1.title',
          links: [
             {
-               languageCode: 'Hakkımızda',
+               languageCode: '1.link1',
                url: '',
             },
             {
-               languageCode: 'Kariyer',
+               languageCode: '1.link2',
                url: '',
             },
             {
-               languageCode: 'Teknoloji Kariyerleri',
+               languageCode: '1.link3',
                url: '',
             },
             {
-               languageCode: 'İletişim',
+               languageCode: '1.link4',
                url: '',
             },
             {
-               languageCode: 'Sosyal Sorumluluk Projeleri',
+               languageCode: '1.link5',
                url: '',
             },
          ],
       },
       {
-         title: 'Yardıma mı ihtiyacınız var?',
+         title: '2.title',
          links: [
             {
-               languageCode: 'Hakkımızda',
+               languageCode: '2.link1',
                url: '',
             },
             {
-               languageCode: 'Kariyer',
+               languageCode: '2.link2',
                url: '',
             },
             {
-               languageCode: 'Teknoloji Kariyerleri',
+               languageCode: '2.link3',
                url: '',
             },
             {
-               languageCode: 'İletişim',
+               languageCode: '2.link4',
                url: '',
             },
             {
-               languageCode: 'Sosyal Sorumluluk Projeleri',
+               languageCode: '2.link5',
                url: '',
             },
          ],
       },
       {
-         title: 'İş Ortağımız Olun',
+         title: '3.title',
          links: [
             {
-               languageCode: 'Hakkımızda',
+               languageCode: '3.link1',
                url: '',
             },
             {
-               languageCode: 'Kariyer',
+               languageCode: '3.link2',
                url: '',
             },
             {
-               languageCode: 'Teknoloji Kariyerleri',
+               languageCode: '3.link3',
                url: '',
             },
             {
-               languageCode: 'İletişim',
+               languageCode: '3.link4',
                url: '',
             },
             {
-               languageCode: 'Sosyal Sorumluluk Projeleri',
+               languageCode: '3.link5',
                url: '',
             },
          ],

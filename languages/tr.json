@@ -79,6 +79,40 @@
       ]
     }
   },
+  "Footer" : {
+    "Navigations" : [
+      {
+        "title" : "Getir'i indirin!",
+        "imageSrc1" : "/images/PromotionImages/appstore-app-image-tr.svg",
+        "imageSrc2" : "/images/PromotionImages/googleplay-app-image-tr.svg",
+        "imageSrc3" : "/images/PromotionImages/huawei-app-image-tr.svg"
+      },
+      {
+        "title" : "Getir'i keşfedin",
+        "link1" : "Hakkımızda",
+        "link2" : "Kariyer",
+        "link3" : "Teknoloji Kariyerleri",
+        "link4" : "İletişim",
+        "link5" : "Sosyal Sorumluluk Projeleri"
+      },
+      {
+        "title" : "Yardıma mı ihtiyacınız var?",
+        "link1" : "Sıkça Sorulan Sorular",
+        "link2" : "Kişisel Verilerin Korunması",
+        "link3" : "Gizlilik Politikası",
+        "link4" : "Kullanım Koşulları",
+        "link5" : "Çerez Politikası"
+      },
+      {
+        "title" : "İş Ortağımız Olun",
+        "link1" : "Bayimiz Olun",
+        "link2" : "Deponuzu Kiralayın",
+        "link3" : "GetirYemek Restoranı Olun",
+        "link4" : "GetirÇarşı İşletmesi Olun",
+        "link5" : "Zincir Restoranlar"
+      }
+    ]
+  },
   "LocaleSwitcher": {
     "label": "Dili Değiştir",
     "locale": "{locale, select, tr {Türkçe} en {İngilizce} other {Bilinmeyen}}"
@@ -88,3 +122,15 @@
     "description": "TR-DES"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+

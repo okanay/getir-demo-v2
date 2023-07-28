@@ -4,11 +4,17 @@ import { FooterNavItems } from '@/components/Footer-Components/FooterNavItems'
 import { motion } from 'framer-motion'
 import { useMediaQuery } from '@mantine/hooks'
 import { nanoid } from '@reduxjs/toolkit'
+import { useTranslations } from 'next-intl'
+import Link from 'next/link'
+
 export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; index: number }) => {
+   const t = useTranslations('Footer.Navigations')
+
    const matches = useMediaQuery('(min-width: 760px)')
    const [isOpen, setIsOpen] = useState(index === 0)
    const [initialState, setInitialState] = useState(true)
    const isRight = (index + 1) % 2 === 1
+
    const handleOnClick = () => {
       if (matches) return
       setIsOpen(!isOpen)
@@ -27,13 +33,13 @@ export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; in
    }, [matches])
 
    return (
-      <div className={`flex w-full flex-col items-start justify-start`}>
+      <div className={`flex w-full flex-col items-start justify-start desktop:col-span-2`}>
          <div className={'mb-4 flex w-full items-center justify-between'}>
             <h4
                className={`w-full text-[18px] text-skin-theme-700 ${
                   isRight ? 'text-start baseTablet:text-end lgTablet:text-start' : 'text-start'
                }`}>
-               {data.title}
+               {t(data.title)}
             </h4>
             <button onClick={handleOnClick} className={'block bg-slate-100 p-1 baseTablet:hidden'}>
                <ArrowDownIcon className={'h-4 w-4 text-skin-theme-700'} />
@@ -50,7 +56,7 @@ export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; in
                   className={`w-full text-[14px] text-black ${
                      isRight ? 'text-start baseTablet:text-end lgTablet:text-start' : 'text-start'
                   }`}>
-                  {link.languageCode}
+                  <Link href={link.url}>{t(link.languageCode)}</Link>
                </h6>
             ))}
          </motion.div>
