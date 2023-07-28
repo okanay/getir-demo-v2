@@ -18,7 +18,7 @@ export const Categories = () => {
             </div>
          </div>
          {/*Categories*/}
-         <div className="grid h-fit w-full grid-cols-4 items-center baseTablet:grid-cols-5 lgTablet:grid-cols-10 lgTablet:gap-4 lgTablet:px-0">
+         <div className="grid h-fit w-full grid-cols-4 items-center gap-2 baseTablet:grid-cols-5 lgTablet:grid-cols-10 lgTablet:gap-4 lgTablet:px-0">
             <CategoryItems t={t} />
          </div>
       </section>

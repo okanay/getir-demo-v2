@@ -1,4 +1,4 @@
-import { ArrowDownIcon } from '@heroicons/react/20/solid'
+import { ArrowDownIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useEffect, useState } from 'react'
 import { FooterNavItems } from '@/components/Footer-Components/FooterNavItems'
 import { motion } from 'framer-motion'
@@ -41,8 +41,12 @@ export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; in
                }`}>
                {t(data.title)}
             </h4>
-            <button onClick={handleOnClick} className={'block bg-slate-100 p-1 baseTablet:hidden'}>
-               <ArrowDownIcon className={'h-4 w-4 text-skin-theme-700'} />
+            <button onClick={handleOnClick} className={'block rounded-lg bg-gray-100 p-1 baseTablet:hidden'}>
+               <ChevronDownIcon
+                  className={`relative h-5 w-5 ${
+                     isOpen ? 'rotate-180' : 'rotate-360'
+                  } text-skin-theme-700 transition-all duration-500`}
+               />
             </button>
          </div>
          <motion.div

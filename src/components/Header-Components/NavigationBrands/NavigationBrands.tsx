@@ -11,7 +11,7 @@ export const NavigationBrands = () => {
 
    return (
       <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between bg-skin-theme-800 font-spaceGrotesk font-medium tracking-wide text-slate-300">
-         <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between gap-4 bg-skin-theme-800 pl-4  pr-8 pt-1">
+         <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between gap-4 bg-skin-theme-800 px-1 pt-1 baseTablet:px-4">
             <ul className="no-scrollbar flex items-center justify-start gap-1 overflow-x-scroll baseTablet:overflow-hidden">
                <NavigationLinks />
             </ul>
