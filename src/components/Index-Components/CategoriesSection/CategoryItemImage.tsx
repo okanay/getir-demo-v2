@@ -10,7 +10,7 @@ export const CategoryItemImage = ({ category }: { category: Category }) => {
 
    return (
       <>
-         <Image src={category.imageSmall} alt={category.languageCode} className={!loading ? 'hidden' : 'w-full'} />
+         <Image src={category.imageSmall} alt={category.languageCode} priority className={!loading ? 'hidden' : 'w-full'} />
 
          <Image
             src={category.image}
