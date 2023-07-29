@@ -1,10 +1,10 @@
 'use client'
 
 import { NavigationLinks } from '@/components/Header-Components/NavigationBrands/NavigationLinks'
-import { LanguageMenuButton } from '@/components/Header-Components/NavigationBrands/LanguageMenuButton'
 import { useTranslations } from 'next-intl'
 import { LoginMenuButton } from '@/components/Header-Components/NavigationBrands/LoginMenuButton'
 import { RegisterMenuButton } from '@/components/Header-Components/NavigationBrands/RegisterMenuButton'
+import { LanguageButton } from '@/components/UI-Components/LanguageCompound/LanguageButton'
 
 export const NavigationBrands = () => {
    const t = useTranslations('Header.Options')
@@ -16,7 +16,7 @@ export const NavigationBrands = () => {
                <NavigationLinks />
             </ul>
             <ul className="hidden items-center justify-end gap-8 font-openSans text-sm baseTablet:flex lgTablet:gap-10">
-               <LanguageMenuButton t={t} />
+               <LanguageButton type={'header'} />
                <LoginMenuButton t={t} />
                <RegisterMenuButton t={t} />
             </ul>

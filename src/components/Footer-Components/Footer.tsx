@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
-import { FooterNavItems } from '@/components/Footer-Components/FooterNavItems'
-import { useTranslations } from 'next-intl'
-import { FooterLanguageButton } from '@/components/Footer-Components/FooterLanguageButton'
 import Link from 'next/link'
+import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import { FooterNavItems } from '@/components/Footer-Components/FooterNavItems'
+import { LanguageButton } from '@/components/UI-Components/LanguageCompound/LanguageButton'
 export const Footer = () => {
    const t = useTranslations('Footer.Navigations')
 
@@ -42,7 +42,7 @@ export const Footer = () => {
                      <li className={'h-6 w-6 bg-white baseTablet:bg-slate-200'} />
                      <li className={'h-6 w-6 bg-white baseTablet:bg-slate-200'} />
                   </ul>
-                  <FooterLanguageButton t={t} />
+                  <LanguageButton type={'footer'} />
                </div>
             </div>
          </div>

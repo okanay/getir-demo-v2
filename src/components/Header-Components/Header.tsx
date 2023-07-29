@@ -1,5 +1,4 @@
 import { NavigationBrands } from '@/components/Header-Components/NavigationBrands/NavigationBrands'
-import { HeroSectionLogin } from '@/components/Index-Components/HeroSectionLogin/HeroSectionLogin'
 import { LanguageSelect } from '@/components/Header-Components/LanguageSelect'
 
 export const Header = () => {

@@ -1,11 +1,11 @@
-import { ArrowDownIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useEffect, useState } from 'react'
-import { FooterNavItems } from '@/components/Footer-Components/FooterNavItems'
 import { motion } from 'framer-motion'
 import { useMediaQuery } from '@mantine/hooks'
 import { nanoid } from '@reduxjs/toolkit'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { FooterNavItems } from '../../../libs/constants/FooterNavigationList'
 
 export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; index: number }) => {
    const t = useTranslations('Footer.Navigations')
