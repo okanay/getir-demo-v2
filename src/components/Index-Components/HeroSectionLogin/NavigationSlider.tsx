@@ -53,8 +53,8 @@ export const NavigationSlider = () => {
    }, [index])
 
    return (
-      <div className={'absolute z-10 hidden h-full w-screen overflow-hidden baseTablet:block'}>
-         <div ref={scope} className="absolute flex h-full w-[800%] overflow-hidden">
+      <div className="relative hidden h-[32rem] w-screen overflow-hidden baseTablet:block">
+         <div ref={scope} className="absolute z-20 flex h-full w-[800%] overflow-hidden">
             <Image src={Image1} alt={'image-1'} priority className="h-full w-screen object-cover object-center" />
             <Image src={Image2} alt={'image-2'} priority className="h-full w-screen object-cover object-center" />
             <Image src={Image3} alt={'image-3'} priority className="h-full w-screen object-cover object-center" />
@@ -64,6 +64,7 @@ export const NavigationSlider = () => {
             <Image src={Image3} alt={'image-3-copy'} priority className="h-full w-screen object-cover object-center" />
             <Image src={Image4} alt={'image-4-copy'} priority className="h-full w-screen object-cover object-center" />
          </div>
+         <div className={'absolute left-0 top-0 z-30 h-full w-full bg-gradient-to-tr from-skin-theme-700/90 to-slate-400/30'} />
       </div>
    )
 }

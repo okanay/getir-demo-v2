@@ -32,7 +32,6 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
    return (
       <html className="" lang={locale}>
          <body>
-            {/*<body className={'overflow-hidden'}>*/}
             <NextIntlClientProvider locale={locale} messages={messages}>
                <Providers>
                   <Header />
