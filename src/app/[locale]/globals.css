@@ -13,6 +13,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*:focus {
+   border-color: inherit;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+}
+
 :root {
    --theme-50: 239, 239, 254;
    --theme-100: 225, 227, 254;

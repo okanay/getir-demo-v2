@@ -22,3 +22,8 @@ export type Card = {
 }
 
 export type Cards = Card[]
+
+export type PhoneFormError = {
+   status: boolean
+   errorMessage: string
+}

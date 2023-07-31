@@ -1,4 +1,4 @@
-export type PhoneCode = {
+export type SelectedCode = {
    flagCode: string
    phoneCode: string
 }

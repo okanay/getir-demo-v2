@@ -113,13 +113,14 @@
       }
     ]
   },
-  "LocaleSwitcher": {
-    "label": "Dili Değiştir",
-    "locale": "{locale, select, tr {Türkçe} en {İngilizce} other {Bilinmeyen}}"
-  },
   "NotFoundPage": {
     "title": "TR",
     "description": "TR-DES"
+  },
+  "Error" : {
+    "MobilePhoneAuthorization" : {
+      "ErrorCode100" : "Lütfen geçerli bir telefon numarası giriniz.\n"
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { SelectShipmentAddress } from '@/components/Index-Components/HeroSectionLogin/SelectShipmentAddress'
-import { MobilePhoneAuthorization } from '@/components/Index-Components/HeroSectionLogin/MobilePhoneAuthorization'
+import { MobilePhoneAuthorization } from '@/components/UI-Components/MobilePhoneAuthorization/MobilePhoneAuthorization'
 import { NavigationSlider } from '@/components/Index-Components/HeroSectionLogin/NavigationSlider'
 import { useTranslations } from 'next-intl'
 import { FlagIcon } from 'react-flag-kit'
