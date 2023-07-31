@@ -21,11 +21,7 @@
     "landing" : {
       "image" : "/images/HeroLoginImages/getir-mutluluk-tr.svg",
       "title" : "Dakikalar icinde kapinizda",
-      "loginTitle" : "Giriş yap veya kayıt ol",
-      "phonePlaceholder" : "Telefon Numarası",
-      "loginButton" : "Telefon numarasi ile devam et",
-      "deliveryButton" : "Teslimat Adresini Belirle"
-
+      "loginTitle" : "Giriş yap veya kayıt ol"
     },
     "categories" : {
       "title" : "Kategoriler",
@@ -113,14 +109,22 @@
       }
     ]
   },
-  "NotFoundPage": {
-    "title": "TR",
-    "description": "TR-DES"
+  "UI" : {
+    "MobilePhoneAuth" : {
+      "loginTitle" : "Giriş yap veya kayıt ol",
+      "phonePlaceholder" : "Telefon Numarası",
+      "loginButton" : "Telefon numarasi ile devam et",
+      "deliveryButton" : "Teslimat Adresini Belirle"
+    }
   },
   "Error" : {
     "MobilePhoneAuthorization" : {
       "ErrorCode100" : "Lütfen geçerli bir telefon numarası giriniz.\n"
     }
+  },
+  "NotFoundPage": {
+    "title": "TR",
+    "description": "TR-DES"
   }
 }
 

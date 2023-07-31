@@ -21,11 +21,7 @@
     "landing" : {
       "image" : "/images/HeroLoginImages/getir-mutluluk-en.svg",
       "title" : "At your door in minutes",
-      "loginTitle" : "Login or register",
-      "phonePlaceholder" : "Mobile Phone",
-      "loginButton" : "Continue with phone number",
-      "deliveryButton" : "Select Delivery Address"
-
+      "loginTitle" : "Login or register"
     },
     "categories" : {
       "title" : "Categories",
@@ -114,14 +110,22 @@
       }
     ]
   },
-  "NotFoundPage": {
-    "title": "EN",
-    "description": "EN-DES"
+  "UI" : {
+    "MobilePhoneAuth" : {
+      "loginTitle" : "Login or register",
+      "phonePlaceholder" : "Mobile Phone",
+      "loginButton" : "Continue with phone number",
+      "deliveryButton" : "Select Delivery Address"
+    }
   },
   "Error" : {
     "MobilePhoneAuthorization": {
       "ErrorCode100": "Enter phone number"
     }
+  },
+  "NotFoundPage": {
+    "title": "EN",
+    "description": "EN-DES"
   }
 }
 

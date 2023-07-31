@@ -5,32 +5,56 @@ import { nanoid } from '@reduxjs/toolkit'
 import { FlagIcon, FlagIconCode } from 'react-flag-kit'
 import { ChevronDownIcon, ExclamationCircleIcon } from '@heroicons/react/20/solid'
 import { CountriesPhoneCodes, SelectedCode } from '../../../../libs/constants/CountriesPhoneCodesList'
-import { PhoneFormError } from '../../../../libs/types/types'
+import { MobilePhoneAuth, PhoneFormError } from '../../../../libs/types/types'
 
 export const MobilePhoneAuthorization = () => {
    // i18 Language
-   const t = useTranslations('Index.landing')
+
+   const t = useTranslations('UI.MobilePhoneAuth')
+
    const errorT = useTranslations('Error.MobilePhoneAuthorization')
+
    // CONSTANT's
+
    const initialSelectedCode: SelectedCode = {
       flagCode: 'TR',
       phoneCode: '90',
    }
-   // STATE's
-   const [error, setError] = useState<PhoneFormError>({ status: false, errorMessage: '' })
-   const [selectedCode, setSelectedCode] = useState<SelectedCode>(initialSelectedCode)
-   const [enteredPhoneNumber, setEnteredPhoneNumber] = useState<string>('')
-   const [isVisibleCodeMenu, setIsVisibleCodeMenu] = useState<boolean>(false)
-   const [selectedIndex, setSelectedIndex] = useState<number>(0)
+
+   const initialError: PhoneFormError = {
+      status: false,
+      errorMessage: '',
+   }
+
    // REF's
-   const mainContainerRef: React.RefObject<HTMLDivElement> = useRef(null)
-   const menuRef = useRef<HTMLUListElement | null>(null)
-   const enteredPhoneRef = useRef<HTMLInputElement | null>(null)
+
+   const togglePhoneCodeListMenuButtonRef: React.RefObject<HTMLDivElement> = useRef(null)
+
+   const countriesPhoneCodeListMenuRef = useRef<HTMLUListElement | null>(null)
+
+   const phoneNumberInputRef = useRef<HTMLInputElement | null>(null)
+
+   // STATE's
+
+   const [isPhoneCodeListMenuVisible, setIsPhoneCodeListMenuVisible] = useState<boolean>(false)
+
+   const [selectedPhoneCodeIndex, setSelectedPhoneCodeIndex] = useState<number>(0)
+
+   const [error, setError] = useState<PhoneFormError>(initialError)
+
+   const [selectedCode, setSelectedCode] = useState<SelectedCode>(initialSelectedCode)
+
+   const [phoneNumber, setPhoneNumber] = useState<string>('')
+
    // EFFECT's
+
    useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
-         if (mainContainerRef.current && !mainContainerRef.current.contains(event.target as Node)) {
-            setIsVisibleCodeMenu(false)
+         if (
+            togglePhoneCodeListMenuButtonRef.current &&
+            !togglePhoneCodeListMenuButtonRef.current.contains(event.target as Node)
+         ) {
+            setIsPhoneCodeListMenuVisible(false)
          }
       }
 
@@ -40,11 +64,13 @@ export const MobilePhoneAuthorization = () => {
          document.removeEventListener('mousedown', handleClickOutside)
       }
    }, [])
+
    useEffect(() => {
-      if (isVisibleCodeMenu && menuRef.current) {
-         menuRef.current.scrollTop = selectedIndex * 29
+      if (isPhoneCodeListMenuVisible && countriesPhoneCodeListMenuRef.current) {
+         countriesPhoneCodeListMenuRef.current.scrollTop = selectedPhoneCodeIndex * 29
       }
-   }, [isVisibleCodeMenu, selectedIndex])
+   }, [isPhoneCodeListMenuVisible, selectedPhoneCodeIndex])
+
    // HANDLE's
    const handleClearError = () => setError({ status: false, errorMessage: '' })
    const handlePhoneInputBlur = (event: React.FocusEvent<HTMLInputElement>) => {
@@ -63,22 +89,31 @@ export const MobilePhoneAuthorization = () => {
       setError({ status: true, errorMessage: 'ErrorCode100' })
    }
    const handleSetPhoneNumber = (event: ChangeEvent<HTMLInputElement>) => {
-      const enteredNumber = enteredPhoneRef.current?.value || ''
+      const enteredNumber = phoneNumberInputRef.current?.value || ''
       const enteredInputValueRegex = /^[0-9]*$/
 
       if (!enteredInputValueRegex.test(enteredNumber)) return
       if (enteredNumber.length > 10) return
 
-      setEnteredPhoneNumber(enteredNumber)
+      setPhoneNumber(enteredNumber)
       if (enteredNumber.length === 10) handleClearError()
    }
    const handleChangeSelectedPhoneCode = (flagCode: string, phoneCode: string, index: number) => {
-      setSelectedIndex(index)
+      setSelectedPhoneCodeIndex(index)
       setSelectedCode({ flagCode: flagCode, phoneCode: phoneCode })
    }
-   const handleTogglePhoneCodeSelectMenu = () => setIsVisibleCodeMenu(!isVisibleCodeMenu)
+   const handleTogglePhoneCodeSelectMenu = () => setIsPhoneCodeListMenuVisible(!isPhoneCodeListMenuVisible)
    const handleFormSubmit = (event: FormEvent) => {
       event.preventDefault()
+
+      if (error.status && phoneNumber.length !== 10) return
+
+      const data: MobilePhoneAuth = {
+         phoneCode: selectedCode.phoneCode,
+         phoneNumber: phoneNumber,
+      }
+
+      console.log(data)
    }
 
    return (
@@ -86,38 +121,33 @@ export const MobilePhoneAuthorization = () => {
          onSubmit={handleFormSubmit}
          className="relative flex w-full flex-col items-start justify-center gap-2 px-1 baseTablet:w-[22.5rem]">
          <div className="flex w-full items-start gap-2">
-            {/*Phone Code, Phone Code Select Menu*/}
             <div
-               ref={mainContainerRef}
+               ref={togglePhoneCodeListMenuButtonRef}
                onClick={handleTogglePhoneCodeSelectMenu}
-               className={`relative flex h-14 w-36 cursor-pointer items-center justify-between rounded border-2 p-2 ${
-                  isVisibleCodeMenu ? 'border-skin-theme-700' : 'border-gray-200'
-               } bg-white text-[14px] transition-colors duration-200 baseTablet:rounded baseTablet:px-2`}>
-               <span className="flex items-center gap-2">
+               className={`relative flex h-14 w-36 cursor-pointer items-center justify-between rounded border-2 bg-white p-2 text-[14px] transition-colors duration-200 baseTablet:rounded baseTablet:px-2
+                          ${isPhoneCodeListMenuVisible ? 'border-skin-theme-700' : 'border-gray-200'}`}>
+               <div className="flex items-center gap-2">
                   <FlagIcon code={selectedCode.flagCode as FlagIconCode} size={16} />
-                  <span>+{selectedCode.phoneCode}</span>
-               </span>
+                  <p>+{selectedCode.phoneCode}</p>
+               </div>
                <ChevronDownIcon
-                  className={`relative transition-all duration-500 ${
-                     isVisibleCodeMenu ? 'rotate-180' : 'rotate-0'
-                  } h-5 w-5 text-skin-theme-700`}
+                  className={`relative h-5 w-5 text-skin-theme-700 transition-all duration-500
+                             ${isPhoneCodeListMenuVisible ? 'rotate-180' : 'rotate-0'}`}
                />
-               {isVisibleCodeMenu && (
+               {isPhoneCodeListMenuVisible && (
                   <ul
-                     ref={menuRef}
-                     className="absolute -left-[2.5%] top-[120%] z-[101] flex h-44 w-[105%] flex-col items-start justify-start overflow-y-scroll rounded border border-gray-200 bg-white text-[14px] text-gray-600">
+                     ref={countriesPhoneCodeListMenuRef}
+                     className="absolute -left-[2.5%] top-[120%] z-[101] flex h-44 w-[105%] flex-col items-start justify-start overflow-y-scroll rounded border border-gray-50 bg-white text-[14px] text-gray-600">
                      {Object.entries(CountriesPhoneCodes).map(([flagCode, phoneCode], index) => (
                         <li
-                           key={nanoid()}
                            onClick={() => {
                               handleChangeSelectedPhoneCode(flagCode, phoneCode, index)
                            }}
-                           className={`flex w-full cursor-pointer items-center justify-start gap-2 px-2 py-1 text-start hover:bg-gray-100 ${
-                              index === selectedIndex && 'bg-skin-theme-50'
-                           }`}>
+                           className={`flex w-full cursor-pointer items-center justify-start gap-2 px-2 py-1 text-start hover:bg-gray-100 
+                                       ${index === selectedPhoneCodeIndex && 'bg-skin-theme-50'}`}
+                           key={nanoid()}>
                            <FlagIcon code={flagCode as FlagIconCode} size={16} />
-                           {'+'}
-                           {phoneCode}
+                           {'+' + phoneCode}
                         </li>
                      ))}
                   </ul>
@@ -128,26 +158,21 @@ export const MobilePhoneAuthorization = () => {
                <div className={'peer relative h-14 w-full'}>
                   <input
                      name={'phone-number-input'}
-                     ref={enteredPhoneRef}
-                     value={enteredPhoneNumber}
+                     ref={phoneNumberInputRef}
+                     value={phoneNumber}
                      onChange={handleSetPhoneNumber}
                      onBlur={handlePhoneInputBlur}
                      type="tel"
-                     className={`${
-                        error.status ? 'border-red-400 outline-red-400' : 'border-gray-200 hover:border-skin-theme-700'
-                     } peer  h-full w-full rounded border-2 bg-white px-3.5 ${
-                        enteredPhoneNumber.length > 0 ? 'pt-2' : 'pt-0'
-                     } text-[14px] font-normal placeholder-transparent transition-colors duration-200 baseTablet:rounded`}
-                     placeholder={'1'}
+                     placeholder={t('phonePlaceholder')}
+                     className={`peer  h-full w-full rounded border-2 bg-white px-3.5 text-[14px] font-normal placeholder-transparent transition-colors duration-200 baseTablet:rounded
+                                ${error.status ? 'border-red-400 outline-red-400' : 'border-gray-200 hover:border-skin-theme-700'}
+                                ${phoneNumber.length > 0 ? 'pt-2' : 'pt-0'}`}
                   />
 
                   <label
                      htmlFor="phone-number-input"
-                     className={`peer pointer-events-none absolute left-4 top-1 text-[12px] font-normal ${
-                        error.status ? 'text-red-400' : 'text-skin-theme-700'
-                     } transition-all
-                        duration-300 peer-placeholder-shown:left-4 peer-placeholder-shown:top-[18px] peer-placeholder-shown:text-[14px]
-                        peer-placeholder-shown:text-gray-400`}>
+                     className={`peer pointer-events-none absolute left-4 top-1 text-[12px] font-normal transition-all duration-300 peer-placeholder-shown:left-4 peer-placeholder-shown:top-[18px] peer-placeholder-shown:text-[14px] peer-placeholder-shown:text-gray-400
+                                ${error.status ? 'text-red-400' : 'text-skin-theme-700'}`}>
                      {t('phonePlaceholder')}
                   </label>
 

@@ -27,3 +27,8 @@ export type PhoneFormError = {
    status: boolean
    errorMessage: string
 }
+
+export type MobilePhoneAuth = {
+   phoneCode: string
+   phoneNumber: string
+}
