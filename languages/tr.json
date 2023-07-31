@@ -119,7 +119,7 @@
   },
   "Error" : {
     "MobilePhoneAuthorization" : {
-      "ErrorCode100" : "Lütfen geçerli bir telefon numarası giriniz.\n"
+      "ErrorCode100" : "Lütfen geçerli bir telefon numarası giriniz."
     }
   },
   "NotFoundPage": {

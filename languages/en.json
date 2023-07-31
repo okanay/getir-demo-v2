@@ -120,7 +120,7 @@
   },
   "Error" : {
     "MobilePhoneAuthorization": {
-      "ErrorCode100": "Enter phone number"
+      "ErrorCode100": "Enter phone number."
     }
   },
   "NotFoundPage": {
