@@ -12,11 +12,11 @@ export const MenuTitleAndCloseButton = ({ locale }: { locale: string }) => {
    }
 
    return (
-      <div className={'mb-4 flex h-fit w-full flex-row items-center justify-between baseTablet:mb-10 baseTablet:h-full'}>
+      <div className={'flex w-full flex-row items-center justify-between'}>
          <div id={'flex-empty'} />
          <h2 className={'text-[15px] text-skin-theme-700'}>{t('title')}</h2>
-         <button onClick={handleOnClose} className={'flex items-center justify-center rounded-lg bg-slate-100 p-1.5'}>
-            <XMarkIcon className={'h-5 w-5'} />
+         <button onClick={handleOnClose} className={'flex items-center justify-center rounded-lg bg-slate-100 p-1'}>
+            <XMarkIcon className={'h-6 w-6'} />
          </button>
       </div>
    )
