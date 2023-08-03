@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { FooterNavItems } from '@/components/Footer-Components/FooterNavItems'
-import { LanguageButton } from '@/components/UI-Components/LanguageCompound/LanguageButton'
+import { LanguageButton } from '@/components/UI-Components/LanguageButton/LanguageButton'
 export const Footer = () => {
    const t = useTranslations('Footer.Navigations')
 

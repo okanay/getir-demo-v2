@@ -112,9 +112,11 @@
   },
   "UI" : {
     "MobilePhoneAuth" : {
-      "loginTitle" : "Login or register",
+      "title" : "Login or register",
       "phonePlaceholder" : "Mobile Phone",
-      "loginButton" : "Continue with phone number",
+      "loginButton" : "Continue with phone number"
+    },
+    "Delivery" : {
       "deliveryButton" : "Select Delivery Address"
     }
   },

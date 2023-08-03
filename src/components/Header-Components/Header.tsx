@@ -1,5 +1,7 @@
 import { NavigationBrands } from '@/components/Header-Components/NavigationBrands/NavigationBrands'
-import { LanguageSelect } from '@/components/Header-Components/LanguageSelect'
+import { LanguageMenu } from '@/components/UI-Components/LanguageButton/LanguageMenu'
+import { LoginMenu } from '@/components/Header-Components/LoginMenu'
+import { PopupManager } from '@/components/UI-Components/PopupMenu/PopupManager'
 
 export const Header = () => {
    return (
@@ -8,7 +10,7 @@ export const Header = () => {
          <nav className={'w-full bg-skin-theme-800'}>
             <NavigationBrands />
          </nav>
-         <LanguageSelect />
+         <PopupManager />
       </header>
    )
 }

@@ -119,7 +119,7 @@ export const MobilePhoneAuthorization = () => {
    return (
       <form
          onSubmit={handleFormSubmit}
-         className="relative flex w-full flex-col items-start justify-center gap-2 px-1 baseTablet:w-[22.5rem]">
+         className="relative flex w-full flex-col items-start justify-center gap-2 baseTablet:w-full">
          <div className="flex w-full items-start gap-2">
             <div
                ref={togglePhoneCodeListMenuButtonRef}

@@ -1,3 +1,5 @@
+import { ButtonHTMLAttributes } from 'react'
+
 export type Person = {
    name: String
    age: Number
@@ -32,3 +34,5 @@ export type MobilePhoneAuth = {
    phoneCode: string
    phoneNumber: string
 }
+
+export type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>

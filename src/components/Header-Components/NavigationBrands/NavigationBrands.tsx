@@ -4,7 +4,7 @@ import { NavigationLinks } from '@/components/Header-Components/NavigationBrands
 import { useTranslations } from 'next-intl'
 import { LoginMenuButton } from '@/components/Header-Components/NavigationBrands/LoginMenuButton'
 import { RegisterMenuButton } from '@/components/Header-Components/NavigationBrands/RegisterMenuButton'
-import { LanguageButton } from '@/components/UI-Components/LanguageCompound/LanguageButton'
+import { LanguageButton } from '@/components/UI-Components/LanguageButton/LanguageButton'
 
 export const NavigationBrands = () => {
    const t = useTranslations('Header.Options')
