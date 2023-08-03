@@ -12,8 +12,8 @@ export const HeroSectionLogin = () => {
    return (
       <section id={'hero-section-login'} className={'relative h-full w-full baseTablet:h-[32rem]'}>
          <NavigationSlider />
-         <div className="flex h-full w-full flex-col items-center justify-center bg-skin-theme-700 py-4 text-center baseTablet:hidden">
-            <h1 className={'text-2xl text-yellow-400'}>getir</h1>
+         <div className="flex h-full w-full flex-col items-center justify-center bg-skin-theme-700 py-6 text-center baseTablet:hidden">
+            <Image src={'images/HeroLoginImages/getir.svg'} alt={''} className={''} priority={true} width={49} height={23} />
          </div>
          <SelectShipmentAddress />
 

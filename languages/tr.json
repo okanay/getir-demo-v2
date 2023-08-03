@@ -113,7 +113,15 @@
     "MobilePhoneAuth" : {
       "title" : "Giriş yap veya kayıt ol",
       "phonePlaceholder" : "Telefon Numarası",
-      "loginButton" : "Telefon numarasi ile devam et"
+      "loginButton" : "Telefon numarasi ile devam et",
+      "information" : {
+        "text" : "Kişisel verilerinize dair Aydınlatma Metni için ",
+        "link" : "tıklayınız"
+      },
+      "sign" : {
+        "text" : "Hala kayıt olmadınız mı?",
+        "button" : "Kayıt Ol"
+      }
     },
     "Delivery" : {
       "deliveryButton" : "Teslimat Adresini Belirle"

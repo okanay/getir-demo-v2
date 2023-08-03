@@ -114,7 +114,15 @@
     "MobilePhoneAuth" : {
       "title" : "Login or register",
       "phonePlaceholder" : "Mobile Phone",
-      "loginButton" : "Continue with phone number"
+      "loginButton" : "Continue with phone number",
+      "information" : {
+        "text" : "For the GDPR document regarding your personal information. ",
+        "link" : "Click"
+      },
+      "sign" : {
+        "text" : "Still haven't signed up?",
+        "button" : "Sign Up"
+      }
     },
     "Delivery" : {
       "deliveryButton" : "Select Delivery Address"
