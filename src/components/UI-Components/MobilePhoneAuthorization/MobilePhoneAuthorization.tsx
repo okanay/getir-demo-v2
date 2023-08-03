@@ -5,14 +5,14 @@ import { nanoid } from '@reduxjs/toolkit'
 import { FlagIcon, FlagIconCode } from 'react-flag-kit'
 import { ChevronDownIcon, ExclamationCircleIcon } from '@heroicons/react/20/solid'
 import { CountriesPhoneCodes, SelectedCode } from '../../../../libs/constants/CountriesPhoneCodesList'
-import { MobilePhoneAuth, PhoneFormError } from '../../../../libs/types/types'
+import { PhoneLoginData, CustomError } from '../../../../libs/types/types'
 
 export const MobilePhoneAuthorization = () => {
    // i18 Language
 
    const t = useTranslations('UI.MobilePhoneAuth')
 
-   const errorT = useTranslations('Error.MobilePhoneAuthorization')
+   const errorT = useTranslations('Error.MobilePhoneAuth')
 
    // CONSTANT's
 
@@ -21,7 +21,7 @@ export const MobilePhoneAuthorization = () => {
       phoneCode: '90',
    }
 
-   const initialError: PhoneFormError = {
+   const initialError: CustomError = {
       status: false,
       errorMessage: '',
    }
@@ -40,7 +40,7 @@ export const MobilePhoneAuthorization = () => {
 
    const [selectedPhoneCodeIndex, setSelectedPhoneCodeIndex] = useState<number>(0)
 
-   const [error, setError] = useState<PhoneFormError>(initialError)
+   const [error, setError] = useState<CustomError>(initialError)
 
    const [selectedCode, setSelectedCode] = useState<SelectedCode>(initialSelectedCode)
 
@@ -108,7 +108,7 @@ export const MobilePhoneAuthorization = () => {
 
       if (error.status && phoneNumber.length !== 10) return
 
-      const data: MobilePhoneAuth = {
+      const data: PhoneLoginData = {
          phoneCode: selectedCode.phoneCode,
          phoneNumber: phoneNumber,
       }

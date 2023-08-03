@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl'
-import { ButtonType } from '../../../../libs/types/types'
+import { ButtonTypeElement } from '../../../../libs/types/types'
 
-export function HeaderButton({ className = '', ...props }: ButtonType) {
+export function HeaderButton({ className = '', ...props }: ButtonTypeElement) {
    const t = useTranslations('Header.Options')
 
    return (

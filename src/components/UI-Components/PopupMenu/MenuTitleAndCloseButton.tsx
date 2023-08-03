@@ -1,8 +1,6 @@
 import { useTranslations } from 'next-intl'
-
 import { useDispatch } from 'react-redux'
 import { closeMenu } from '../../../../redux/slices/PopUpMenuSlice'
-
 import { XMarkIcon } from '@heroicons/react/20/solid'
 
 export const MenuTitleAndCloseButton = ({ locale }: { locale: string }) => {

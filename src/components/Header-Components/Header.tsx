@@ -1,6 +1,6 @@
 import { NavigationBrands } from '@/components/Header-Components/NavigationBrands/NavigationBrands'
 import { LanguageMenu } from '@/components/UI-Components/LanguageButton/LanguageMenu'
-import { LoginMenu } from '@/components/Header-Components/LoginMenu'
+import { LoginMenu } from '@/components/Login-Components/LoginMenu'
 import { PopupManager } from '@/components/UI-Components/PopupMenu/PopupManager'
 
 export const Header = () => {

@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl'
 import { GlobeAltIcon } from '@heroicons/react/20/solid'
-import { ButtonType } from '../../../../libs/types/types'
-export function FooterButton({ className = '', ...props }: ButtonType) {
+import { ButtonTypeElement } from '../../../../libs/types/types'
+export function FooterButton({ className = '', ...props }: ButtonTypeElement) {
    const t = useTranslations('Header.Options')
 
    return (

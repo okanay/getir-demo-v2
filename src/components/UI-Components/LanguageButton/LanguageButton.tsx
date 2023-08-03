@@ -1,4 +1,4 @@
-import { LanguageCompound } from '@/components/UI-Components/LanguageButton/LanguageCompound'
+import { LanguageButtonCompound } from '@/components/UI-Components/LanguageButton/LanguageButtonCompound'
 import { useDispatch } from 'react-redux'
 import { setMenu } from '../../../../redux/slices/PopUpMenuSlice'
 
@@ -11,9 +11,13 @@ export const LanguageButton = ({ type }: { type: LanguageButtonType }) => {
    }
 
    return (
-      <LanguageCompound>
-         {type === 'header' && <LanguageCompound.HeaderButton onClick={handleOnClick}></LanguageCompound.HeaderButton>}
-         {type === 'footer' && <LanguageCompound.FooterButton onClick={handleOnClick}></LanguageCompound.FooterButton>}
-      </LanguageCompound>
+      <LanguageButtonCompound>
+         {type === 'header' && (
+            <LanguageButtonCompound.HeaderButton onClick={handleOnClick}></LanguageButtonCompound.HeaderButton>
+         )}
+         {type === 'footer' && (
+            <LanguageButtonCompound.FooterButton onClick={handleOnClick}></LanguageButtonCompound.FooterButton>
+         )}
+      </LanguageButtonCompound>
    )
 }

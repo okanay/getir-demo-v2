@@ -5,9 +5,9 @@ import { HeaderButton } from '@/components/UI-Components/LanguageButton/HeaderBu
 type Props = {
    children: ReactNode
 }
-export const LanguageCompound = ({ children }: Props) => {
+export const LanguageButtonCompound = ({ children }: Props) => {
    return children
 }
 
-LanguageCompound.HeaderButton = HeaderButton
-LanguageCompound.FooterButton = FooterButton
+LanguageButtonCompound.HeaderButton = HeaderButton
+LanguageButtonCompound.FooterButton = FooterButton

@@ -1,11 +1,5 @@
 import { ButtonHTMLAttributes } from 'react'
 
-export type Person = {
-   name: String
-   age: Number
-   alive: Boolean
-}
-
 export type Category = {
    key: string
    languageCode: string
@@ -25,14 +19,16 @@ export type Card = {
 
 export type Cards = Card[]
 
-export type PhoneFormError = {
+export type CustomError = {
    status: boolean
    errorMessage: string
 }
 
-export type MobilePhoneAuth = {
+export type PhoneLoginData = {
    phoneCode: string
    phoneNumber: string
 }
 
-export type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>
+export type ButtonTypeElement = ButtonHTMLAttributes<HTMLButtonElement>
+
+export type BodyTypeElement = HTMLBodyElement | null
