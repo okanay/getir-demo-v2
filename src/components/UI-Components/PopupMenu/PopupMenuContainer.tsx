@@ -12,7 +12,12 @@ export const PopupMenuContainer = ({ children }: Props) => {
             animate={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
             exit={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
             className={'fixed left-0 top-0 z-40 z-[201] h-screen w-full font-openSans'}>
-            <div className={'flex h-full w-full flex-col items-center justify-start baseTablet:justify-center'}>{children}</div>
+            <div
+               className={
+                  'flex h-[100svh] w-full flex-col items-center justify-start overflow-y-scroll baseTablet:justify-center'
+               }>
+               {children}
+            </div>
          </motion.div>
       </AnimatePresence>
    )

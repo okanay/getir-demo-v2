@@ -11,7 +11,7 @@ export const LoginMenu = () => {
 
    return (
       <PopupMenuContainer>
-         <div className="relative flex h-screen w-full flex-col items-center justify-start gap-4 bg-white px-4 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center baseTablet:rounded-t-lg">
+         <div className="relative flex h-full w-full flex-col items-center justify-start gap-4 bg-white px-4 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center baseTablet:rounded-t-lg">
             <MenuTitleAndCloseButton locale={'UI.MobilePhoneAuth'} />
             <MobilePhoneAuthorization />
             <p className={'w-full pt-2 text-start text-[12px] font-normal text-gray-400'}>

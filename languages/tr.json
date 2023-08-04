@@ -128,7 +128,7 @@
     }
   },
   "Error" : {
-    "MobilePhoneAuthorization" : {
+    "MobilePhoneAuth" : {
       "ErrorCode100" : "Lütfen geçerli bir telefon numarası giriniz."
     }
   },

@@ -129,7 +129,7 @@
     }
   },
   "Error" : {
-    "MobilePhoneAuthorization": {
+    "MobilePhoneAuth": {
       "ErrorCode100": "Enter phone number."
     }
   },
