@@ -13,6 +13,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.max-screen-all-devices-types{
+   height: 100vh;
+   height: 100dvh;
+}
+
 *:focus {
    border-color: inherit;
    -webkit-box-shadow: none;
