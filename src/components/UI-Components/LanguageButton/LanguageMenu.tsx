@@ -37,9 +37,9 @@ export const LanguageMenu = () => {
 
    return (
       <PopupMenuContainer>
-         <div className="flex h-screen w-full flex-col items-center justify-start gap-4 border border-slate-200 bg-white px-4 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center baseTablet:rounded-lg">
+         <div className="relative flex h-full w-full flex-col items-center justify-start gap-4 border border-slate-200 bg-white px-4 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center baseTablet:rounded-lg">
             <MenuTitleAndCloseButton locale={'Header.LanguageMenu'} />
-            <div className={'pointer-events-none mb-8 w-full rounded-lg border border-slate-200'}>
+            <div className={'pointer-events-none mb-8 w-full rounded-lg border-slate-200 baseTablet:border'}>
                <button
                   onClick={() => handleLanguageChange('tr')}
                   className={'group pointer-events-auto flex w-full items-center justify-between px-4 py-2.5'}>
@@ -58,7 +58,7 @@ export const LanguageMenu = () => {
                   <FlagIcon code="TR" size={18} />
                </button>
                {/*LINE*/}
-               <hr />
+               <hr className={'hidden baseTablet:block'} />
                {/*LINE*/}
                <button
                   onClick={() => handleLanguageChange('en')}

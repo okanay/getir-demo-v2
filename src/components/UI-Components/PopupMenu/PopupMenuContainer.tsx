@@ -14,7 +14,7 @@ export const PopupMenuContainer = ({ children }: Props) => {
             className={'fixed left-0 top-0 z-40 z-[201] h-screen w-full font-openSans'}>
             <div
                className={
-                  'flex h-[100svh] w-full flex-col items-center justify-start overflow-y-scroll baseTablet:justify-center'
+                  'flex h-[100svh] h-[100vh] w-full flex-col items-center justify-start overflow-y-scroll baseTablet:justify-center'
                }>
                {children}
             </div>
