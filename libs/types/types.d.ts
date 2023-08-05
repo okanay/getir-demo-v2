@@ -13,6 +13,8 @@ export type Categories = Category[]
 export type Card = {
    key: string
    cardImage: string
+   cardWidth: number
+   cardHeight: number
    cardTitle: string
    cardAlt: string
 }

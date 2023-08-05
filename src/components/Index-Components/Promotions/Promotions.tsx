@@ -47,7 +47,7 @@ export const Promotions = () => {
                   <div
                      key={card.key}
                      className="flex h-[24rem] w-full flex-col items-center justify-start gap-4 rounded-lg border border-slate-100 bg-white px-8 py-16 text-center">
-                     <Image src={card.cardImage} alt={''} className={''} width={150} height={150} />
+                     <Image src={card.cardImage} alt={''} className={''} width={card.cardWidth} height={card.cardHeight} />
                      <h1 className={'text-[18px] font-semibold text-skin-theme-700'}>{t(card.cardTitle)}</h1>
                      <p className={'text-[15px] tracking-wide text-slate-500'}>{t(card.cardAlt)}</p>
                   </div>

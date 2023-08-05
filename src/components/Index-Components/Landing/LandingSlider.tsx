@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react'
 import { useAnimate } from 'framer-motion'
 
-import Image1 from '../../../../public/images/IndexNavigationSlideImages/SlideImageFirst.jpg'
-import Image2 from '../../../../public/images/IndexNavigationSlideImages/SlideImageSecond.jpg'
-import Image3 from '../../../../public/images/IndexNavigationSlideImages/SlideImageThird.jpg'
-import Image4 from '../../../../public/images/IndexNavigationSlideImages/SlideImageFourth.jpg'
+import Image1 from '../../../../public/images/LandingImages/SlideImages/SlideImageFirst.jpg'
+import Image2 from '../../../../public/images/LandingImages/SlideImages/SlideImageSecond.jpg'
+import Image3 from '../../../../public/images/LandingImages/SlideImages/SlideImageThird.jpg'
+import Image4 from '../../../../public/images/LandingImages/SlideImages/SlideImageFourth.jpg'
 import Image from 'next/image'
 
 export const LandingSlider = () => {

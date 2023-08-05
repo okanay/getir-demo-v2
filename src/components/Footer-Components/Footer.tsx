@@ -25,7 +25,7 @@ export const Footer = () => {
             </div>
             <FooterNavItems />
             <div className="flex hidden h-fit w-fit flex-col items-start justify-start rounded-lg border border-slate-100 bg-white p-4 text-start shadow shadow-slate-100  desktop:block">
-               <Image src={'/images/FooterImages/etbis.png'} alt={''} width={72} height={84} className={''} />
+               <Image src={'/images/FooterImages/etbis.png'} alt={''} width={130} height={150} className={''} />
             </div>
          </div>
          <div className={'mx-auto max-w-7xl bg-gray-100 baseTablet:bg-white'}>
