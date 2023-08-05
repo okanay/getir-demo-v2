@@ -21,7 +21,7 @@ export type Cards = Card[]
 
 export type CustomError = {
    status: boolean
-   errorMessage: string
+   message: string
 }
 
 export type PhoneLoginData = {

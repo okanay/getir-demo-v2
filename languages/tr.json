@@ -141,14 +141,39 @@
       }
     },
     "CustomInput" : {
-      "phonePlaceholder" : "Telefon Numarası"
-    }
+      "PhoneNumberInput" : {
+        "placeholder": "Telefon Numarası",
+        "Errors": {
+          "Error100" : "Bir hata meydana geldi.",
+          "Error101": "Lütfen geçerli bir telefon numarası giriniz.",
+          "Error102": "Lütfen geçerli bir telefon numarası giriniz.",
+          "Error103": "Lütfen geçerli bir telefon numarası giriniz.",
+          "Error104": "Lütfen geçerli bir telefon numarası giriniz."
+        }
+      },
+      "NameInput" : {
+        "placeholder": "Ad Soyad",
+        "Errors": {
+          "Error100" : "Bir hata meydana geldi.",
+          "Error101": "101",
+          "Error102": "102",
+          "Error103": "103",
+          "Error104": "104"
+        }
+      },
+      "EmailInput" : {
+        "placeholder" : "E-Posta",
+        "Errors" : {
+          "Error100" : "Bir hata meydana geldi.",
+          "Error101" : "101",
+          "Error102" : "102",
+          "Error103" : "103",
+          "Error104" : "104"
+        }
+      }
+      }
   },
-  "Error" : {
-    "MobilePhoneAuth" : {
-      "ErrorCode100" : "Lütfen geçerli bir telefon numarası giriniz."
-    }
-  },
+  "Error" : {},
   "NotFoundPage": {
     "title": "TR",
     "description": "TR-DES"

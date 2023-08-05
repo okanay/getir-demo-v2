@@ -141,14 +141,38 @@
       }
     },
     "CustomInput" : {
-      "phonePlaceholder" : "Mobile Phone"
+      "PhoneNumberInput" : {
+        "placeholder": "Mobile Phone",
+        "Errors": {
+          "Error100" : "Bad Request",
+          "Error101" : "Enter phone number.",
+          "Error102" : "Enter phone number.",
+          "Error103" : "Enter phone number."
+        }
+      },
+      "NameInput" : {
+        "placeholder": "Name Surname",
+        "Errors": {
+          "Error100" : "Bad Request",
+          "Error101": "101",
+          "Error102": "102",
+          "Error103": "103",
+          "Error104": "104"
+        }
+      },
+      "EmailInput" : {
+        "placeholder" : "E-mail",
+        "Errors" : {
+          "Error100" : "Bad Request",
+          "Error101" : "101",
+          "Error102" : "102",
+          "Error103" : "103",
+          "Error104" : "104"
+        }
+      }
     }
   },
-  "Error" : {
-    "MobilePhoneAuth": {
-      "ErrorCode100": "Enter phone number."
-    }
-  },
+  "Error" : {},
   "NotFoundPage": {
     "title": "EN",
     "description": "EN-DES"
