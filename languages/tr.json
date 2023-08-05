@@ -116,8 +116,8 @@
     "LoginMenu" : {
       "title" : "Giriş yap veya kayıt ol",
       "information" : {
-        "text" : "Kişisel verilerinize dair Aydınlatma Metni için ",
-        "link" : "tıklayınız"
+        "info-first" : "Kişisel verilerinize dair Aydınlatma Metni için ",
+        "link-first" : "tıklayınız"
       },
       "loginButton" : "Telefon numarası ile devam et",
       "signup" : {
@@ -129,10 +129,10 @@
       "title" : "Kayıt Ol",
       "information" : {
         "info-first" : "Kişisel verilerinize dair Aydınlatma Metni için ",
-        "link-first" : "tıklayınız. ",
-        "info-second" : "Üye olmakla, ",
-        "link-second" : "Kullanım Koşulları ",
-        "info-third" : "hükümlerini kabul etmektesiniz."
+        "link-first" : "tıklayınız",
+        "info-second" : ". Üye olmakla, ",
+        "link-second" : "Kullanım Koşulları",
+        "info-third" : " hükümlerini kabul etmektesiniz."
       },
       "registerButton" : "Kayıt Ol",
       "signin" : {
@@ -170,6 +170,9 @@
           "Error103" : "103",
           "Error104" : "104"
         }
+      },
+      "SelectAdsCampaign" : {
+        "text" : "Getir’in bana özel kampanya, tanıtım ve fırsatlarından haberdar olmak istiyorum."
       }
       }
   },

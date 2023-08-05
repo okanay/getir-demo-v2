@@ -116,8 +116,8 @@
     "LoginMenu" : {
       "title" : "Login or register",
       "information" : {
-        "text" : "For the GDPR document regarding your personal information. ",
-        "link" : "Click"
+        "info-first" : "For the GDPR document regarding your personal information. ",
+        "link-first" : "Click"
       },
       "loginButton" : "Continue with phone number",
       "signup" : {
@@ -169,6 +169,9 @@
           "Error103" : "103",
           "Error104" : "104"
         }
+      },
+      "SelectAdsCampaign" : {
+        "text" : "I want to be informed of special promotions and news regarding Getir."
       }
     }
   },

@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import { SelectedCode } from '../../../libs/constants/CountriesPhoneCodesList'
 import { useTranslations } from 'next-intl'
 import { PhoneCodeInput } from '@/components/UI-Components/CustomInput/PhoneCodeInput'
 import { PhoneNumberInput } from '@/components/UI-Components/CustomInput/PhoneNumberInput'
 import { FullNameInput } from '@/components/UI-Components/CustomInput/FullNameInput'
 import { EmailInput } from '@/components/UI-Components/CustomInput/EmailInput'
+import { SelectAdsCampaign } from '@/components/UI-Components/CustomInput/SelectAdsCampaign'
+import Link from 'next/link'
+import { RegisterAuthFormTermInformationTextsAndLinks } from '@/components/Register-Components/RegisterAuthFormTermInformationTextsAndLinks'
 
 export const RegisterAuthForm = () => {
    // i18 Language
@@ -14,13 +17,15 @@ export const RegisterAuthForm = () => {
       flagCode: 'TR',
       phoneCode: '90',
    })
-
    const [phoneNumber, setPhoneNumber] = useState<string>('')
    const [fullName, setFullName] = useState<string>('')
    const [email, setEmail] = useState<string>('')
+   const [adsCampaign, setAdsCampaign] = useState<boolean>(false)
 
    // HANDLE's
-   const handleOnSubmit = () => {}
+   const handleOnSubmit = (event: FormEvent) => {
+      event.preventDefault()
+   }
 
    return (
       <form onSubmit={handleOnSubmit} className={'flex w-full flex-col gap-4'}>
@@ -30,10 +35,11 @@ export const RegisterAuthForm = () => {
          </div>
          <FullNameInput fullName={fullName} setFullName={setFullName} />
          <EmailInput email={email} setEmail={setEmail} />
-
+         <SelectAdsCampaign adsCampaign={adsCampaign} setAdsCampaign={setAdsCampaign} />
+         <RegisterAuthFormTermInformationTextsAndLinks t={t} />
          <button
             type="submit"
-            className="h-14 w-full rounded border border-gray-200 bg-yellow-400 px-4 text-[14px] font-medium text-skin-theme-700 transition-colors duration-200 hover:bg-skin-theme-700 hover:text-yellow-400">
+            className="h-14 w-full rounded-lg border border-gray-200 bg-skin-theme-700 px-4 text-[14px] font-semibold text-white transition-colors duration-200 hover:bg-skin-theme-600 hover:text-white">
             {t('registerButton')}
          </button>
       </form>

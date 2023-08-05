@@ -22,6 +22,7 @@ export const CustomInput = ({ name, type, value, handleOnChange, handleOnBlur, e
                onBlur={handleOnBlur}
                type={type}
                name={name}
+               id={name}
                placeholder={t('placeholder')}
                className={`peer  h-full w-full rounded border-2 bg-white px-3.5 text-[14px] font-normal placeholder-transparent transition-colors duration-200 baseTablet:rounded
                                 ${errorStatus ? 'border-red-400 outline-red-400' : 'border-gray-200 hover:border-skin-theme-700'}
