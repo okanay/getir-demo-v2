@@ -4,7 +4,7 @@ type Props = {
    children: React.ReactNode
 }
 
-export const PopupMenuContainer = ({ children }: Props) => {
+export const MenuContainer = ({ children }: Props) => {
    return (
       <AnimatePresence>
          <motion.div

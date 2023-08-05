@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { setMenu } from '../../../../redux/slices/PopUpMenuSlice'
 
 export const SelectShipmentAddress = () => {
-   const t = useTranslations('UI.Delivery')
+   const t = useTranslations('Index.landing.delivery')
 
    const dispatch = useDispatch()
    const handleOnClick = () => {

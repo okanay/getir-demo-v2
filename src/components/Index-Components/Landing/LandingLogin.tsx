@@ -1,17 +1,17 @@
 import Image from 'next/image'
-import { SelectShipmentAddress } from '@/components/Index-Components/HeroSectionLogin/SelectShipmentAddress'
-import { MobilePhoneAuthorization } from '@/components/UI-Components/MobilePhoneAuthorization/MobilePhoneAuthorization'
-import { NavigationSlider } from '@/components/Index-Components/HeroSectionLogin/NavigationSlider'
+import { SelectShipmentAddress } from '@/components/Index-Components/Landing/SelectShipmentAddress'
+import { LoginAuthForm } from '@/components/Login-Components/LoginAuthForm'
+import { LandingSlider } from '@/components/Index-Components/Landing/LandingSlider'
 import { useTranslations } from 'next-intl'
 import { FlagIcon } from 'react-flag-kit'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
-export const HeroSectionLogin = () => {
+export const LandingLogin = () => {
    const t = useTranslations('Index.landing')
 
    return (
       <section id={'hero-section-login'} className={'relative h-full w-full baseTablet:h-[32rem]'}>
-         <NavigationSlider />
+         <LandingSlider />
          <div className="flex h-full w-full flex-col items-center justify-center bg-skin-theme-700 py-6 text-center baseTablet:hidden">
             <Image src={'images/HeroLoginImages/getir.svg'} alt={''} className={''} priority={true} width={49} height={23} />
          </div>
@@ -24,8 +24,8 @@ export const HeroSectionLogin = () => {
                   <p className={'max-w-[460px] text-[36px] leading-10 tracking-wide text-white'}>{t('title')}</p>
                </div>
                <div className="flex w-full flex-col items-center justify-center bg-gray-100 p-4 text-center text-[16px] font-semibold baseTablet:w-fit baseTablet:rounded-lg baseTablet:px-5 baseTablet:py-6">
-                  <h2 className={'mb-4 text-[16px] text-skin-theme-800'}>{t('loginTitle')}</h2>
-                  <MobilePhoneAuthorization />
+                  <h2 className={'mb-4 text-[16px] text-skin-theme-800'}>{t('loginOrRegister')}</h2>
+                  <LoginAuthForm />
                </div>
             </div>
          </div>

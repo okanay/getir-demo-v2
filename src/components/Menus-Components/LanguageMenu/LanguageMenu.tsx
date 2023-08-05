@@ -8,10 +8,10 @@ import { XMarkIcon } from '@heroicons/react/20/solid'
 import { FlagIcon } from 'react-flag-kit'
 import { useDispatch } from 'react-redux'
 import { closeMenu } from '../../../../redux/slices/PopUpMenuSlice'
-import { PopupMenuContainer } from '@/components/UI-Components/PopupMenu/PopupMenuContainer'
-import { MenuTitleAndCloseButton } from '@/components/UI-Components/PopupMenu/MenuTitleAndCloseButton'
+import { MenuContainer } from '@/components/Menus-Components/MenuContainer'
+import { MenuTitleAndCloseButton } from '@/components/Menus-Components/MenuTitleAndCloseButton'
 export const LanguageMenu = () => {
-   const t = useTranslations('Header.LanguageMenu')
+   const t = useTranslations('Menus.LanguageMenu')
 
    const dispatch = useDispatch()
    const [_, startTransition] = useTransition()
@@ -36,9 +36,9 @@ export const LanguageMenu = () => {
    }
 
    return (
-      <PopupMenuContainer>
+      <MenuContainer>
          <div className="relative flex h-full w-full flex-col items-center justify-start gap-4 border border-slate-200 bg-white px-4 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center baseTablet:rounded-lg">
-            <MenuTitleAndCloseButton locale={'Header.LanguageMenu'} />
+            <MenuTitleAndCloseButton locale={'Menus.LanguageMenu'} />
             <div className={'pointer-events-none mb-8 w-full rounded-lg border-slate-200 baseTablet:border'}>
                <button
                   onClick={() => handleLanguageChange('tr')}
@@ -57,9 +57,9 @@ export const LanguageMenu = () => {
                   </span>
                   <FlagIcon code="TR" size={18} />
                </button>
-               {/*LINE*/}
+               {/******************************************/}
                <hr className={'hidden baseTablet:block'} />
-               {/*LINE*/}
+               {/******************************************/}
                <button
                   onClick={() => handleLanguageChange('en')}
                   className={'group pointer-events-auto flex w-full items-center justify-between px-4 py-2.5'}>
@@ -85,6 +85,6 @@ export const LanguageMenu = () => {
                {t('button')}
             </button>
          </div>
-      </PopupMenuContainer>
+      </MenuContainer>
    )
 }

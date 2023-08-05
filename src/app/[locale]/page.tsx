@@ -1,13 +1,13 @@
 'use client'
-import { HeroSectionLogin } from '@/components/Index-Components/HeroSectionLogin/HeroSectionLogin'
+import { LandingLogin } from '@/components/Index-Components/Landing/LandingLogin'
 import { Categories } from '@/components/Index-Components/CategoriesSection/Categories'
 import { Promotions } from '@/components/Index-Components/Promotions/Promotions'
-import { MobilePhoneAuthorization } from '@/components/UI-Components/MobilePhoneAuthorization/MobilePhoneAuthorization'
+import { LoginAuthForm } from '@/components/Login-Components/LoginAuthForm'
 
 export default function Index({ params }: { params: { locale: string } }) {
    return (
       <>
-         <HeroSectionLogin />
+         <LandingLogin />
          <Categories />
          <Promotions />
       </>

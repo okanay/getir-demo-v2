@@ -11,17 +11,16 @@
       "selectedLanguage" : "Türkçe (TR)",
       "login" : "Giriş Yap",
       "signUp" : "Kayıt Ol"
-    },
-    "LanguageMenu" : {
-      "title" : "Dil Değiştir",
-      "button" : "Güncelle"
     }
   },
   "Index" : {
     "landing" : {
       "image" : "/images/HeroLoginImages/getir-mutluluk-tr.svg",
       "title" : "Dakikalar icinde kapinizda",
-      "loginTitle" : "Giriş yap veya kayıt ol"
+      "loginOrRegister" : "Giriş yap veya kayıt ol",
+      "delivery" : {
+        "deliveryButton" : "Teslimat Adresini Belirle"
+      }
     },
     "categories" : {
       "title" : "Kategoriler",
@@ -109,22 +108,40 @@
       }
     ]
   },
-  "UI" : {
-    "MobilePhoneAuth" : {
+  "Menus" : {
+    "LanguageMenu" : {
+      "title" : "Dil Değiştir",
+      "button" : "Güncelle"
+    },
+    "LoginMenu" : {
       "title" : "Giriş yap veya kayıt ol",
-      "phonePlaceholder" : "Telefon Numarası",
-      "loginButton" : "Telefon numarasi ile devam et",
       "information" : {
         "text" : "Kişisel verilerinize dair Aydınlatma Metni için ",
         "link" : "tıklayınız"
       },
-      "sign" : {
+      "loginButton" : "Telefon numarası ile devam et",
+      "signup" : {
         "text" : "Hala kayıt olmadınız mı?",
         "button" : "Kayıt Ol"
       }
     },
-    "Delivery" : {
-      "deliveryButton" : "Teslimat Adresini Belirle"
+    "RegisterMenu" : {
+      "title" : "Kayıt Ol",
+      "information" : {
+        "info-first" : "Kişisel verilerinize dair Aydınlatma Metni için ",
+        "link-first" : "tıklayınız. ",
+        "info-second" : "Üye olmakla, ",
+        "link-second" : "Kullanım Koşulları ",
+        "info-third" : "hükümlerini kabul etmektesiniz."
+      },
+      "registerButton" : "Kayıt Ol",
+      "signin" : {
+        "text" : "Getir'e üyeyseniz ",
+        "button" : "Giriş Yap"
+      }
+    },
+    "CustomInput" : {
+      "phonePlaceholder" : "Telefon Numarası"
     }
   },
   "Error" : {
@@ -137,6 +154,7 @@
     "description": "TR-DES"
   }
 }
+
 
 
 

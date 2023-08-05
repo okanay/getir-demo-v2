@@ -13,7 +13,7 @@ type Props = {
 export const PhoneNumberInput = ({ phoneNumber, setPhoneNumber }: Props) => {
    // i18 Language
 
-   const t = useTranslations('UI.MobilePhoneAuth')
+   const t = useTranslations('Menus.CustomInput')
 
    const errorT = useTranslations('Error.MobilePhoneAuth')
 
@@ -56,7 +56,7 @@ export const PhoneNumberInput = ({ phoneNumber, setPhoneNumber }: Props) => {
       if (!enteredInputValueRegex.test(enteredNumber)) return
       if (enteredNumber.length > 10) return
 
-      setPhoneNumber(enteredNumber)
+      setPhoneNumber(String(enteredNumber))
       if (enteredNumber.length === 10) handleClearError()
    }
 
@@ -73,7 +73,7 @@ export const PhoneNumberInput = ({ phoneNumber, setPhoneNumber }: Props) => {
                placeholder={t('phonePlaceholder')}
                className={`peer  h-full w-full rounded border-2 bg-white px-3.5 text-[14px] font-normal placeholder-transparent transition-colors duration-200 baseTablet:rounded
                                 ${error.status ? 'border-red-400 outline-red-400' : 'border-gray-200 hover:border-skin-theme-700'}
-                                ${phoneNumber.length > 0 ? 'pt-2' : 'pt-0'}`}
+                                ${String(phoneNumber).length > 0 ? 'pt-2' : 'pt-0'}`}
             />
 
             <label

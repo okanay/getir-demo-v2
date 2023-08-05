@@ -9,7 +9,7 @@ import Image3 from '../../../../public/images/IndexNavigationSlideImages/SlideIm
 import Image4 from '../../../../public/images/IndexNavigationSlideImages/SlideImageFourth.jpg'
 import Image from 'next/image'
 
-export const NavigationSlider = () => {
+export const LandingSlider = () => {
    //
    //
    //

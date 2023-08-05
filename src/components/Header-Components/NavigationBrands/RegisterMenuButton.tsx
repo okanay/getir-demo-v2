@@ -1,6 +1,12 @@
+import { useDispatch } from 'react-redux'
+import { setMenu } from '../../../../redux/slices/PopUpMenuSlice'
+
 export const RegisterMenuButton = ({ t }: { t: any }) => {
+   const dispatch = useDispatch()
+   const handleOnClick = () => dispatch(setMenu('register'))
+
    return (
-      <button className={'flex items-center justify-start gap-2'}>
+      <button onClick={handleOnClick} className={'flex items-center justify-start gap-2'}>
          <svg
             data-testid="icon"
             name="user-add"

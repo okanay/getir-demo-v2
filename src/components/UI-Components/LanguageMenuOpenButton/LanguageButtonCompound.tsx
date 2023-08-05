@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
-import { FooterButton } from '@/components/UI-Components/LanguageButton/FooterButton'
-import { HeaderButton } from '@/components/UI-Components/LanguageButton/HeaderButton'
+import { FooterButton } from '@/components/UI-Components/LanguageMenuOpenButton/FooterButton'
+import { HeaderButton } from '@/components/UI-Components/LanguageMenuOpenButton/HeaderButton'
 
 type Props = {
    children: ReactNode

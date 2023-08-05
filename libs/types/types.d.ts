@@ -25,6 +25,7 @@ export type CustomError = {
 }
 
 export type PhoneLoginData = {
+   flagCode: string
    phoneCode: string
    phoneNumber: string
 }

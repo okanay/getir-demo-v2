@@ -11,17 +11,16 @@
       "selectedLanguage" : "English (EN)",
       "login" : "Login",
       "signUp" : "Sign Up"
-    },
-    "LanguageMenu" : {
-      "title" : "Change Language",
-      "button" : "Update"
     }
   },
   "Index" : {
     "landing" : {
       "image" : "/images/HeroLoginImages/getir-mutluluk-en.svg",
       "title" : "At your door in minutes",
-      "loginTitle" : "Login or register"
+      "loginOrRegister" : "Login or register",
+      "delivery" : {
+        "deliveryButton" : "Select Delivery Address"
+      }
     },
     "categories" : {
       "title" : "Categories",
@@ -74,7 +73,6 @@
         }
       ]
     }
-
   },
   "Footer" : {
     "Navigations" : [
@@ -110,22 +108,40 @@
       }
     ]
   },
-  "UI" : {
-    "MobilePhoneAuth" : {
+  "Menus" : {
+    "LanguageMenu" : {
+      "title" : "Change Language",
+      "button" : "Update"
+    },
+    "LoginMenu" : {
       "title" : "Login or register",
-      "phonePlaceholder" : "Mobile Phone",
-      "loginButton" : "Continue with phone number",
       "information" : {
         "text" : "For the GDPR document regarding your personal information. ",
         "link" : "Click"
       },
-      "sign" : {
+      "loginButton" : "Continue with phone number",
+      "signup" : {
         "text" : "Still haven't signed up?",
         "button" : "Sign Up"
       }
     },
-    "Delivery" : {
-      "deliveryButton" : "Select Delivery Address"
+    "RegisterMenu" : {
+      "title" : "Sign Up",
+      "information" : {
+        "info-first" : "Please click ",
+        "link-first" : "here ",
+        "info-second" : "to review our Privacy Notice regarding your personal data. By registering, you accept our ",
+        "link-second" : "Terms of Conditions.",
+        "info-third" : ""
+      },
+      "registerButton" : "Sign Up",
+      "signin" : {
+        "text" : "If you're a member of Getir ",
+        "button" : "Login"
+      }
+    },
+    "CustomInput" : {
+      "phonePlaceholder" : "Mobile Phone"
     }
   },
   "Error" : {

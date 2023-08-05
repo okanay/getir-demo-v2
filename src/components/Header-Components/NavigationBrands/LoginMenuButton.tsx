@@ -3,9 +3,7 @@ import { setMenu } from '../../../../redux/slices/PopUpMenuSlice'
 
 export const LoginMenuButton = ({ t }: { t: any }) => {
    const dispatch = useDispatch()
-   const handleOnClick = () => {
-      dispatch(setMenu('login'))
-   }
+   const handleOnClick = () => dispatch(setMenu('login'))
 
    return (
       <button onClick={handleOnClick} className={'flex items-center justify-start gap-2.5'}>
