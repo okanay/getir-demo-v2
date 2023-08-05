@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from 'react'
-import { ValidationSchemas } from '../../../../libs/validation/ValidationSchemas'
+import { FullNameSchemas } from '../../../../libs/validation/ValidationSchemas'
 import { useTranslations } from 'next-intl'
 import { CustomInput } from '@/components/UI-Components/CustomInput/CustomInput'
 
@@ -28,19 +28,19 @@ export const FullNameInput = ({ fullName, setFullName }: Props) => {
    const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>) => {
       const enteredFullName = event.target.value || ''
 
-      const isEnteredFullNameValid = ValidationSchemas.InputValidation.safeParse(enteredFullName)
+      const isEnteredFullNameValid = FullNameSchemas.InputValidation.safeParse(enteredFullName)
       if (!isEnteredFullNameValid.success) handleSetError(isEnteredFullNameValid)
    }
 
    const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
       const enteredFullName = event.target.value || ''
-      const isEnteredFullNameRegexValid = ValidationSchemas.InputValidationRegex.safeParse(enteredFullName)
+      const isEnteredFullNameRegexValid = FullNameSchemas.InputValidationRegex.safeParse(enteredFullName)
 
       if (!isEnteredFullNameRegexValid.success && enteredFullName !== '') {
          handleSetError(isEnteredFullNameRegexValid)
          return
       }
-      if (!ValidationSchemas.InputRequiredLength.safeParse(enteredFullName).success) return
+      if (!FullNameSchemas.InputRequiredLength.safeParse(enteredFullName).success) return
 
       setFullName(event.target.value)
       handleClearError()

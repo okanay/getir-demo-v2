@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 
-import { MenuContainer } from '@/components/Menus-Components/MenuContainer'
+import { MenuMainContainer } from '@/components/Menus-Components/MenuMainContainer'
 import { LoginAuthForm } from '@/components/Login-Components/LoginAuthForm'
 import { MenuTitleAndCloseButton } from '@/components/Menus-Components/MenuTitleAndCloseButton'
 import { useTranslations } from 'next-intl'

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react'
 import { CustomError } from '../../../../libs/types/types'
-import { ValidationSchemas } from '../../../../libs/validation/ValidationSchemas'
+import { PhoneNumberSchemas } from '../../../../libs/validation/ValidationSchemas'
 
 import { useTranslations } from 'next-intl'
 import { CustomInput } from '@/components/UI-Components/CustomInput/CustomInput'
@@ -29,21 +29,21 @@ export const PhoneNumberInput = ({ phoneNumber, setPhoneNumber }: Props) => {
 
    const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>) => {
       const enteredPhoneNumber = event.target.value || ''
-      const isEnteredPhoneNumberValid = ValidationSchemas.PhoneNumberRequiredLength.safeParse(enteredPhoneNumber)
+      const isEnteredPhoneNumberValid = PhoneNumberSchemas.PhoneNumberRequiredLength.safeParse(enteredPhoneNumber)
 
       if (!isEnteredPhoneNumberValid.success) handleSetError(isEnteredPhoneNumberValid)
    }
 
    const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
       const enteredPhoneNumber = event.target.value || ''
-      const isEnteredPhoneNumberValid = ValidationSchemas.PhoneNumberRegex.safeParse(enteredPhoneNumber)
+      const isEnteredPhoneNumberValid = PhoneNumberSchemas.PhoneNumberRegex.safeParse(enteredPhoneNumber)
 
       if (!isEnteredPhoneNumberValid.success) {
          handleSetError(isEnteredPhoneNumberValid)
          return
       }
 
-      if (!ValidationSchemas.PhoneNumberMaxLength.safeParse(enteredPhoneNumber).success) return
+      if (!PhoneNumberSchemas.PhoneNumberMaxLength.safeParse(enteredPhoneNumber).success) return
 
       setPhoneNumber(String(enteredPhoneNumber))
       handleClearError()

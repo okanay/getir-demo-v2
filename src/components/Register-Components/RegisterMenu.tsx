@@ -1,5 +1,4 @@
 import { useTranslations } from 'next-intl'
-import { MenuContainer } from '@/components/Menus-Components/MenuContainer'
 import { MenuTitleAndCloseButton } from '@/components/Menus-Components/MenuTitleAndCloseButton'
 import { RegisterAuthForm } from '@/components/Register-Components/RegisterAuthForm'
 import { useDispatch } from 'react-redux'

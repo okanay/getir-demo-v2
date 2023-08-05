@@ -4,7 +4,7 @@ type Props = {
    children: React.ReactNode
 }
 
-export const MenuContainer = ({ children }: Props) => {
+export const MenuMainContainer = ({ children }: Props) => {
    return (
       <AnimatePresence>
          <motion.div

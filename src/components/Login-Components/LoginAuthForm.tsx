@@ -1,47 +1,22 @@
-import { SelectedCode } from '../../../libs/constants/CountriesPhoneCodesList'
 import React, { FormEvent, useState } from 'react'
+import { LoginFormType, LoginValidationSchemas } from '../../../libs/validation/ValidationSchemas'
+import { SelectedCode } from '../../../libs/constants/CountriesPhoneCodesList'
 
 import { PhoneCodeInput } from '@/components/UI-Components/CustomInput/PhoneCodeInput'
 import { PhoneNumberInput } from '@/components/UI-Components/CustomInput/PhoneNumberInput'
 import { useTranslations } from 'next-intl'
 
-import { z, ZodType } from 'zod'
-import { useDispatch } from 'react-redux'
-import { setMenu } from '../../../redux/slices/PopUpMenuSlice'
-export const LoginFormSchema: ZodType = z.object({
-   flagCode: z.string().min(1).max(4),
-   phoneCode: z.string().min(1).max(4),
-   phoneNumber: z.string().min(10).max(10),
-})
-export type LoginFormType = z.infer<typeof LoginFormSchema>
-
 export const LoginAuthForm = () => {
    // i18 Language
    const t = useTranslations('Menus.LoginMenu')
+
    // STATE's
    const [selectedCode, setSelectedCode] = useState<SelectedCode>({
       flagCode: 'TR',
       phoneCode: '90',
    })
+
    const [phoneNumber, setPhoneNumber] = useState<string>('')
-   // SCHEMA's
-   type IsFormSuccessFunction = (data: LoginFormType) => boolean | LoginFormType
-   const IsFormSuccess: IsFormSuccessFunction = (data: LoginFormType) => {
-      const schemaCheck = LoginFormSchema.safeParse(data)
-
-      if (!schemaCheck.success) {
-         const schemaError = schemaCheck.error.format()
-
-         // const phoneNumberError = schemaError.phoneNumber?._errors.join(', ') || ''
-         // const phoneCodeError = schemaError.phoneCode?._errors.join(', ') || ''
-         // const flagCodeError = schemaError.flagCode?._errors.join(', ') || ''
-
-         console.log(schemaError)
-         return false
-      }
-
-      return schemaCheck.data
-   }
    // HANDLE's
    const handleFormSubmit = (event: FormEvent) => {
       event.preventDefault()
@@ -51,7 +26,7 @@ export const LoginAuthForm = () => {
          phoneCode: selectedCode.phoneCode,
          phoneNumber: phoneNumber,
       }
-      const validData = IsFormSuccess(data)
+      const validData = LoginValidationSchemas.IsLoginFormSuccess(data)
 
       if (!validData) return
       console.log(validData)

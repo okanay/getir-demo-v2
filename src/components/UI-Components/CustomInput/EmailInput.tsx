@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from 'react'
-import { ValidationSchemas } from '../../../../libs/validation/ValidationSchemas'
+import { EmailSchemas } from '../../../../libs/validation/ValidationSchemas'
 import { useTranslations } from 'next-intl'
 import { CustomInput } from '@/components/UI-Components/CustomInput/CustomInput'
 
@@ -28,13 +28,13 @@ export const EmailInput = ({ email, setEmail }: Props) => {
    const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>) => {
       const enteredEmail = event.target.value || ''
 
-      const isEnteredEmailValid = ValidationSchemas.EmailSchema.safeParse(enteredEmail)
+      const isEnteredEmailValid = EmailSchemas.EmailSchema.safeParse(enteredEmail)
       if (!isEnteredEmailValid.success) handleSetError(isEnteredEmailValid)
    }
 
    const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
       const enteredEmail = event.target.value || ''
-      const isEnteredEmailValid = ValidationSchemas.EmailSchemaRequiredLength.safeParse(enteredEmail)
+      const isEnteredEmailValid = EmailSchemas.EmailSchemaRequiredLength.safeParse(enteredEmail)
 
       if (!isEnteredEmailValid.success && enteredEmail !== '') {
          handleSetError(isEnteredEmailValid)

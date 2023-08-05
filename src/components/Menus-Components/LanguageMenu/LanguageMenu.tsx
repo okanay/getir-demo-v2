@@ -4,12 +4,12 @@ import { useRouter } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname } from 'next-intl/client'
 import { useState, useTransition } from 'react'
-import { XMarkIcon } from '@heroicons/react/20/solid'
-import { FlagIcon } from 'react-flag-kit'
 import { useDispatch } from 'react-redux'
 import { closeMenu } from '../../../../redux/slices/PopUpMenuSlice'
-import { MenuContainer } from '@/components/Menus-Components/MenuContainer'
 import { MenuTitleAndCloseButton } from '@/components/Menus-Components/MenuTitleAndCloseButton'
+
+import { FlagIcon } from 'react-flag-kit'
+
 export const LanguageMenu = () => {
    const t = useTranslations('Menus.LanguageMenu')
 
@@ -36,7 +36,7 @@ export const LanguageMenu = () => {
    }
 
    return (
-      <div className="relative flex h-full w-full flex-col items-center justify-start gap-4 border border-slate-200 bg-white px-4 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center baseTablet:rounded-lg">
+      <div className="relative flex h-full w-full flex-col items-center justify-start gap-4 bg-white px-4 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center baseTablet:rounded-lg">
          <MenuTitleAndCloseButton locale={'Menus.LanguageMenu'} />
          <div className={'pointer-events-none mb-8 w-full rounded-lg border-slate-200 baseTablet:border'}>
             <button
