@@ -1,7 +1,6 @@
-import React, { ChangeEvent, useRef, useState } from 'react'
-import { ExclamationCircleIcon } from '@heroicons/react/20/solid'
-import { useTranslations } from 'next-intl'
+import React, { ChangeEvent, useState } from 'react'
 import { ValidationSchemas } from '../../../../libs/validation/ValidationSchemas'
+import { useTranslations } from 'next-intl'
 import { CustomInput } from '@/components/UI-Components/CustomInput/CustomInput'
 
 type Props = {
@@ -20,8 +19,9 @@ export const FullNameInput = ({ fullName, setFullName }: Props) => {
    })
 
    // HANDLE's
-   const handleSetError = (schema: any) =>
+   const handleSetError = (schema: any) => {
       setError({ status: true, message: schema.error?.formErrors?.formErrors[0] || 'Error100' })
+   }
 
    const handleClearError = () => setError({ status: false, message: '' })
 

@@ -14,6 +14,7 @@ export const RegisterAuthForm = () => {
       flagCode: 'TR',
       phoneCode: '90',
    })
+
    const [phoneNumber, setPhoneNumber] = useState<string>('')
    const [fullName, setFullName] = useState<string>('')
    const [email, setEmail] = useState<string>('')
