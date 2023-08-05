@@ -41,7 +41,6 @@ export const LoginAuthForm = () => {
             <PhoneCodeInput selectedCode={selectedCode} setSelectedCode={setSelectedCode} />
             <PhoneNumberInput phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
          </div>
-         <LoginAuthFormTermInformationTextsAndLinks t={t} />
          <button
             type="submit"
             className="h-14 w-full rounded border border-gray-200 bg-yellow-400 px-4 text-[14px] font-medium text-skin-theme-700 transition-colors duration-200 hover:bg-skin-theme-700 hover:text-yellow-400">
