@@ -2,10 +2,13 @@ import Image from 'next/image'
 
 import { useTranslations } from 'next-intl'
 import { CardsList } from '../../../../libs/constants/CardsList'
+import { useState } from 'react'
+import { LandingPosterImage } from '@/components/Index-Components/Promotions/LandingPosterImage'
 
 export const Promotions = () => {
    //
    const t = useTranslations('Index.promotions')
+   //
 
    return (
       <section id={'promotions'} className={'border-y border-gray-100 bg-gray-100 font-openSans'}>
@@ -31,13 +34,7 @@ export const Promotions = () => {
                   </div>
 
                   <div className={'relative hidden h-[288px] w-[605px] overflow-hidden baseTablet:flex'}>
-                     <Image
-                        src={t('images.landingPoster')}
-                        alt={''}
-                        height={288}
-                        width={605}
-                        className={'absolute h-full w-full flex-shrink-0 flex-grow-0 object-contain object-cover object-left'}
-                     />
+                     <LandingPosterImage t={t} />
                   </div>
                </div>
             </div>
@@ -47,7 +44,14 @@ export const Promotions = () => {
                   <div
                      key={card.key}
                      className="flex h-[24rem] w-full flex-col items-center justify-start gap-4 rounded-lg border border-slate-100 bg-white px-8 py-16 text-center">
-                     <Image src={card.cardImage} alt={''} className={''} width={card.cardWidth} height={card.cardHeight} />
+                     <Image
+                        src={card.cardImage}
+                        alt={''}
+                        className={''}
+                        width={card.cardWidth}
+                        height={card.cardHeight}
+                        priority={true}
+                     />
                      <h1 className={'text-[18px] font-semibold text-skin-theme-700'}>{t(card.cardTitle)}</h1>
                      <p className={'text-[15px] tracking-wide text-slate-500'}>{t(card.cardAlt)}</p>
                   </div>

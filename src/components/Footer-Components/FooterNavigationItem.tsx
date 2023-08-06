@@ -11,7 +11,7 @@ export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; in
    const t = useTranslations('Footer.Navigations')
 
    const matches = useMediaQuery('(min-width: 760px)')
-   const [isOpen, setIsOpen] = useState(index === 0)
+   const [isOpen, setIsOpen] = useState(false)
    const [initialState, setInitialState] = useState(true)
    const isRight = (index + 1) % 2 === 1
 
@@ -21,16 +21,17 @@ export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; in
    }
 
    useEffect(() => {
-      setInitialState(false)
-   }, [])
-
-   useEffect(() => {
       if (matches) setIsOpen(true)
    }, [matches])
 
    useEffect(() => {
       if (index !== 0 && !matches) setIsOpen(false)
+      else if (index === 0 && !matches) setIsOpen(true)
    }, [matches])
+
+   useEffect(() => {
+      setInitialState(false)
+   }, [])
 
    return (
       <div className={`flex w-full flex-col items-start justify-start desktop:col-span-2`}>
@@ -51,9 +52,9 @@ export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; in
          </div>
          <motion.div
             className={`relative flex w-full origin-top flex-col items-start gap-4 overflow-hidden text-start`}
-            initial={{ height: initialState ? 0 : 176 }}
+            initial={{ height: initialState ? (isOpen ? 176 : 0) : 0 }}
             animate={{ height: isOpen ? 176 : 0 }}
-            transition={{ delay: initialState ? 0 : 0.1, ease: 'linear', duration: matches ? 0 : initialState ? 0 : 0.4 }}>
+            transition={{ delay: 0, ease: 'linear', duration: initialState ? 0 : matches ? 0 : 0.4 }}>
             {data.links.map(link => (
                <h6
                   key={nanoid()}

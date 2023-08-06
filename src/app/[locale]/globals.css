@@ -1,22 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');*/
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600&display=swap');
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.max-screen-all-devices-types{
-   height: 100vh;
-   height: 100dvh;
-}
 
 *:focus {
    border-color: inherit;
@@ -38,6 +35,25 @@
    --theme-950: 40, 29, 73;
 }
 
+.max-screen-all-devices-types{
+   height: 100vh;
+   height: 100dvh;
+}
+
+.menu-container {
+   @apply relative flex h-full w-full flex-col items-center justify-start gap-4 bg-white px-5 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center
+}
+
+.slider {
+   width: 100%;
+   overflow: hidden;
+}
+
+.slides {
+   animation: slide 4s linear infinite;
+   animation-fill-mode: forwards;
+}
+
 @media (prefers-color-scheme: dark) {
    :root {
       --theme-950: 239, 239, 254;
@@ -54,6 +70,14 @@
    }
 }
 
+@keyframes slide {
+   0% {
+      transform: translateX(0%);
+   }
+   100% { /* Başlangıçta ve sonunda 1. resim gösteriliyor */
+      transform: translateX(-50%);
+   }
+}
 
 @layer utilities {
    @variants responsive {
@@ -65,41 +89,5 @@
          -ms-overflow-style: none;
          scrollbar-width: none;
       }
-   }
-}
-
-@font-face {
-   font-family: helvetica;
-   src: url('/fonts/helvetica.otf') format("opentype");
-}
-
-@font-face {
-   font-family: helvetica-bold;
-   src: url('/fonts/helvetica-bold.ttf') format("truetype");
-}
-
-@font-face {
-   font-family: jiho;
-   src: url('/fonts/jiho.otf') format("opentype");
-}
-
-
-
-.slider {
-   width: 100%;
-   overflow: hidden;
-}
-
-.slides {
-   animation: slide 4s linear infinite;
-   animation-fill-mode: forwards;
-}
-
-@keyframes slide {
-   0% {
-      transform: translateX(0%);
-   }
-   100% { /* Başlangıçta ve sonunda 1. resim gösteriliyor */
-      transform: translateX(-50%);
    }
 }

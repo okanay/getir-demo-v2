@@ -8,6 +8,8 @@ import { EmailInput } from '@/components/UI-Components/CustomInput/EmailInput'
 import { SelectAdsCampaign } from '@/components/UI-Components/CustomInput/SelectAdsCampaign'
 import Link from 'next/link'
 import { RegisterAuthFormTermInformationTextsAndLinks } from '@/components/Register-Components/RegisterAuthFormTermInformationTextsAndLinks'
+import { useDispatch } from 'react-redux'
+import { setMenu } from '../../../redux/slices/PopUpMenuSlice'
 
 export const RegisterAuthForm = () => {
    // i18 Language
@@ -28,7 +30,7 @@ export const RegisterAuthForm = () => {
    }
 
    return (
-      <form onSubmit={handleOnSubmit} className={'flex w-full flex-col gap-4'}>
+      <form onSubmit={handleOnSubmit} className={'flex h-full w-full flex-col gap-4'}>
          <div className="flex w-full items-start gap-2">
             <PhoneCodeInput selectedCode={selectedCode} setSelectedCode={setSelectedCode} />
             <PhoneNumberInput phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
@@ -37,11 +39,14 @@ export const RegisterAuthForm = () => {
          <EmailInput email={email} setEmail={setEmail} />
          <SelectAdsCampaign adsCampaign={adsCampaign} setAdsCampaign={setAdsCampaign} />
          <RegisterAuthFormTermInformationTextsAndLinks t={t} />
-         <button
-            type="submit"
-            className="h-14 w-full rounded-lg border border-gray-200 bg-skin-theme-700 px-4 text-[14px] font-semibold text-white transition-colors duration-200 hover:bg-skin-theme-600 hover:text-white">
-            {t('registerButton')}
-         </button>
+         <div className={'relative flex h-full w-full flex-col items-end justify-end gap-6'}>
+            <button
+               type="submit"
+               className="w-full rounded-lg border border-gray-200 bg-skin-theme-700 px-4 py-3.5 text-[14px] font-semibold text-white transition-colors duration-200 hover:bg-skin-theme-600 hover:text-white baseTablet:mt-12">
+               {t('registerButton')}
+            </button>
+            <div className="pointer-events-none h-8 w-full bg-transparent baseTablet:hidden" />
+         </div>
       </form>
    )
 }

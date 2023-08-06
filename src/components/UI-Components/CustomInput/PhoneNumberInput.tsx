@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react'
 import { CustomError } from '../../../../libs/types/types'
-import { PhoneNumberSchemas } from '../../../../libs/validation/ValidationSchemas'
+import { PhoneNumberSchemas } from '../../../../libs/validations/ValidationSchemas'
 
 import { useTranslations } from 'next-intl'
 import { CustomInput } from '@/components/UI-Components/CustomInput/CustomInput'

@@ -36,7 +36,7 @@ export const LanguageMenu = () => {
    }
 
    return (
-      <div className="relative flex h-full w-full flex-col items-center justify-start gap-4 bg-white px-4 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center baseTablet:rounded-lg">
+      <div className="menu-container baseTablet:rounded-lg">
          <MenuTitleAndCloseButton locale={'Menus.LanguageMenu'} />
          <div className={'pointer-events-none mb-8 w-full rounded-lg border-slate-200 baseTablet:border'}>
             <button
@@ -80,7 +80,7 @@ export const LanguageMenu = () => {
          <button
             disabled={isSelectEqualLocale}
             onClick={handleOnChange}
-            className={`w-full rounded-lg border border-slate-200 bg-skin-theme-700 py-3 text-[#f5f5f5] transition-colors duration-300 disabled:cursor-not-allowed disabled:bg-[#a2a2a2]`}>
+            className={`w-full rounded-lg border border-slate-200 bg-skin-theme-700 py-3.5 text-[15px] font-semibold text-[#f5f5f5] transition-colors duration-300 disabled:cursor-not-allowed disabled:bg-[#a2a2a2]`}>
             {t('button')}
          </button>
       </div>

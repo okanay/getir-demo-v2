@@ -19,7 +19,7 @@ export const LoginMenu = () => {
    const handleOpenRegisterMenu = () => dispatch(setMenu('register'))
 
    return (
-      <div className="relative flex h-full w-full flex-col items-center justify-start gap-4 bg-white px-4 py-8 baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center baseTablet:rounded-t-lg">
+      <div className="menu-container baseTablet:rounded-t-lg">
          <MenuTitleAndCloseButton locale={'Menus.LoginMenu'} />
          <LoginAuthForm />
          <LoginAuthFormTermInformationTextsAndLinks t={t} />

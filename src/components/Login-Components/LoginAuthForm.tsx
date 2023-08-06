@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react'
-import { LoginFormType, LoginValidationSchemas } from '../../../libs/validation/ValidationSchemas'
+import { LoginFormType, LoginValidationSchemas } from '../../../libs/validations/ValidationSchemas'
 import { SelectedCode } from '../../../libs/constants/CountriesPhoneCodesList'
 
 import { PhoneCodeInput } from '@/components/UI-Components/CustomInput/PhoneCodeInput'
@@ -43,7 +43,7 @@ export const LoginAuthForm = () => {
          </div>
          <button
             type="submit"
-            className="h-14 w-full rounded border border-gray-200 bg-yellow-400 px-4 text-[14px] font-medium text-skin-theme-700 transition-colors duration-200 hover:bg-skin-theme-700 hover:text-yellow-400">
+            className="w-full rounded border border-gray-200 bg-yellow-400 px-4 py-3.5 text-[14px] font-semibold text-skin-theme-700 transition-colors duration-200 hover:bg-skin-theme-700 hover:text-yellow-400">
             {t('loginButton')}
          </button>
       </form>

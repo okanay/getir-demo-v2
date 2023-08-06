@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from 'react'
-import { FullNameSchemas } from '../../../../libs/validation/ValidationSchemas'
+import { FullNameSchemas } from '../../../../libs/validations/ValidationSchemas'
 import { useTranslations } from 'next-intl'
 import { CustomInput } from '@/components/UI-Components/CustomInput/CustomInput'
 
