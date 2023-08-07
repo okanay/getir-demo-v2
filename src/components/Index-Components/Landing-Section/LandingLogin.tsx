@@ -23,7 +23,7 @@ export const LandingLogin = () => {
                   <Image src={t('image')} width={160} height={161} alt={'getir bir mutluluk'} className={'scale-110'} priority />
                   <p className={'max-w-[460px] text-[36px] leading-10 tracking-wide text-white'}>{t('title')}</p>
                </div>
-               <div className="flex w-full flex-col items-center justify-center bg-gray-100 p-4 text-center text-[16px] font-semibold baseTablet:w-fit baseTablet:rounded-lg baseTablet:px-5 baseTablet:py-6">
+               <div className="flex w-full flex-col items-center justify-center bg-gradient-to-tr from-gray-200 via-gray-100 to-gray-200 p-4 text-center text-[16px] font-semibold drop-shadow baseTablet:w-fit baseTablet:rounded-lg baseTablet:px-5 baseTablet:py-6">
                   <h2 className={'mb-4 text-[16px] text-skin-theme-800'}>{t('loginOrRegister')}</h2>
                   <LoginAuthForm />
                </div>
