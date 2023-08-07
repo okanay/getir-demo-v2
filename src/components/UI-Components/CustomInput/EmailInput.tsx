@@ -1,35 +1,28 @@
-import React, { ChangeEvent, useState } from 'react'
 import { EmailSchemas } from '../../../../libs/validations/ValidationSchemas'
-import { useTranslations } from 'next-intl'
+import React, { ChangeEvent } from 'react'
+
 import { CustomInput } from '@/components/UI-Components/CustomInput/CustomInput'
+import { useTranslations } from 'next-intl'
+import { useCustomErrorHook } from '@/hooks/useCustomErrorHook'
 
 type Props = {
    email: string
-   setEmail: (newValue: string) => void
+   setEmail: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const EmailInput = ({ email, setEmail }: Props) => {
    // i18 Language
    const t = useTranslations('Menus.CustomInput.EmailInput')
 
-   // STATE's
-   const [error, setError] = useState({
-      status: false,
-      message: '',
-   })
+   // CUSTOM HOOK's
+   const { error, clearError, setErrorWithZodValidationSchema } = useCustomErrorHook()
 
-   // HANDLE's
-   const handleSetError = (schema: any) => {
-      setError({ status: true, message: schema.error?.formErrors?.formErrors[0] || 'Error100' })
-   }
-
-   const handleClearError = () => setError({ status: false, message: '' })
-
+   // Handle's
    const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>) => {
       const enteredEmail = event.target.value || ''
 
       const isEnteredEmailValid = EmailSchemas.EmailSchema.safeParse(enteredEmail)
-      if (!isEnteredEmailValid.success) handleSetError(isEnteredEmailValid)
+      if (!isEnteredEmailValid.success) setErrorWithZodValidationSchema(isEnteredEmailValid.error)
    }
 
    const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,12 +30,12 @@ export const EmailInput = ({ email, setEmail }: Props) => {
       const isEnteredEmailValid = EmailSchemas.EmailSchemaRequiredLength.safeParse(enteredEmail)
 
       if (!isEnteredEmailValid.success && enteredEmail !== '') {
-         handleSetError(isEnteredEmailValid)
+         setErrorWithZodValidationSchema(isEnteredEmailValid.error)
          return
       }
 
       setEmail(event.target.value)
-      handleClearError()
+      clearError()
    }
 
    return (

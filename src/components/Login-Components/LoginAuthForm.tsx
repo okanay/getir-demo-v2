@@ -6,7 +6,7 @@ import { PhoneCodeInput } from '@/components/UI-Components/CustomInput/PhoneCode
 import { PhoneNumberInput } from '@/components/UI-Components/CustomInput/PhoneNumberInput'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
-import { LoginAuthFormTermInformationTextsAndLinks } from '@/components/Login-Components/LoginAuthFormTermInformationTextsAndLinks'
+import { LoginInformationAndTerm } from '@/components/Login-Components/LoginInformationAndTerm'
 
 export const LoginAuthForm = () => {
    // i18 Language
@@ -36,14 +36,14 @@ export const LoginAuthForm = () => {
    return (
       <form
          onSubmit={handleFormSubmit}
-         className="relative flex w-full flex-col items-start justify-center gap-4 baseTablet:w-full">
-         <div className="flex w-full items-start gap-2">
+         className="relative flex w-full flex-col items-start justify-center gap-[12px] baseTablet:w-full">
+         <div className="flex w-full items-start gap-[8px]">
             <PhoneCodeInput selectedCode={selectedCode} setSelectedCode={setSelectedCode} />
             <PhoneNumberInput phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
          </div>
          <button
             type="submit"
-            className="w-full rounded border border-gray-200 bg-yellow-400 px-4 py-3.5 text-[14px] font-semibold text-skin-theme-700 transition-colors duration-200 hover:bg-skin-theme-700 hover:text-yellow-400">
+            className="w-full rounded border border-gray-200 bg-yellow-400 py-3.5 text-[16px] font-semibold text-skin-theme-700 transition-colors duration-200 hover:bg-skin-theme-700 hover:text-yellow-400">
             {t('loginButton')}
          </button>
       </form>

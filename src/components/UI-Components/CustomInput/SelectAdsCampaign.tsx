@@ -1,4 +1,4 @@
-import { CheckCircleIcon, CheckIcon } from '@heroicons/react/20/solid'
+import { CheckIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
 
 type Props = {

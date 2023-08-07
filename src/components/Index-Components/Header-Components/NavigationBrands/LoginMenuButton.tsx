@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { setMenu } from '../../../../redux/slices/PopUpMenuSlice'
+import { setMenu } from '../../../../../redux/slices/PopUpMenuSlice'
 
 export const LoginMenuButton = ({ t }: { t: any }) => {
    const dispatch = useDispatch()

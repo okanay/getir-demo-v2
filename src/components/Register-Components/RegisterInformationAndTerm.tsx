@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-export const RegisterAuthFormTermInformationTextsAndLinks = ({ t }: { t: any }) => {
+export const RegisterInformationAndTerm = ({ t }: { t: any }) => {
    return (
       <p className={'text-start text-[12px] font-normal text-gray-400'}>
          <span>{t('information.info-first')}</span>

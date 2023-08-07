@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { CardsList } from '../../../../libs/constants/CardsList'
 import { useState } from 'react'
-import { LandingPosterImage } from '@/components/Index-Components/Promotions/LandingPosterImage'
+import { LandingPosterImage } from '@/components/Index-Components/Promotions-Section/LandingPosterImage'
 
 export const Promotions = () => {
    //

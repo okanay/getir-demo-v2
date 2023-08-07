@@ -1,9 +1,9 @@
-import React, { ChangeEvent, useState } from 'react'
-import { CustomError } from '../../../../libs/types/types'
 import { PhoneNumberSchemas } from '../../../../libs/validations/ValidationSchemas'
+import React, { ChangeEvent } from 'react'
 
-import { useTranslations } from 'next-intl'
 import { CustomInput } from '@/components/UI-Components/CustomInput/CustomInput'
+import { useTranslations } from 'next-intl'
+import { useCustomErrorHook } from '@/hooks/useCustomErrorHook'
 
 type Props = {
    phoneNumber: string
@@ -14,24 +14,15 @@ export const PhoneNumberInput = ({ phoneNumber, setPhoneNumber }: Props) => {
    // i18 Language
    const t = useTranslations('Menus.CustomInput.PhoneNumberInput')
 
-   // STATE's
-   const [error, setError] = useState<CustomError>({
-      status: false,
-      message: '',
-   })
+   // CUSTOM HOOK's
+   const { error, clearError, setErrorWithZodValidationSchema } = useCustomErrorHook()
 
-   // HANDLE's
-   const handleSetError = (schema: any) => {
-      setError({ status: true, message: schema.error?.formErrors?.formErrors[0] || 'Error100' })
-   }
-
-   const handleClearError = () => setError({ status: false, message: '' })
-
+   // Handle's
    const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>) => {
       const enteredPhoneNumber = event.target.value || ''
       const isEnteredPhoneNumberValid = PhoneNumberSchemas.PhoneNumberRequiredLength.safeParse(enteredPhoneNumber)
 
-      if (!isEnteredPhoneNumberValid.success) handleSetError(isEnteredPhoneNumberValid)
+      if (!isEnteredPhoneNumberValid.success) setErrorWithZodValidationSchema(isEnteredPhoneNumberValid)
    }
 
    const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -39,14 +30,14 @@ export const PhoneNumberInput = ({ phoneNumber, setPhoneNumber }: Props) => {
       const isEnteredPhoneNumberValid = PhoneNumberSchemas.PhoneNumberRegex.safeParse(enteredPhoneNumber)
 
       if (!isEnteredPhoneNumberValid.success) {
-         handleSetError(isEnteredPhoneNumberValid)
+         setErrorWithZodValidationSchema(isEnteredPhoneNumberValid)
          return
       }
 
       if (!PhoneNumberSchemas.PhoneNumberMaxLength.safeParse(enteredPhoneNumber).success) return
 
       setPhoneNumber(String(enteredPhoneNumber))
-      handleClearError()
+      clearError()
    }
 
    return (

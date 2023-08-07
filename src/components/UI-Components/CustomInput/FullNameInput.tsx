@@ -1,7 +1,9 @@
-import React, { ChangeEvent, useState } from 'react'
 import { FullNameSchemas } from '../../../../libs/validations/ValidationSchemas'
-import { useTranslations } from 'next-intl'
+import React, { ChangeEvent } from 'react'
+
 import { CustomInput } from '@/components/UI-Components/CustomInput/CustomInput'
+import { useTranslations } from 'next-intl'
+import { useCustomErrorHook } from '@/hooks/useCustomErrorHook'
 
 type Props = {
    fullName: string
@@ -12,24 +14,15 @@ export const FullNameInput = ({ fullName, setFullName }: Props) => {
    // i18 Language
    const t = useTranslations('Menus.CustomInput.NameInput')
 
-   // STATE's
-   const [error, setError] = useState({
-      status: false,
-      message: '',
-   })
+   // CUSTOM HOOK's
+   const { error, clearError, setErrorWithZodValidationSchema } = useCustomErrorHook()
 
-   // HANDLE's
-   const handleSetError = (schema: any) => {
-      setError({ status: true, message: schema.error?.formErrors?.formErrors[0] || 'Error100' })
-   }
-
-   const handleClearError = () => setError({ status: false, message: '' })
-
+   // Handle's
    const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>) => {
       const enteredFullName = event.target.value || ''
 
       const isEnteredFullNameValid = FullNameSchemas.InputValidation.safeParse(enteredFullName)
-      if (!isEnteredFullNameValid.success) handleSetError(isEnteredFullNameValid)
+      if (!isEnteredFullNameValid.success) setErrorWithZodValidationSchema(isEnteredFullNameValid)
    }
 
    const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,13 +30,13 @@ export const FullNameInput = ({ fullName, setFullName }: Props) => {
       const isEnteredFullNameRegexValid = FullNameSchemas.InputValidationRegex.safeParse(enteredFullName)
 
       if (!isEnteredFullNameRegexValid.success && enteredFullName !== '') {
-         handleSetError(isEnteredFullNameRegexValid)
+         setErrorWithZodValidationSchema(isEnteredFullNameRegexValid)
          return
       }
       if (!FullNameSchemas.InputRequiredLength.safeParse(enteredFullName).success) return
 
       setFullName(event.target.value)
-      handleClearError()
+      clearError()
    }
 
    return (

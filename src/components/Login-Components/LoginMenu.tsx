@@ -7,7 +7,7 @@ import { MenuTitleAndCloseButton } from '@/components/Menus-Components/MenuTitle
 import { useTranslations } from 'next-intl'
 import { setMenu } from '../../../redux/slices/PopUpMenuSlice'
 import { useDispatch } from 'react-redux'
-import { LoginAuthFormTermInformationTextsAndLinks } from '@/components/Login-Components/LoginAuthFormTermInformationTextsAndLinks'
+import { LoginInformationAndTerm } from '@/components/Login-Components/LoginInformationAndTerm'
 import React from 'react'
 
 export const LoginMenu = () => {
@@ -22,8 +22,8 @@ export const LoginMenu = () => {
       <div className="menu-container baseTablet:rounded-t-lg">
          <MenuTitleAndCloseButton locale={'Menus.LoginMenu'} />
          <LoginAuthForm />
-         <LoginAuthFormTermInformationTextsAndLinks t={t} />
-         <div className="absolute bottom-0 z-[203] flex h-14 w-full flex-col items-center justify-center gap-1 rounded-b-lg border-t border-gray-200 bg-gray-100 text-[14px] font-normal text-gray-600 baseTablet:translate-y-full">
+         <LoginInformationAndTerm t={t} />
+         <div className="absolute bottom-0 z-[203] flex w-full flex-col items-center justify-center gap-1 rounded-b-lg border-t border-gray-200 bg-gray-100 py-[16px] text-[16px] font-normal text-gray-600 baseTablet:translate-y-full">
             <div className={'flex flex-row gap-1'}>
                <span> {t('signup.text')}</span>
                <button onClick={handleOpenRegisterMenu} className={'font-semibold text-skin-theme-700'}>

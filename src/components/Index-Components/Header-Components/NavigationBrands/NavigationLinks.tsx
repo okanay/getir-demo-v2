@@ -34,9 +34,9 @@ export const NavigationLinks = () => {
    return links.map(link => (
       <li
          key={link.key}
-         className={`flex h-10 cursor-pointer flex-col items-center justify-center rounded-t ${
+         className={`flex cursor-pointer flex-col items-center justify-center rounded-t py-[8px] ${
             link.isSelected ? 'bg-skin-theme-700' : 'hover:bg-skin-theme-700'
-         } px-2.5 baseTablet:px-4`}>
+         } px-4`}>
          <span
             className={`${
                link.isSelected ? 'text-yellow-400' : 'text-slate-300'

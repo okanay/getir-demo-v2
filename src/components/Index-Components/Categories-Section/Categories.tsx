@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl'
 
-import { CategoryItems } from '@/components/Index-Components/CategoriesSection/CategoryItems'
+import { CategoryItems } from '@/components/Index-Components/Categories-Section/CategoryItems'
 
 export const Categories = () => {
    const t = useTranslations('Index.categories')
