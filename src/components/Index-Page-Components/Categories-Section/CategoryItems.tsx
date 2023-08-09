@@ -1,5 +1,5 @@
 import { CategoryList } from '../../../../libs/constants/CategoriesList'
-import { CategoryItem } from '@/components/Index-Components/Categories-Section/CategoryItem'
+import { CategoryItem } from '@/components/Index-Page-Components/Categories-Section/CategoryItem'
 import { nanoid } from '@reduxjs/toolkit'
 
 export const CategoryItems = ({ t }: { t: any }) => {

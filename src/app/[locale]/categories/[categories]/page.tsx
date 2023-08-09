@@ -1,6 +1,6 @@
-import { ProductsItems } from '@/components/Categories-Components/ProductsItems'
+import { ProductsItems } from '@/components/Categories-Page-Components/ProductsItems'
 import { CategoriesHelper } from '../../../../../libs/helpers/CategoriesPageHelpers'
-import { ProductsMenu } from '@/components/Categories-Components/ProductsMenu/ProductsMenu'
+import { ProductsMenu } from '@/components/Categories-Page-Components/ProductsMenu/ProductsMenu'
 
 type TProps = {
    params: { categories: string }

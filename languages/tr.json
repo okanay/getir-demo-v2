@@ -74,6 +74,11 @@
       ]
     }
   },
+  "Categories" : {
+    "ProductMenu" : {
+      "Title" : "Kategoriler"
+    }
+  },
   "Footer" : {
     "Navigations" : [
       {

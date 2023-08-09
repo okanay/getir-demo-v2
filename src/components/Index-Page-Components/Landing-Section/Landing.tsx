@@ -1,8 +1,8 @@
 'use client'
 
-import { SelectShipmentAddress } from '@/components/Index-Components/Landing-Section/SelectShipmentAddress'
+import { SelectShipmentAddress } from '@/components/Index-Page-Components/Landing-Section/SelectShipmentAddress'
 import { LoginAuthForm } from '@/components/Login-Components/LoginAuthForm'
-import { LandingSlider } from '@/components/Index-Components/Landing-Section/LandingSlider'
+import { LandingSlider } from '@/components/Index-Page-Components/Landing-Section/LandingSlider'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -16,7 +16,7 @@ export const Landing = () => {
          <div className="relative flex h-[64px] w-full flex-col items-center justify-center bg-skin-theme-700 baseTablet:hidden">
             <div className={'absolute flex w-full flex-row items-center justify-center'}>
                <Link href={'/'}>
-                  <Image src={'images/LandingImages/getir.svg'} alt={''} priority={true} width={49} height={23} className={''} />
+                  <Image src={'/images/LandingImages/getir.svg'} alt={''} priority={true} width={49} height={23} className={''} />
                </Link>
             </div>
          </div>

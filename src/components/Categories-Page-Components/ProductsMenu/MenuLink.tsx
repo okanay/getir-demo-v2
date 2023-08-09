@@ -4,15 +4,16 @@ import { motion } from 'framer-motion'
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
 import { useProductLink } from '@/hooks/useProductLink'
-import { CategoryItemImage } from '@/components/Index-Components/Categories-Section/CategoryItemImage'
+import { CategoryItemImage } from '@/components/Index-Page-Components/Categories-Section/CategoryItemImage'
 import Link from 'next/link'
 import { nanoid } from '@reduxjs/toolkit'
 import { useMediaQuery } from '@mantine/hooks'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
-import { ProductAltLink } from '@/components/Categories-Components/ProductsMenu/ProductAltLink'
+import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/AltLink'
 
-export const ProductsLinks = ({ category }: { category: Category }) => {
+export const MenuLink = ({ category }: { category: Category }) => {
+   const [selectedAltLinkIndex, setSelectedAltLinkIndex] = useState<number>(0)
    const matches = useMediaQuery('(min-width: 760px)')
    const { open, setOpen, router, customPathname } = useProductLink(category.url)
    const t = useTranslations('Index.categories.categoriesItems')
@@ -22,7 +23,9 @@ export const ProductsLinks = ({ category }: { category: Category }) => {
    }, [matches, setOpen, customPathname, category])
 
    const handleToggleButton = () => {
-      if (matches) setOpen(!open)
+      if (matches) {
+         setOpen(!open)
+      }
    }
 
    const handleSelectLink = () => {
@@ -32,7 +35,7 @@ export const ProductsLinks = ({ category }: { category: Category }) => {
 
    function AltCategories() {
       return category.altCategories?.map((altCategory, index) => (
-         <ProductAltLink key={nanoid()} altCategory={altCategory} index={index} />
+         <AltLink key={nanoid()} altCategory={altCategory} index={index} />
       ))
    }
 
@@ -52,7 +55,6 @@ export const ProductsLinks = ({ category }: { category: Category }) => {
          <motion.div
             initial={{ height: open ? 'fit-content' : 0 }}
             animate={{ height: open ? 'fit-content' : 0 }}
-            layoutId={'link'}
             transition={{ duration: !matches ? 0 : 0.4, ease: 'linear' }}
             className={'w-full overflow-y-hidden'}>
             <div>

@@ -3,7 +3,7 @@
 import Link from 'next/link'
 
 import { Category } from '../../../../libs/types/types'
-import { CategoryItemImage } from '@/components/Index-Components/Categories-Section/CategoryItemImage'
+import { CategoryItemImage } from '@/components/Index-Page-Components/Categories-Section/CategoryItemImage'
 
 export const CategoryItem = ({ category, t }: { category: Category; t: any }) => {
    return (

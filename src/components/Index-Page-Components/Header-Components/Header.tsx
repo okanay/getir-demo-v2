@@ -1,4 +1,4 @@
-import { NavigationBrands } from '@/components/Index-Components/Header-Components/NavigationBrands/NavigationBrands'
+import { NavigationBrands } from '@/components/Index-Page-Components/Header-Components/NavigationBrands/NavigationBrands'
 import { LanguageMenu } from '@/components/Menus-Components/LanguageMenu/LanguageMenu'
 import { LoginMenu } from '@/components/Login-Components/LoginMenu'
 import { MenusManager } from '@/components/Menus-Components/MenusManager'

@@ -1,9 +1,9 @@
 'use client'
 
-import { NavigationLinks } from '@/components/Index-Components/Header-Components/NavigationBrands/NavigationLinks'
+import { NavigationLinks } from '@/components/Index-Page-Components/Header-Components/NavigationBrands/NavigationLinks'
 import { useTranslations } from 'next-intl'
-import { LoginMenuButton } from '@/components/Index-Components/Header-Components/NavigationBrands/LoginMenuButton'
-import { RegisterMenuButton } from '@/components/Index-Components/Header-Components/NavigationBrands/RegisterMenuButton'
+import { LoginMenuButton } from '@/components/Index-Page-Components/Header-Components/NavigationBrands/LoginMenuButton'
+import { RegisterMenuButton } from '@/components/Index-Page-Components/Header-Components/NavigationBrands/RegisterMenuButton'
 import { LanguageButton } from '@/components/UI-Components/LanguageMenuOpenButton/LanguageButton'
 
 export const NavigationBrands = () => {

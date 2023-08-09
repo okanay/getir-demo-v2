@@ -5,8 +5,8 @@ import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import { ReactNode } from 'react'
 import { Providers } from '@/app/[locale]/providers'
-import { Header } from '@/components/Index-Components/Header-Components/Header'
-import { Footer } from '@/components/Index-Components/Footer-Components/Footer'
+import { Header } from '@/components/Index-Page-Components/Header-Components/Header'
+import { Footer } from '@/components/Index-Page-Components/Footer-Components/Footer'
 
 export const metadata: Metadata = {
    title: 'Getir | Okan Ay',

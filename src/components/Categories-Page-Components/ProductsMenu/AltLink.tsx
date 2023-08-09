@@ -3,17 +3,28 @@ import { nanoid } from '@reduxjs/toolkit'
 import { twMerge } from 'tailwind-merge'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { AltCategory } from '../../../../libs/types/types'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { usePathname } from 'next-intl/client'
 
 type TProps = {
    altCategory: AltCategory
    index: number
 }
 
-export const ProductAltLink = ({ altCategory, index }: TProps) => {
+export const AltLink = ({ altCategory, index }: TProps) => {
+   const router = useRouter()
+   const pathname = usePathname()
+   const searchParams = useSearchParams()
+
    const ref = useRef<HTMLButtonElement | null>(null)
 
    const handleLinkButtonClick = () => {
-      console.log(ref?.current?.getAttribute('data-target-url'))
+      const targetUrl = ref?.current?.getAttribute('data-target-url') || '#'
+      const url = `${pathname}?${searchParams}${targetUrl}`
+
+      router.push(targetUrl, {
+         scroll: true,
+      })
    }
 
    return (

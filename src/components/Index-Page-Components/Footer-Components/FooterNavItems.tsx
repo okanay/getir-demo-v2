@@ -1,4 +1,4 @@
-import { FooterNavigationItem } from '@/components/Index-Components/Footer-Components/FooterNavigationItem'
+import { FooterNavigationItem } from '@/components/Index-Page-Components/Footer-Components/FooterNavigationItem'
 import { nanoid } from '@reduxjs/toolkit'
 import { FooterNavigationList } from '../../../../libs/constants/FooterNavigationList'
 
