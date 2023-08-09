@@ -9,6 +9,9 @@ export default async function middleware(request) {
    const response = handleI18nRouting(request)
    response.headers.set('x-default-locale', defaultLocale)
 
+   const requestHeaders = new Headers(request.headers)
+   requestHeaders.set('x-pathname', request.nextUrl.pathname)
+
    // auth middleware
    const { url, nextUrl } = request
 

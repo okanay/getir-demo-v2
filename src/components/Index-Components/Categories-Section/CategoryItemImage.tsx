@@ -1,3 +1,5 @@
+'use client'
+
 import { Category } from '../../../../libs/types/types'
 import Image from 'next/image'
 import { useState } from 'react'

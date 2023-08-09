@@ -1,3 +1,5 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
 
 import { CategoryItems } from '@/components/Index-Components/Categories-Section/CategoryItems'

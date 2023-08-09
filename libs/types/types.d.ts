@@ -1,11 +1,12 @@
 import { ButtonHTMLAttributes } from 'react'
 
 export type Category = {
-   key: string
+   unique: string
    languageCode: string
    image: any
    imageSmall: any
    url: string
+   altCategories: number
 }
 
 export type Categories = Category[]

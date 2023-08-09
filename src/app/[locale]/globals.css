@@ -22,6 +22,9 @@
 }
 
 :root {
+
+   --categories-max-h-calc: calc(100vh - 170px);
+
    --theme-50: 239, 239, 254;
    --theme-100: 225, 227, 254;
    --theme-200: 201, 201, 252;
@@ -33,6 +36,10 @@
    --theme-800: 76, 51, 152;
    --theme-900: 66, 50, 125;
    --theme-950: 40, 29, 73;
+}
+
+.categories-max-h-calc {
+   max-height: var(--categories-max-h-calc);
 }
 
 .max-screen-all-devices-types{

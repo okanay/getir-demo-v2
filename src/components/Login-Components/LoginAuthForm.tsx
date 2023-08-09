@@ -1,3 +1,5 @@
+'use client'
+
 import React, { FormEvent, useState } from 'react'
 import { LoginFormType, LoginValidationSchemas } from '../../../libs/validations/ValidationSchemas'
 import { SelectedCode } from '../../../libs/constants/CountriesPhoneCodesList'
@@ -5,10 +7,9 @@ import { SelectedCode } from '../../../libs/constants/CountriesPhoneCodesList'
 import { PhoneCodeInput } from '@/components/UI-Components/CustomInput/PhoneCodeInput'
 import { PhoneNumberInput } from '@/components/UI-Components/CustomInput/PhoneNumberInput'
 import { useTranslations } from 'next-intl'
-import Link from 'next/link'
 import { LoginInformationAndTerm } from '@/components/Login-Components/LoginInformationAndTerm'
 
-export const LoginAuthForm = () => {
+export const LoginAuthForm = ({ shownInformationTerm = true }) => {
    // i18 Language
    const t = useTranslations('Menus.LoginMenu')
 
@@ -46,6 +47,7 @@ export const LoginAuthForm = () => {
             className="w-full rounded border border-gray-200 bg-yellow-400 py-3.5 text-[16px] font-semibold text-skin-theme-700 transition-colors duration-200 hover:bg-skin-theme-700 hover:text-yellow-400">
             {t('loginButton')}
          </button>
+         {shownInformationTerm && <LoginInformationAndTerm t={t} />}
       </form>
    )
 }
