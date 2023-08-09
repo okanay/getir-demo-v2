@@ -6,8 +6,18 @@ export type Category = {
    image: any
    imageSmall: any
    url: string
-   altCategories: number
+   altCategories?: AltCategories
 }
+
+export type AltCategory = {
+   unique: string
+   id: number
+   name: string
+   languageCode: string
+   url: string
+}
+
+export type AltCategories = AltCategory[]
 
 export type Categories = Category[]
 

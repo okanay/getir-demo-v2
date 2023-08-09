@@ -1,4 +1,4 @@
-import { ProductsLoading } from '@/components/Categories-Components/ProductsMenu/ProductsLoading'
+import { ProductsLoading } from '@/components/Categories-Components/ProductsLoading'
 
 export default function Loading() {
    return <ProductsLoading />

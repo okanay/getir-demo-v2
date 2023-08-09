@@ -43,7 +43,7 @@ export const PhoneNumberInput = ({ phoneNumber, setPhoneNumber }: Props) => {
    return (
       <CustomInput
          type={'tel'}
-         name={'Phone Number'}
+         name={'phone'}
          value={phoneNumber}
          errorStatus={error.status}
          errorMessage={error.message}

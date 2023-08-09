@@ -6,5 +6,9 @@ type TProps = {
 }
 
 export const ProductsItems = async ({ categories = 'beverages' }: TProps) => {
-   return <div className={'h-[96rem] w-full'}>{categories}</div>
+   return (
+      <div className={'mt-14 h-96 w-full px-6 py-2 baseTablet:mt-0 baseTablet:px-4'}>
+         <h1>{categories}</h1>
+      </div>
+   )
 }

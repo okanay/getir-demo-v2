@@ -41,7 +41,7 @@ export const EmailInput = ({ email, setEmail }: Props) => {
    return (
       <CustomInput
          type={'email'}
-         name={'Full Name'}
+         name={'Email'}
          value={email}
          errorStatus={error.status}
          errorMessage={error.message}
