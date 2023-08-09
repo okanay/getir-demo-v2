@@ -8,12 +8,18 @@ import { CategoryItemImage } from '@/components/Index-Components/Categories-Sect
 import Link from 'next/link'
 import { nanoid } from '@reduxjs/toolkit'
 import { useMediaQuery } from '@mantine/hooks'
-import { useEffect } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
+import { ProductAltLink } from '@/components/Categories-Components/ProductsMenu/ProductAltLink'
 
 export const ProductsLinks = ({ category }: { category: Category }) => {
+   const matches = useMediaQuery('(min-width: 760px)')
    const { open, setOpen, router, customPathname } = useProductLink(category.url)
    const t = useTranslations('Index.categories.categoriesItems')
+
+   useEffect(() => {
+      if (!matches && customPathname === category.url) setOpen(true)
+   }, [matches, setOpen, customPathname, category])
 
    const handleToggleButton = () => {
       if (matches) setOpen(!open)
@@ -24,11 +30,11 @@ export const ProductsLinks = ({ category }: { category: Category }) => {
       if (customPathname === category.url) handleToggleButton()
    }
 
-   const matches = useMediaQuery('(min-width: 760px)')
-
-   useEffect(() => {
-      if (!matches && customPathname === category.url) setOpen(true)
-   }, [matches, setOpen, customPathname, category])
+   function AltCategories() {
+      return category.altCategories?.map((altCategory, index) => (
+         <ProductAltLink key={nanoid()} altCategory={altCategory} index={index} />
+      ))
+   }
 
    return (
       <div className={'flex w-fit flex-shrink-0 flex-col items-start justify-start py-2 baseTablet:w-full baseTablet:py-2'}>
@@ -46,7 +52,8 @@ export const ProductsLinks = ({ category }: { category: Category }) => {
          <motion.div
             initial={{ height: open ? 'fit-content' : 0 }}
             animate={{ height: open ? 'fit-content' : 0 }}
-            transition={{ duration: !matches ? 0 : 0.2, ease: 'linear' }}
+            layoutId={'link'}
+            transition={{ duration: !matches ? 0 : 0.4, ease: 'linear' }}
             className={'w-full overflow-y-hidden'}>
             <div>
                <motion.div
@@ -57,24 +64,7 @@ export const ProductsLinks = ({ category }: { category: Category }) => {
                ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}>
                   <div
                      className={`flex w-full flex-row items-center justify-start gap-x-2 px-4 baseTablet:h-fit baseTablet:w-full baseTablet:flex-col baseTablet:px-0`}>
-                     {category.altCategories?.map((altCategory, index) => (
-                        <Link
-                           key={nanoid()}
-                           href={altCategory.url}
-                           className={'flex w-fit flex-shrink-0 baseTablet:w-full baseTablet:flex-row baseTablet:px-2'}>
-                           <span className={'flex w-full items-center justify-start gap-2'}>
-                              <div className={'hidden h-8 w-8 baseTablet:block'} />
-                              <h6
-                                 className={twMerge(
-                                    'rounded border border-gray-200 bg-white px-2 py-1 text-[12px] font-semibold text-skin-theme-700 baseTablet:rounded-none baseTablet:border-0 baseTablet:bg-transparent baseTablet:px-0 baseTablet:py-0 baseTablet:py-0 baseTablet:text-[14px] baseTablet:text-slate-600',
-                                    index === 0 && 'border-skin-theme-600 bg-skin-theme-700 text-white',
-                                 )}>
-                                 {altCategory.languageCode}
-                              </h6>
-                           </span>
-                           <ChevronRightIcon className={'mr-0.5 hidden h-[20px] w-[20px] text-gray-400'} />
-                        </Link>
-                     ))}
+                     <AltCategories />
                   </div>
                </motion.div>
             </div>
