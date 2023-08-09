@@ -13,7 +13,7 @@ import { twMerge } from 'tailwind-merge'
 import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/AltLink'
 
 export const MenuLink = ({ category }: { category: Category }) => {
-   const [selectedAltLinkIndex, setSelectedAltLinkIndex] = useState<number>(0)
+   const [selectedIndex, setSelectedIndex] = useState<number>(0)
    const matches = useMediaQuery('(min-width: 760px)')
    const { open, setOpen, router, customPathname } = useProductLink(category.url)
    const t = useTranslations('Index.categories.categoriesItems')
@@ -33,9 +33,15 @@ export const MenuLink = ({ category }: { category: Category }) => {
       if (customPathname === category.url) handleToggleButton()
    }
 
-   function AltCategories() {
+   function AltLinks() {
       return category.altCategories?.map((altCategory, index) => (
-         <AltLink key={nanoid()} altCategory={altCategory} index={index} />
+         <AltLink
+            key={nanoid()}
+            altCategory={altCategory}
+            index={index}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setSelectedIndex}
+         />
       ))
    }
 
@@ -66,7 +72,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
                ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}>
                   <div
                      className={`flex w-full flex-row items-center justify-start gap-x-2 px-4 baseTablet:h-fit baseTablet:w-full baseTablet:flex-col baseTablet:px-0`}>
-                     <AltCategories />
+                     <AltLinks />
                   </div>
                </motion.div>
             </div>
