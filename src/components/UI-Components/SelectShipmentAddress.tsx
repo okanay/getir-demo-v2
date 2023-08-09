@@ -1,7 +1,9 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
-import { ChevronDownIcon, ChevronRightIcon, MapIcon, MapPinIcon } from '@heroicons/react/20/solid'
+import { ChevronRightIcon, MapPinIcon } from '@heroicons/react/20/solid'
 import { useDispatch } from 'react-redux'
-import { setMenu } from '../../../../redux/slices/PopUpMenuSlice'
+import { setMenu } from '../../../redux/slices/PopUpMenuSlice'
 
 export const SelectShipmentAddress = () => {
    const t = useTranslations('Index.landing.delivery')

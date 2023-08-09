@@ -1,6 +1,6 @@
 'use client'
 
-import { SelectShipmentAddress } from '@/components/Index-Page-Components/Landing-Section/SelectShipmentAddress'
+import { SelectShipmentAddress } from '@/components/UI-Components/SelectShipmentAddress'
 import { LoginAuthForm } from '@/components/Login-Components/LoginAuthForm'
 import { LandingSlider } from '@/components/Index-Page-Components/Landing-Section/LandingSlider'
 import { useTranslations } from 'next-intl'
