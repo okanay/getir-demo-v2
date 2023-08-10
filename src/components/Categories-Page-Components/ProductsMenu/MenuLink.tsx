@@ -67,7 +67,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
                <motion.div
                   animate={{ opacity: open ? 1 : 0 }}
                   transition={{ duration: matches ? 0.4 : 0, ease: 'linear' }}
-                  className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto py-2 baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:pb-0 baseTablet:pt-2 
+                  className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto bg-white py-2 baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:bg-transparent baseTablet:pb-0 baseTablet:pt-2  
                ${category.url !== customPathname && 'hidden baseTablet:block'}
                ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}>
                   <div

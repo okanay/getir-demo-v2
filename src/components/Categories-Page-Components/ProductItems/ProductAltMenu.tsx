@@ -25,9 +25,9 @@ export const ProductAltMenu = ({ index, altCategory, products }: TProps) => {
    const data: Products | undefined = products.filter(p => p.altCategoryId === altCategory.id) || undefined
 
    return (
-      <section key={nanoid()} className={'my-2 flex flex-col items-start justify-start gap-2'}>
+      <section key={nanoid()} className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}>
          {index !== 0 ? <h1 className={'text-[14px] text-slate-900'}>{altCategory.name}</h1> : null}
-         <div className="grid h-fit w-full grid-cols-4 gap-[1px] rounded-lg bg-gray-100 baseTablet:grid-cols-3 lgTablet:grid-cols-4">
+         <div className="grid h-fit w-full  grid-cols-2 gap-[1px] rounded-lg bg-gray-100 smTablet:grid-cols-3 baseLaptop:grid-cols-4">
             {data !== undefined &&
                data.map(d => (
                   <div key={nanoid()} className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
