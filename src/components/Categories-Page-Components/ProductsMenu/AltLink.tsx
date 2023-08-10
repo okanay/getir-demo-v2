@@ -1,10 +1,9 @@
 import { Dispatch, SetStateAction, useRef } from 'react'
-import { nanoid } from '@reduxjs/toolkit'
 import { twMerge } from 'tailwind-merge'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { AltCategory } from '../../../../libs/types/types'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { usePathname } from 'next-intl/client'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 type TProps = {
    altCategory: AltCategory
@@ -19,18 +18,11 @@ export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex }:
 
    const handleLinkButtonClick = () => {
       setSelectedIndex(index)
-
-      const targetUrl = ref?.current?.getAttribute('data-target-url') || '#'
-
-      router.push(targetUrl, {
-         scroll: true,
-      })
    }
 
    return (
-      <button
-         key={nanoid()}
-         ref={ref}
+      <Link
+         href={altCategory.url}
          onClick={handleLinkButtonClick}
          data-target-url={altCategory.url}
          className={'flex w-fit flex-shrink-0 baseTablet:w-full baseTablet:flex-row baseTablet:px-2'}>
@@ -50,6 +42,6 @@ export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex }:
                index !== selectedIndex && 'baseTablet:hidden',
             )}
          />
-      </button>
+      </Link>
    )
 }
