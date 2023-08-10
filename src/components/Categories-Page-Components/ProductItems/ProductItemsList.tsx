@@ -6,7 +6,6 @@ import { Category } from '../../../../libs/types/types'
 import { Products } from '@/components/Categories-Page-Components/ProductItems/ProductsItems'
 import { nanoid } from '@reduxjs/toolkit'
 import { ProductAltMenu } from '@/components/Categories-Page-Components/ProductItems/ProductAltMenu'
-import { ProductsLoading } from '@/components/Categories-Page-Components/ProductsLoading'
 
 type TProps = {
    selectedCategories: Category
@@ -25,7 +24,7 @@ export const ProductItemsList = ({ categories, selectedCategories, products }: T
             <h1>{selectedCategories?.altCategories.at(0)?.name}</h1>
          </div>
          {selectedCategories.altCategories.map((altCategory, index) => (
-            <ProductAltMenu key={nanoid()} index={index} altCategory={altCategory} />
+            <ProductAltMenu key={nanoid()} index={index} altCategory={altCategory} products={products} />
          ))}
       </div>
    )

@@ -34,7 +34,12 @@ export const DummyData: Products = [
          {
             lan: 'tr',
             text: 'Kuzeyden Su',
-            description: '',
+            description: '12 x 330 ml',
+         },
+         {
+            lan: 'en',
+            text: 'Kuzeyden Water',
+            description: '12 x 330 ml',
          },
       ],
       imageDetails: [
@@ -62,20 +67,8 @@ export type Product = {
    productId: number
    uniqueId: string
    altCategoryId: number
-   productDetails: [
-      {
-         lan: string
-         text: string
-         description: string
-      },
-   ]
-   imageDetails: [
-      {
-         baseSrc: string
-         smallSrc: string
-         alt: string
-      },
-   ]
+   productDetails: ProductDetail[]
+   imageDetails: ImageDetail[]
    brand: {
       brandId: number
       brandName: string
@@ -87,6 +80,18 @@ export type Product = {
          percentage: number
       }
    }
+}
+
+export type ProductDetail = {
+   lan: string
+   text: string
+   description: string
+}
+
+export type ImageDetail = {
+   baseSrc: string
+   smallSrc: string
+   alt: string
 }
 
 export type Products = Product[]
