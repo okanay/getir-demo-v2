@@ -1,4 +1,4 @@
-import { ProductsItems } from '@/components/Categories-Page-Components/ProductsItems'
+import { ProductsItems } from '@/components/Categories-Page-Components/ProductItems/ProductsItems'
 import { CategoriesHelper } from '../../../../../libs/helpers/CategoriesPageHelpers'
 import { ProductsMenu } from '@/components/Categories-Page-Components/ProductsMenu/ProductsMenu'
 
@@ -9,5 +9,5 @@ type TProps = {
 
 export default function CategoriesRootPage({ searchParams, params: { categories } }: TProps) {
    CategoriesHelper.CheckIsValidPathname(categories)
-   return <ProductsItems categories={categories} />
+   return <ProductsItems categories={categories} searchParams={searchParams} />
 }

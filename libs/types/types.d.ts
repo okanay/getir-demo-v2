@@ -6,7 +6,7 @@ export type Category = {
    image: any
    imageSmall: any
    url: string
-   altCategories?: AltCategories
+   altCategories: AltCategories
 }
 
 export type AltCategory = {

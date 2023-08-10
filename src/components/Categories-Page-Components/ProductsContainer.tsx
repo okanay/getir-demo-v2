@@ -7,7 +7,7 @@ export const ProductsContainer = ({ children }: TProps) => {
          <section
             id={'categories'}
             className={
-               'relative top-0 mx-auto flex max-w-7xl flex-col gap-x-4 font-openSans baseTablet:flex-row baseTablet:px-4'
+               'relative top-0 mx-auto flex max-w-7xl flex-col gap-x-4 font-openSans baseTablet:mt-4 baseTablet:flex-row baseTablet:px-4'
             }>
             {children}
          </section>

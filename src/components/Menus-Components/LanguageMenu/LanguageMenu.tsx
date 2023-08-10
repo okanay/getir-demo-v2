@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname } from 'next-intl/client'
 import { useState, useTransition } from 'react'
@@ -16,6 +16,7 @@ export const LanguageMenu = () => {
    const dispatch = useDispatch()
    const [_, startTransition] = useTransition()
    const locale = useLocale()
+   const searchParams = useSearchParams()
    const router = useRouter()
    const pathname = usePathname()
    const [select, setSelect] = useState(locale)
@@ -29,7 +30,8 @@ export const LanguageMenu = () => {
    }
    const handleOnChange = () => {
       startTransition(() => {
-         router.replace(`/${select}${pathname}`)
+         const path = `/${select}${pathname}?${searchParams}`
+         router.replace(path)
       })
 
       handleOnClose()
