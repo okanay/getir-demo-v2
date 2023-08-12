@@ -1,6 +1,6 @@
 'use client'
 import { Category } from '../../../../libs/types/types'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
 import { useProductLink } from '@/hooks/useProductLink'
@@ -46,37 +46,40 @@ export const MenuLink = ({ category }: { category: Category }) => {
    }
 
    return (
-      <div className={'flex w-fit flex-shrink-0 flex-col items-start justify-start py-2 baseTablet:w-full baseTablet:py-2'}>
-         <button onClick={handleSelectLink} className={'flex w-full flex-row items-center justify-between px-2'}>
-            <span className={'flex items-center justify-start gap-2'}>
-               <div className={'hidden h-8 w-8 rounded border border-gray-200 baseTablet:block'}>
-                  <CategoryItemImage category={category} />
-               </div>
-               <h4 className={'text-[12px] font-semibold text-slate-100 baseTablet:text-[14px] baseTablet:text-slate-600'}>
-                  {t(category.languageCode)}
-               </h4>
-            </span>
-            <ChevronDownIcon className={'hidden h-[20px] w-[20px] text-gray-400 baseTablet:block'} />
-         </button>
-         <motion.div
-            initial={{ height: open ? 'fit-content' : 0 }}
-            animate={{ height: open ? 'fit-content' : 0 }}
-            transition={{ duration: !matches ? 0 : 0.4, ease: 'linear' }}
-            className={'w-full overflow-y-hidden'}>
-            <div>
-               <motion.div
-                  animate={{ opacity: open ? 1 : 0 }}
-                  transition={{ duration: matches ? 0.4 : 0, ease: 'linear' }}
-                  className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto bg-white py-2 baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:bg-transparent baseTablet:pb-0 baseTablet:pt-2  
+      <AnimatePresence>
+         <div className={'flex w-fit flex-shrink-0 flex-col items-start justify-start py-2 baseTablet:w-full baseTablet:py-2'}>
+            <button onClick={handleSelectLink} className={'flex w-full flex-row items-center justify-between px-2'}>
+               <span className={'flex items-center justify-start gap-2'}>
+                  <div className={'hidden h-8 w-8 rounded border border-gray-200 baseTablet:block'}>
+                     <CategoryItemImage category={category} />
+                  </div>
+                  <h4 className={'text-[12px] font-semibold text-slate-100 baseTablet:text-[14px] baseTablet:text-slate-600'}>
+                     {t(category.languageCode)}
+                  </h4>
+               </span>
+               <ChevronDownIcon className={'hidden h-[20px] w-[20px] text-gray-400 baseTablet:block'} />
+            </button>
+            <motion.div
+               initial={{ height: open ? 'fit-content' : 0 }}
+               animate={{ height: open ? 'fit-content' : 0 }}
+               exit={{ height: 0 }}
+               transition={{ duration: !matches ? 0 : 0.4, ease: 'linear' }}
+               className={'w-full overflow-y-hidden'}>
+               <div>
+                  <motion.div
+                     animate={{ opacity: open ? 1 : 0 }}
+                     transition={{ duration: matches ? 0.4 : 0, ease: 'linear' }}
+                     className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto bg-white py-2 baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:bg-transparent baseTablet:pb-0 baseTablet:pt-2  
                ${category.url !== customPathname && 'hidden baseTablet:block'}
                ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}>
-                  <div
-                     className={`flex w-full flex-row items-center justify-start gap-x-2 px-4 baseTablet:h-fit baseTablet:w-full baseTablet:flex-col baseTablet:px-0`}>
-                     <AltLinks />
-                  </div>
-               </motion.div>
-            </div>
-         </motion.div>
-      </div>
+                     <div
+                        className={`flex w-full flex-row items-center justify-start gap-x-2 px-4 baseTablet:h-fit baseTablet:w-full baseTablet:flex-col baseTablet:px-0`}>
+                        <AltLinks />
+                     </div>
+                  </motion.div>
+               </div>
+            </motion.div>
+         </div>
+      </AnimatePresence>
    )
 }

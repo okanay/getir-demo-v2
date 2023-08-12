@@ -1,9 +1,8 @@
-import { Dispatch, SetStateAction, useRef } from 'react'
-import { twMerge } from 'tailwind-merge'
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
+import { Dispatch, SetStateAction } from 'react'
 import { AltCategory } from '../../../../libs/types/types'
-import { useRouter } from 'next/navigation'
+import { twMerge } from 'tailwind-merge'
 import Link from 'next/link'
+import { ChevronRightIcon } from '@heroicons/react/20/solid'
 
 type TProps = {
    altCategory: AltCategory
@@ -13,9 +12,6 @@ type TProps = {
 }
 
 export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex }: TProps) => {
-   const router = useRouter()
-   const ref = useRef<HTMLButtonElement | null>(null)
-
    const handleLinkButtonClick = () => {
       setSelectedIndex(index)
    }
@@ -24,13 +20,13 @@ export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex }:
       <Link
          href={altCategory.url}
          onClick={handleLinkButtonClick}
-         data-target-url={altCategory.url}
          className={'flex w-fit flex-shrink-0 baseTablet:w-full baseTablet:flex-row baseTablet:px-2'}>
          <span className={'flex w-full items-center justify-start gap-2'}>
             <div className={'hidden h-8 w-8 baseTablet:block'} />
             <h6
                className={twMerge(
-                  'rounded border border-gray-200 bg-white px-2 py-1 text-[12px] font-semibold text-skin-theme-700 baseTablet:rounded-none baseTablet:border-0 baseTablet:bg-transparent baseTablet:px-0 baseTablet:py-0 baseTablet:py-0 baseTablet:text-[14px] baseTablet:text-slate-600',
+                  'rounded border border-gray-200 bg-white px-2 py-1 text-[12px] font-semibold text-skin-theme-700 ' +
+                     'baseTablet:rounded-none baseTablet:border-0 baseTablet:bg-transparent baseTablet:px-0 baseTablet:py-0 baseTablet:py-0 baseTablet:text-[14px] baseTablet:text-slate-600',
                   index === selectedIndex && 'border-skin-theme-600 bg-skin-theme-700 text-white',
                )}>
                {altCategory.languageCode}
