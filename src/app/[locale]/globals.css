@@ -22,7 +22,6 @@
 }
 
 :root {
-
    --categories-max-h-calc: calc(100vh - 170px);
    --theme-50: 239, 239, 254;
    --theme-100: 225, 227, 254;

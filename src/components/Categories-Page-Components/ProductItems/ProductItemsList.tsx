@@ -17,7 +17,7 @@ export const ProductItemsList = ({ categories, selectedCategories, products }: T
    const t = useTranslations('')
 
    return (
-      <div className={'mt-14 w-full px-6 py-2 baseTablet:mt-0 baseTablet:px-4'}>
+      <div className={'sticky top-0 mt-14 w-full px-6 py-2 baseTablet:mt-0 baseTablet:px-4'}>
          <div className={'mb-1.5 flex flex-row items-center gap-2 text-[14px] text-slate-900'}>
             <h1>{t('Index.categories.categoriesItems.' + selectedCategories?.languageCode)}</h1>
             <ChevronRightIcon className={'h-4 w-4 text-gray-400'} />

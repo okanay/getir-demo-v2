@@ -1,85 +1,83 @@
 'use client'
+
 import { Category } from '../../../../libs/types/types'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
 import { useProductLink } from '@/hooks/useProductLink'
 import { CategoryItemImage } from '@/components/Index-Page-Components/Categories-Section/CategoryItemImage'
-import Link from 'next/link'
 import { nanoid } from '@reduxjs/toolkit'
 import { useMediaQuery } from '@mantine/hooks'
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { twMerge } from 'tailwind-merge'
+import { useEffect, useState } from 'react'
 import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/AltLink'
 
 export const MenuLink = ({ category }: { category: Category }) => {
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
-   const matches = useMediaQuery('(min-width: 760px)')
+   //
    const { open, setOpen, router, customPathname } = useProductLink(category.url)
+   //
    const t = useTranslations('Index.categories.categoriesItems')
-
-   useEffect(() => {
-      if (!matches && customPathname === category.url) setOpen(true)
-   }, [matches, setOpen, customPathname, category])
-
+   //
+   const matches = useMediaQuery('(min-width: 760px)')
+   //
    const handleToggleButton = () => {
       if (matches) {
          setOpen(!open)
       }
    }
-
+   //
    const handleSelectLink = () => {
       if (customPathname !== category.url) router.push(category.url)
       if (customPathname === category.url) handleToggleButton()
    }
-
-   function AltLinks() {
-      return category.altCategories?.map((altCategory, index) => (
-         <AltLink
-            key={nanoid()}
-            altCategory={altCategory}
-            index={index}
-            selectedIndex={selectedIndex}
-            setSelectedIndex={setSelectedIndex}
-         />
-      ))
-   }
+   //
+   useEffect(() => {
+      if (!matches && customPathname === category.url) setOpen(true)
+   }, [matches, setOpen, customPathname, category])
 
    return (
-      <AnimatePresence>
-         <div className={'flex w-fit flex-shrink-0 flex-col items-start justify-start py-2 baseTablet:w-full baseTablet:py-2'}>
-            <button onClick={handleSelectLink} className={'flex w-full flex-row items-center justify-between px-2'}>
-               <span className={'flex items-center justify-start gap-2'}>
-                  <div className={'hidden h-8 w-8 rounded border border-gray-200 baseTablet:block'}>
-                     <CategoryItemImage category={category} />
-                  </div>
-                  <h4 className={'text-[12px] font-semibold text-slate-100 baseTablet:text-[14px] baseTablet:text-slate-600'}>
-                     {t(category.languageCode)}
-                  </h4>
-               </span>
-               <ChevronDownIcon className={'hidden h-[20px] w-[20px] text-gray-400 baseTablet:block'} />
-            </button>
-            <motion.div
-               initial={{ height: open ? 'fit-content' : 0 }}
-               animate={{ height: open ? 'fit-content' : 0 }}
-               exit={{ height: 0 }}
-               transition={{ duration: !matches ? 0 : 0.4, ease: 'linear' }}
-               className={'w-full overflow-y-hidden'}>
-               <div>
+      <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent py-2 baseTablet:w-full baseTablet:py-2">
+         <button className={'flex w-full flex-row items-center justify-between px-2'} onClick={handleSelectLink}>
+            <span className={'flex items-center justify-start gap-2'}>
+               <div className={'hidden h-8 w-8 rounded border border-gray-200 baseTablet:block'}>
+                  <CategoryItemImage category={category} />
+               </div>
+               <h4 className="text-[12px] font-semibold text-slate-100 baseTablet:text-[14px] baseTablet:text-slate-600">
+                  {t(category.languageCode)}
+               </h4>
+            </span>
+            <ChevronDownIcon className={'hidden h-[20px] w-[20px] text-gray-400 baseTablet:block'} />
+         </button>
+         <div className={'w-full overflow-y-hidden'}>
+            <div
+               className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto bg-white baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:bg-transparent`}>
+               <AnimatePresence>
                   <motion.div
-                     animate={{ opacity: open ? 1 : 0 }}
-                     transition={{ duration: matches ? 0.4 : 0, ease: 'linear' }}
-                     className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto bg-white py-2 baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:bg-transparent baseTablet:pb-0 baseTablet:pt-2  
-               ${category.url !== customPathname && 'hidden baseTablet:block'}
-               ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+                     initial={{ height: open ? 'var(--to-height, 0px)' : 'var(--from-height, 0px)' }}
+                     animate={{ height: open ? 'var(--to-height, 0px)' : 'var(--from-height, 0px)' }}
+                     exit={{ height: 'var(--from-height, 0px)' }}
+                     transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
+                     className="overflow-y-hidden [--from-height:auto] [--to-height:auto] baseTablet:[--from-height:0px] baseTablet:[--to-height:auto]">
                      <div
-                        className={`flex w-full flex-row items-center justify-start gap-x-2 px-4 baseTablet:h-fit baseTablet:w-full baseTablet:flex-col baseTablet:px-0`}>
-                        <AltLinks />
+                        className={`flex flex-row items-center justify-start gap-2 px-4 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0
+                        ${open ? '' : 'hidden'}`}>
+                        {category.altCategories.map((altCategory, index) => (
+                           <div
+                              key={altCategory.languageCode + index}
+                              className={'h-fit w-fit flex-shrink-0 flex-grow-0 baseTablet:w-full '}>
+                              <AltLink
+                                 altCategory={altCategory}
+                                 index={index}
+                                 selectedIndex={selectedIndex}
+                                 setSelectedIndex={setSelectedIndex}
+                              />
+                           </div>
+                        ))}
                      </div>
                   </motion.div>
-               </div>
-            </motion.div>
+               </AnimatePresence>
+            </div>
          </div>
-      </AnimatePresence>
+      </div>
    )
 }
