@@ -1,10 +1,9 @@
 import { CategoryList } from '../../../../libs/constants/CategoriesList'
-import { AltCategory, Category } from '../../../../libs/types/types'
+import { Category } from '../../../../libs/types/types'
 import { redirect } from 'next/navigation'
 import { ProductItemsList } from '@/components/Categories-Page-Components/ProductItems/ProductItemsList'
 import { Suspense } from 'react'
-import { ProductsLoading } from '@/components/Categories-Page-Components/ProductsLoading'
-import { nanoid } from '@reduxjs/toolkit'
+import { ProductLoadingContainer } from '@/components/Categories-Page-Components/ProductItems/ProductLoadingContainer'
 
 type TProps = {
    categories?: string
@@ -17,7 +16,11 @@ export const ProductsItems = async ({ categories = 'beverages', searchParams }: 
 
    const products = await ProductFetch(selectedCategories)
 
-   return <ProductItemsList selectedCategories={selectedCategories} categories={categories} products={products} />
+   return (
+      <Suspense fallback={<ProductLoadingContainer />}>
+         <ProductItemsList selectedCategories={selectedCategories} categories={categories} products={products} />{' '}
+      </Suspense>
+   )
 }
 
 async function ProductFetch(category: Category) {
