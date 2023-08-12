@@ -1,5 +1,3 @@
-'use client'
-
 import { CategoryList } from '../../../../libs/constants/CategoriesList'
 import { nanoid } from '@reduxjs/toolkit'
 import { MenuLink } from '@/components/Categories-Page-Components/ProductsMenu/MenuLink'
