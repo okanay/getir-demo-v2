@@ -3,7 +3,7 @@ import { Category } from '../../../../libs/types/types'
 import { redirect } from 'next/navigation'
 import { ProductItemsList } from '@/components/Categories-Page-Components/ProductItems/ProductItemsList'
 import { Suspense } from 'react'
-import { ProductLoadingContainer } from '@/components/Categories-Page-Components/ProductItems/ProductLoadingContainer'
+import { ProductsLoading } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
 
 type TProps = {
    categories?: string
@@ -17,7 +17,7 @@ export const ProductsItems = async ({ categories = 'beverages', searchParams }: 
    const products = await ProductFetch(selectedCategories)
 
    return (
-      <Suspense fallback={<ProductLoadingContainer />}>
+      <Suspense fallback={<ProductsLoading />}>
          <ProductItemsList selectedCategories={selectedCategories} categories={categories} products={products} />{' '}
       </Suspense>
    )
