@@ -53,7 +53,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
                className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto bg-white baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:bg-transparent`}>
                <AnimatePresence>
                   <motion.div
-                     initial={{ height: 'var(--from-height, 0px)' }}
+                     initial={{ height: !open ? 'var(--from-height, 0px)' : 'var(--to-height, 0px)' }}
                      animate={{ height: open ? 'var(--to-height, 0px)' : 'var(--from-height, 0px)' }}
                      exit={{ height: 'var(--from-height, 0px)' }}
                      transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
