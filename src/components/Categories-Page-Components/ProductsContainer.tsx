@@ -1,3 +1,5 @@
+'use client'
+
 type TProps = {
    children: React.ReactNode
 }

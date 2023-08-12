@@ -1,3 +1,5 @@
+'use client'
+
 import { MenuLinks } from '@/components/Categories-Page-Components/ProductsMenu/MenuLinks'
 import { MenuTitle } from '@/components/Categories-Page-Components/ProductsMenu/MenuTitle'
 
