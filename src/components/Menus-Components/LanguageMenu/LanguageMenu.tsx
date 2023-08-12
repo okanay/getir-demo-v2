@@ -24,6 +24,7 @@ export const LanguageMenu = () => {
 
    const handleOnClose = () => {
       dispatch(closeMenu())
+      router.refresh()
    }
    const handleLanguageChange = (lan: string) => {
       setSelect(lan)

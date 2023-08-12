@@ -3,7 +3,7 @@
 import { Category } from '../../../../libs/types/types'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useProductLink } from '@/hooks/useProductLink'
 import { CategoryItemImage } from '@/components/Index-Page-Components/Categories-Section/CategoryItemImage'
 import { nanoid } from '@reduxjs/toolkit'
