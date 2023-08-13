@@ -19,23 +19,27 @@ export const MenuLink = ({ category }: { category: Category }) => {
    const router = useRouter()
    //
    const initialCSearchParamsValue = params?.get('c') || '0'
-
+   const matches = useMediaQuery('(min-width: 760px)')
+   //
    const [cValue, setCValue] = useState<string>(initialCSearchParamsValue)
    const [open, setOpen] = useState<boolean>(true)
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
    const [count, setCount] = useState(0)
    //
-   const handleSelectLink = () => {
-      setCount(count + 1)
-      if (category.unique !== cValue) return router.push(category.url)
-      setOpen(!open)
-   }
-   //
    useEffect(() => {
-      const c = params.get('c')
-      setCValue(String(c))
+      const c = String(params.get('c'))
+      setCValue(c)
    }, [params])
 
+   useEffect(() => {
+      if (!matches && !open) setOpen(open)
+   }, [matches, open, setOpen])
+   //
+   const handleSelectLink = () => {
+      setCount(count + 1)
+      if (category.unique !== cValue) return router.push(category.url, { scroll: false })
+      setOpen(!open)
+   }
    return (
       <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent py-2 baseTablet:w-full baseTablet:py-2">
          <button className={'flex w-full flex-row items-center justify-between px-2'} onClick={handleSelectLink}>
@@ -61,14 +65,13 @@ export const MenuLink = ({ category }: { category: Category }) => {
                         }}
                         animate={{
                            height: open ? 'var(--to-height, 0)' : 'var(--from-height, 0)',
-                           transition: { duration: 0.75, type: 'tween', ease: 'linear' },
+                           transition: { duration: 0.5, type: 'tween', ease: 'linear' },
                         }}
                         exit={{
                            height: 'var(--from-height, 0)',
-                           transition: { duration: 0.5, type: 'tween', ease: 'linear' },
+                           transition: { duration: 0.25, type: 'tween', ease: 'linear' },
                         }}>
-                        <div
-                           className={`flex flex-row items-center justify-start gap-2 px-4 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0`}>
+                        <div className="flex flex-row items-center justify-start gap-2 px-4 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0">
                            {category.altCategories.map((altCategory, index) => (
                               <div
                                  key={altCategory.languageCode + index}
