@@ -37,7 +37,7 @@ import SexHealthSmall from '../../public/images/CategoryImages/SmallVersions/Adu
 
 export const CategoryList: Categories = [
    {
-      unique: 'C1',
+      unique: '1',
       languageCode: 'category-1',
       image: Beverages,
       imageSmall: BeveragesSmall,
@@ -57,7 +57,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C2',
+      unique: '2',
       languageCode: 'category-2',
       image: FruitsVeg,
       imageSmall: FruitsVegSmall,
@@ -68,7 +68,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C3',
+      unique: '3',
       languageCode: 'category-3',
       image: BakedGoods,
       imageSmall: BakedGoodsSmall,
@@ -81,7 +81,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C4',
+      unique: '4',
       languageCode: 'category-4',
       image: Food,
       imageSmall: FoodSmall,
@@ -114,7 +114,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C5',
+      unique: '5',
       languageCode: 'category-5',
       image: Snacks,
       imageSmall: SnacksSmall,
@@ -144,7 +144,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C6',
+      unique: '6',
       languageCode: 'category-6',
       image: IceCream,
       imageSmall: IceCreamSmall,
@@ -160,7 +160,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C7',
+      unique: '7',
       languageCode: 'category-7',
       image: MilkDairy,
       imageSmall: MilkDairySmall,
@@ -174,7 +174,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C8',
+      unique: '8',
       languageCode: 'category-8',
       image: Breakfast,
       imageSmall: BreakfastSmall,
@@ -193,7 +193,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C9',
+      unique: '9',
       languageCode: 'category-9',
       image: ReadyEat,
       imageSmall: ReadyEatSmall,
@@ -209,7 +209,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C10',
+      unique: '10',
       languageCode: 'category-10',
       image: FitForm,
       imageSmall: FitFormSmall,
@@ -224,7 +224,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C11',
+      unique: '11',
       languageCode: 'category-11',
       image: PersonalCare,
       imageSmall: PersonalCareSmall,
@@ -247,7 +247,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C12',
+      unique: '12',
       languageCode: 'category-12',
       image: HomeCare,
       imageSmall: HomeCareSmall,
@@ -263,7 +263,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C13',
+      unique: '13',
       languageCode: 'category-13',
       image: HomeLiving,
       imageSmall: HomeLivingSmall,
@@ -294,7 +294,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C14',
+      unique: '14',
       languageCode: 'category-14',
       image: Tech,
       imageSmall: TechSmall,
@@ -318,7 +318,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C15',
+      unique: '15',
       languageCode: 'category-15',
       image: PetFood,
       imageSmall: PetFoodSmall,
@@ -330,7 +330,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C16',
+      unique: '16',
       languageCode: 'category-16',
       image: BabyCare,
       imageSmall: BabyCareSmall,
@@ -343,7 +343,7 @@ export const CategoryList: Categories = [
       ],
    },
    {
-      unique: 'C17',
+      unique: '17',
       languageCode: 'category-17',
       image: SexHealth,
       imageSmall: SexHealthSmall,

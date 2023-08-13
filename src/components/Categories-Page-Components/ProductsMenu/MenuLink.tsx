@@ -10,30 +10,31 @@ import { nanoid } from '@reduxjs/toolkit'
 import { useMediaQuery } from '@mantine/hooks'
 import { useEffect, useState } from 'react'
 import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/AltLink'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 export const MenuLink = ({ category }: { category: Category }) => {
-   const [selectedIndex, setSelectedIndex] = useState<number>(0)
-   //
-   const { open, setOpen, router, customPathname } = useProductLink(category.url)
-   //
    const t = useTranslations('Index.categories.categoriesItems')
    //
-   const matches = useMediaQuery('(min-width: 760px)')
+   const params = useSearchParams()
+   const router = useRouter()
    //
-   const handleToggleButton = () => {
-      if (matches) {
-         setOpen(!open)
-      }
-   }
+   const initialCSearchParamsValue = params?.get('c') || '0'
+
+   const [cValue, setCValue] = useState<string>(initialCSearchParamsValue)
+   const [open, setOpen] = useState<boolean>(true)
+   const [selectedIndex, setSelectedIndex] = useState<number>(0)
+   const [count, setCount] = useState(0)
    //
    const handleSelectLink = () => {
-      if (customPathname !== category.url) router.push(category.url)
-      if (customPathname === category.url) handleToggleButton()
+      setCount(count + 1)
+      if (category.unique !== cValue) return router.push(category.url)
+      setOpen(!open)
    }
    //
    useEffect(() => {
-      if (!matches && customPathname === category.url) setOpen(true)
-   }, [matches, setOpen, customPathname, category])
+      const c = params.get('c')
+      setCValue(String(c))
+   }, [params])
 
    return (
       <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent py-2 baseTablet:w-full baseTablet:py-2">
@@ -52,29 +53,38 @@ export const MenuLink = ({ category }: { category: Category }) => {
             <div
                className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto bg-white baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:bg-transparent`}>
                <AnimatePresence>
-                  <motion.div
-                     initial={{ height: !open ? 'var(--from-height, 0px)' : 'var(--to-height, 0px)' }}
-                     animate={{ height: open ? 'var(--to-height, 0px)' : 'var(--from-height, 0px)' }}
-                     exit={{ height: 'var(--from-height, 0px)' }}
-                     transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}
-                     className="overflow-y-hidden [--from-height:auto] [--to-height:auto] baseTablet:[--from-height:0px] baseTablet:[--to-height:auto]">
-                     <div
-                        className={`flex flex-row items-center justify-start gap-2 px-4 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0
+                  {initialCSearchParamsValue === category.unique && (
+                     <motion.div
+                        className="overflow-y-hidden [--from-height:auto] [--to-height:auto] baseTablet:[--from-height:0px] baseTablet:[--to-height:auto]"
+                        initial={{
+                           height: count === 0 ? 'var(--to-height, 0)' : 'var(--from-height, 0)',
+                        }}
+                        animate={{
+                           height: open ? 'var(--to-height, 0)' : 'var(--from-height, 0)',
+                           transition: { duration: 0.75, type: 'tween', ease: 'linear' },
+                        }}
+                        exit={{
+                           height: 'var(--from-height, 0)',
+                           transition: { duration: 0.5, type: 'tween', ease: 'linear' },
+                        }}>
+                        <div
+                           className={`flex flex-row items-center justify-start gap-2 px-4 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0
                         ${open ? '' : 'hidden'}`}>
-                        {category.altCategories.map((altCategory, index) => (
-                           <div
-                              key={altCategory.languageCode + index}
-                              className={'h-fit w-fit flex-shrink-0 flex-grow-0 baseTablet:w-full '}>
-                              <AltLink
-                                 altCategory={altCategory}
-                                 index={index}
-                                 selectedIndex={selectedIndex}
-                                 setSelectedIndex={setSelectedIndex}
-                              />
-                           </div>
-                        ))}
-                     </div>
-                  </motion.div>
+                           {category.altCategories.map((altCategory, index) => (
+                              <div
+                                 key={altCategory.languageCode + index}
+                                 className={'h-fit w-fit flex-shrink-0 flex-grow-0 baseTablet:w-full '}>
+                                 <AltLink
+                                    altCategory={altCategory}
+                                    index={index}
+                                    selectedIndex={selectedIndex}
+                                    setSelectedIndex={setSelectedIndex}
+                                 />
+                              </div>
+                           ))}
+                        </div>
+                     </motion.div>
+                  )}
                </AnimatePresence>
             </div>
          </div>
