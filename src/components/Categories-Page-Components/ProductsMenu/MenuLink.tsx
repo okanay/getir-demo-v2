@@ -26,20 +26,21 @@ export const MenuLink = ({ category }: { category: Category }) => {
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
    const [count, setCount] = useState(0)
    //
+   const handleSelectLink = () => {
+      setCount(count + 1)
+      if (category.unique !== cValue) {
+         router.push(category.url, { scroll: false })
+         setOpen(true)
+         return
+      }
+      setOpen(!open)
+   }
+   //
    useEffect(() => {
       const c = String(params.get('c'))
       setCValue(c)
    }, [params])
 
-   useEffect(() => {
-      if (!matches && !open) setOpen(open)
-   }, [matches, open, setOpen])
-   //
-   const handleSelectLink = () => {
-      setCount(count + 1)
-      if (category.unique !== cValue) return router.push(category.url, { scroll: false })
-      setOpen(!open)
-   }
    return (
       <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent py-2 baseTablet:w-full baseTablet:py-2">
          <button className={'flex w-full flex-row items-center justify-between px-2'} onClick={handleSelectLink}>
