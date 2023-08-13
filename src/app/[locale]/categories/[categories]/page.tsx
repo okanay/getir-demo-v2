@@ -8,7 +8,7 @@ type TProps = {
 }
 
 export default async function CategoriesRootPage({ searchParams, params: { categories } }: TProps) {
-   const getCategoryData = await CategoryList.find(c => c.unique === searchParams?.c)
+   const getCategoryData = await CategoryList.find(c => c.slugName === categories)
    if (getCategoryData === undefined) redirect('/')
    if (getCategoryData.slugName !== categories) redirect('/')
 

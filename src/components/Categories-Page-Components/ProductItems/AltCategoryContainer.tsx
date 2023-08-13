@@ -1,10 +1,15 @@
-import { nanoid } from '@reduxjs/toolkit'
-import { AltCategory } from '../../../../libs/types/types'
-import { useState } from 'react'
+'use client'
+
 import { PlusIcon } from '@heroicons/react/20/solid'
-import { ProductItemLoadingSkeleton } from '@/components/Categories-Page-Components/ProductItems/ProductItemLoadingSkeleton'
-import { Product, Products } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
+import { AltCategory } from '../../../../libs/types/types'
+import { Products } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
+import { nanoid } from '@reduxjs/toolkit'
 import { DummyDataRender } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
+import useMeasure from 'react-use-measure'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getSelectedAltCategoryIndex, resetSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
+import { useMediaQuery } from '@mantine/hooks'
 
 type TProps = {
    index: number
@@ -15,13 +20,28 @@ type TProps = {
 export const AltCategoryContainer = ({ index, altCategory, products }: TProps) => {
    const data: Products | undefined = products.filter(p => p.altCategoryId === altCategory.id) || undefined
 
+   const dispatch = useDispatch()
+   const selectedIndexValue = useSelector(getSelectedAltCategoryIndex)
+   const matches = useMediaQuery('(min-width: 760px)')
+
+   const [ref, bounds] = useMeasure()
+
+   useEffect(() => {
+      if (selectedIndexValue === index) {
+         window.scrollTo({ left: 0, top: bounds.top - (matches ? (index === 0 ? 50 : 0) : 140), behavior: 'smooth' })
+      }
+   }, [selectedIndexValue, bounds, index, matches])
+   useEffect(() => {
+      dispatch(resetSelectedAltCategoryIndex())
+   }, [dispatch])
+
    return (
-      <section key={nanoid()} className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}>
+      <section id={altCategory.url} ref={ref} className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}>
          {index !== 0 ? <h1 className={'text-[14px] text-slate-900'}>{altCategory.name}</h1> : null}
-         <div className="grid h-fit w-full  grid-cols-2 gap-[1px] rounded-lg bg-gray-100 smTablet:grid-cols-3 baseLaptop:grid-cols-4">
+         <div className="grid h-fit w-full grid-cols-2 gap-[1px] rounded-lg bg-gray-100 smTablet:grid-cols-3 baseLaptop:grid-cols-4">
             {data !== undefined &&
                data.map(d => (
-                  <div key={nanoid()} className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
+                  <article key={nanoid()} className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
                      <div className={'relative row-span-1 flex h-full w-full flex-col items-center justify-center'}>
                         <div className={'mt-4 h-[96px] w-[96px] animate-pulse rounded-full bg-gray-200'}></div>
                         <button
@@ -34,7 +54,7 @@ export const AltCategoryContainer = ({ index, altCategory, products }: TProps) =
                         <h1 className={'font-semibold text-slate-900'}>{d.productDetails[0].text}</h1>
                         <h1 className={'text-gray-600'}>{d.productDetails[0].description}</h1>
                      </div>
-                  </div>
+                  </article>
                ))}
             <DummyDataRender copyCount={6} />
          </div>

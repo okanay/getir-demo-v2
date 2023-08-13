@@ -1,16 +1,13 @@
 'use client'
 
 import Image from 'next/image'
-
-import { useTranslations } from 'next-intl'
 import { CardsList } from '../../../../libs/constants/CardsList'
-import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { LandingPosterImage } from '@/components/Index-Page-Components/Promotions-Section/LandingPosterImage'
 
 export const Promotions = () => {
    //
    const t = useTranslations('Index.promotions')
-   //
 
    return (
       <section id={'promotions'} className={'border-y border-gray-100 bg-gray-100 font-openSans'}>

@@ -2,10 +2,12 @@
 
 import { MenuLinks } from '@/components/Categories-Page-Components/ProductsMenu/MenuLinks'
 import { MenuTitle } from '@/components/Categories-Page-Components/ProductsMenu/MenuTitle'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { resetSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
 
 export const ProductsMenu = () => {
-   const [client, setClient] = useState(true)
+   console.log('client')
 
    return (
       <aside className="sticky top-0 z-[200] w-full baseTablet:h-fit baseTablet:max-w-[240px] baseTablet:flex-shrink-0 baseTablet:flex-grow baseTablet:basis-[100%] baseTablet:py-2">

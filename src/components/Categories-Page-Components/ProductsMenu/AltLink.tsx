@@ -3,6 +3,9 @@ import { AltCategory } from '../../../../libs/types/types'
 import { twMerge } from 'tailwind-merge'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
+import { useDispatch, useSelector } from 'react-redux'
+import { getSelectedAltCategoryIndex, setSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 type TProps = {
    altCategory: AltCategory
@@ -12,13 +15,15 @@ type TProps = {
 }
 
 export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex }: TProps) => {
+   const searchParams = useSearchParams()
+   const dispatch = useDispatch()
    const handleLinkButtonClick = () => {
       setSelectedIndex(index)
+      dispatch(setSelectedAltCategoryIndex(index))
    }
 
    return (
-      <Link
-         href={altCategory.url}
+      <button
          onClick={handleLinkButtonClick}
          className={'flex w-fit flex-shrink-0 baseTablet:w-full baseTablet:flex-row baseTablet:px-2'}>
          <span className={'flex w-full items-center justify-start gap-2'}>
@@ -38,6 +43,6 @@ export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex }:
                index !== selectedIndex && 'baseTablet:hidden',
             )}
          />
-      </Link>
+      </button>
    )
 }
