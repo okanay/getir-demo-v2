@@ -31,7 +31,7 @@ async function ProductFetch(category: Category) {
 export const DummyData: Products = [
    {
       productId: 1,
-      uniqueId: 'C1',
+      uniqueId: '1',
       altCategoryId: 100,
       productDetails: [
          {
