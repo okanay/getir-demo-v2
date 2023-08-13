@@ -1,6 +1,6 @@
 import { PlusIcon } from '@heroicons/react/20/solid'
 
-export const ProductLoadingContainer = () => {
+export const ProductItemLoadingSkeleton = () => {
    const getRandomNumber = (max: number, min: number) => {
       return Math.floor(Math.random() * (max - min + 1)) + max
    }

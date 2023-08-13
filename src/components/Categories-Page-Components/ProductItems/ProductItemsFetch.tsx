@@ -1,30 +1,26 @@
-import { CategoryList } from '../../../../libs/constants/CategoriesList'
-import { Category } from '../../../../libs/types/types'
-import { redirect } from 'next/navigation'
-import { ProductItemsList } from '@/components/Categories-Page-Components/ProductItems/ProductItemsList'
 import { Suspense } from 'react'
+import { Category } from '../../../../libs/types/types'
+import { ProductsContainer } from '@/components/Categories-Page-Components/ProductItems/ProductsContainer'
 import { ProductsLoading } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
 
 type TProps = {
    categories?: string
    searchParams?: { [key: string]: string | string[] | undefined }
+   data: Category
 }
 
-export const ProductsItems = async ({ categories = 'beverages', searchParams }: TProps) => {
-   const selectedCategories: Category | undefined = CategoryList.find(c => c.url.includes(`?c=${searchParams?.c}`))
-   if (selectedCategories === undefined) redirect('/categories/beverages?c=1')
-
-   const products = await ProductFetch(selectedCategories)
+export const ProductItemsFetch = async ({ categories = 'beverages', data }: TProps) => {
+   const products = await ProductFetch(data)
 
    return (
       <Suspense fallback={<ProductsLoading />}>
-         <ProductItemsList selectedCategories={selectedCategories} categories={categories} products={products} />{' '}
+         <ProductsContainer data={data} products={products} />{' '}
       </Suspense>
    )
 }
 
 async function ProductFetch(category: Category) {
-   const { unique } = category
+   const { unique } = category || -1
    return DummyData.filter(d => d.uniqueId === unique) || []
 }
 

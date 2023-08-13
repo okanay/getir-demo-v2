@@ -2,8 +2,9 @@ import { nanoid } from '@reduxjs/toolkit'
 import { AltCategory } from '../../../../libs/types/types'
 import { useState } from 'react'
 import { PlusIcon } from '@heroicons/react/20/solid'
-import { ProductLoadingContainer } from '@/components/Categories-Page-Components/ProductItems/ProductLoadingContainer'
-import { Product, Products } from '@/components/Categories-Page-Components/ProductItems/ProductsItems'
+import { ProductItemLoadingSkeleton } from '@/components/Categories-Page-Components/ProductItems/ProductItemLoadingSkeleton'
+import { Product, Products } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
+import { DummyDataRender } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
 
 type TProps = {
    index: number
@@ -11,17 +12,7 @@ type TProps = {
    products: Products
 }
 
-export const ProductAltMenu = ({ index, altCategory, products }: TProps) => {
-   const [dummyCount, setDummyCount] = useState(4)
-
-   const DummyDataRender = () => {
-      const divs = []
-      for (let i = 0; i < dummyCount; i++) {
-         divs.push(<ProductLoadingContainer key={nanoid()} />)
-      }
-      return divs
-   }
-
+export const AltCategoryContainer = ({ index, altCategory, products }: TProps) => {
    const data: Products | undefined = products.filter(p => p.altCategoryId === altCategory.id) || undefined
 
    return (
@@ -45,7 +36,7 @@ export const ProductAltMenu = ({ index, altCategory, products }: TProps) => {
                      </div>
                   </div>
                ))}
-            <DummyDataRender />
+            <DummyDataRender copyCount={6} />
          </div>
       </section>
    )

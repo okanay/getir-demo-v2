@@ -42,6 +42,7 @@ export const CategoryList: Categories = [
       image: Beverages,
       imageSmall: BeveragesSmall,
       url: '/categories/beverages?c=1',
+      slugName: 'beverages',
       altCategories: [
          { unique: 'C1', id: 100, languageCode: 'Water', name: 'Water', url: '#water' },
          { unique: 'C1', id: 101, languageCode: 'Ice', name: 'Ice', url: '#ice' },
@@ -62,6 +63,8 @@ export const CategoryList: Categories = [
       image: FruitsVeg,
       imageSmall: FruitsVegSmall,
       url: '/categories/fruits-veg?c=2',
+      slugName: 'fruits-veg',
+
       altCategories: [
          { unique: 'C2', id: 100, languageCode: 'Fruits', name: 'Fruits', url: '#fruits' },
          { unique: 'C2', id: 101, languageCode: 'Vegetables', name: 'Vegetables', url: '#vegetables' },
@@ -73,6 +76,8 @@ export const CategoryList: Categories = [
       image: BakedGoods,
       imageSmall: BakedGoodsSmall,
       url: '/categories/baked-goods?c=3',
+      slugName: 'baked-goods',
+
       altCategories: [
          { unique: 'C3', id: 102, languageCode: 'FreshBakery', name: 'Fresh Bakery', url: '#fresh-bakery' },
          { unique: 'C3', id: 103, languageCode: 'Bakery', name: 'Bakery', url: '#bakery' },
@@ -86,6 +91,8 @@ export const CategoryList: Categories = [
       image: Food,
       imageSmall: FoodSmall,
       url: '/categories/food?c=4',
+      slugName: 'food',
+
       altCategories: [
          { unique: 'C4', id: 100, languageCode: 'Pasta', name: 'Pasta', url: '#pasta' },
          { unique: 'C4', id: 101, languageCode: 'Rice', name: 'Rice', url: '#rice' },
@@ -119,6 +126,8 @@ export const CategoryList: Categories = [
       image: Snacks,
       imageSmall: SnacksSmall,
       url: '/categories/snacks?c=5',
+      slugName: 'snacks',
+
       altCategories: [
          { unique: 'C5', id: 100, languageCode: 'GoesWellWith', name: 'Goes Well With', url: '#goes-well-with' },
          { unique: 'C5', id: 101, languageCode: 'Chips', name: 'Chips', url: '#chips' },
@@ -149,6 +158,7 @@ export const CategoryList: Categories = [
       image: IceCream,
       imageSmall: IceCreamSmall,
       url: '/categories/icecream?c=6',
+      slugName: 'icecream',
       altCategories: [
          { unique: 'C6', id: 100, languageCode: 'Stick', name: 'Stick', url: '#stick' },
          { unique: 'C6', id: 101, languageCode: 'Bar', name: 'Bar', url: '#bar' },
@@ -165,6 +175,8 @@ export const CategoryList: Categories = [
       image: MilkDairy,
       imageSmall: MilkDairySmall,
       url: '/categories/milkdairy?c=7',
+      slugName: 'milkdairy',
+
       altCategories: [
          { unique: 'C7', id: 100, languageCode: 'Milk', name: 'Milk', url: '#milk' },
          { unique: 'C7', id: 101, languageCode: 'Cheese', name: 'Cheese', url: '#cheese' },
@@ -179,6 +191,8 @@ export const CategoryList: Categories = [
       image: Breakfast,
       imageSmall: BreakfastSmall,
       url: '/categories/breakfast?c=8',
+      slugName: 'breakfast',
+
       altCategories: [
          { unique: 'C8', id: 100, languageCode: 'Eggs', name: 'Eggs', url: '#eggs' },
          { unique: 'C8', id: 101, languageCode: 'DeliProducts', name: 'Deli Products', url: '#deli-products' },
@@ -198,6 +212,8 @@ export const CategoryList: Categories = [
       image: ReadyEat,
       imageSmall: ReadyEatSmall,
       url: '/categories/ready-eat?c=9',
+      slugName: 'ready-eat',
+
       altCategories: [
          { unique: 'C9', id: 100, languageCode: 'Sandwiches', name: 'Sandwiches', url: '#sandwiches' },
          { unique: 'C9', id: 101, languageCode: 'InstantMeal', name: 'Instant Meal', url: '#instant-meal' },
@@ -214,6 +230,8 @@ export const CategoryList: Categories = [
       image: FitForm,
       imageSmall: FitFormSmall,
       url: '/categories/fitform?c=10',
+      slugName: 'fitform',
+
       altCategories: [
          { unique: 'C10', id: 100, languageCode: 'Bars', name: 'Bars', url: '#bars' },
          { unique: 'C10', id: 101, languageCode: 'Granola', name: 'Granola', url: '#granola' },
@@ -229,6 +247,8 @@ export const CategoryList: Categories = [
       image: PersonalCare,
       imageSmall: PersonalCareSmall,
       url: '/categories/personalcare?c=11',
+      slugName: 'personalcare',
+
       altCategories: [
          { unique: 'C11', id: 100, languageCode: 'OralCare', name: 'Oral Care', url: '#oral-care' },
          { unique: 'C11', id: 101, languageCode: 'HairCare', name: 'Hair Care', url: '#hair-care' },
@@ -252,6 +272,8 @@ export const CategoryList: Categories = [
       image: HomeCare,
       imageSmall: HomeCareSmall,
       url: '/categories/homecare?c=12',
+      slugName: 'homecare',
+
       altCategories: [
          { unique: 'C12', id: 100, languageCode: 'Cleaning', name: 'Cleaning', url: '#cleaning' },
          { unique: 'C12', id: 101, languageCode: 'Laundry', name: 'Laundry', url: '#laundry' },
@@ -268,6 +290,8 @@ export const CategoryList: Categories = [
       image: HomeLiving,
       imageSmall: HomeLivingSmall,
       url: '/categories/homeliving?c=13',
+      slugName: 'homeliving',
+
       altCategories: [
          {
             unique: 'C13',
@@ -299,6 +323,8 @@ export const CategoryList: Categories = [
       image: Tech,
       imageSmall: TechSmall,
       url: '/categories/tech?c=14',
+      slugName: 'tech',
+
       altCategories: [
          {
             unique: 'C14',
@@ -323,6 +349,8 @@ export const CategoryList: Categories = [
       image: PetFood,
       imageSmall: PetFoodSmall,
       url: '/categories/petfood?c=15',
+      slugName: 'petfood',
+
       altCategories: [
          { unique: 'C15', id: 100, languageCode: 'Cats', name: 'Cats', url: '#cats' },
          { unique: 'C15', id: 101, languageCode: 'Dogs', name: 'Dogs', url: '#dogs' },
@@ -335,6 +363,8 @@ export const CategoryList: Categories = [
       image: BabyCare,
       imageSmall: BabyCareSmall,
       url: '/categories/babycare?c=16',
+      slugName: 'babycare',
+
       altCategories: [
          { unique: 'C16', id: 100, languageCode: 'Diapers', name: 'Diapers', url: '#diapers' },
          { unique: 'C16', id: 101, languageCode: 'BabyCare', name: 'Baby Care', url: '#baby-care' },
@@ -348,6 +378,7 @@ export const CategoryList: Categories = [
       image: SexHealth,
       imageSmall: SexHealthSmall,
       url: '/categories/sexhealth?c=17',
+      slugName: 'sexhealth',
       altCategories: [
          { unique: 'C17', id: 100, languageCode: 'Condoms', name: 'Condoms', url: '#condoms' },
          { unique: 'C17', id: 101, languageCode: 'GelsLubricants', name: 'Gels & Lubricants', url: '#gels-lubricants' },

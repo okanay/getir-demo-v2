@@ -6,6 +6,7 @@ export type Category = {
    image: any
    imageSmall: any
    url: string
+   slugName: string
    altCategories: AltCategories
 }
 

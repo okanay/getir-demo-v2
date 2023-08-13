@@ -2,9 +2,10 @@
 
 import { MenuLinks } from '@/components/Categories-Page-Components/ProductsMenu/MenuLinks'
 import { MenuTitle } from '@/components/Categories-Page-Components/ProductsMenu/MenuTitle'
+import { useState } from 'react'
 
 export const ProductsMenu = () => {
-   console.log('render')
+   const [client, setClient] = useState(true)
 
    return (
       <aside className="sticky top-0 z-[200] w-full baseTablet:h-fit baseTablet:max-w-[240px] baseTablet:flex-shrink-0 baseTablet:flex-grow baseTablet:basis-[100%] baseTablet:py-2">
