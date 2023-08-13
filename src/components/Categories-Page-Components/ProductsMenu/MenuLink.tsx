@@ -68,8 +68,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
                            transition: { duration: 0.5, type: 'tween', ease: 'linear' },
                         }}>
                         <div
-                           className={`flex flex-row items-center justify-start gap-2 px-4 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0
-                        ${open ? '' : 'hidden'}`}>
+                           className={`flex flex-row items-center justify-start gap-2 px-4 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0`}>
                            {category.altCategories.map((altCategory, index) => (
                               <div
                                  key={altCategory.languageCode + index}
