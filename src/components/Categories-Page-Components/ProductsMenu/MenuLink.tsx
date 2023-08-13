@@ -5,21 +5,22 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
 import { CategoryItemImage } from '@/components/Index-Page-Components/Categories-Section/CategoryItemImage'
-import { useMediaQuery } from '@mantine/hooks'
-import { useState } from 'react'
+
+import { useEffect, useState } from 'react'
 import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/AltLink'
 import { useRouter } from 'next/navigation'
 
 import { useParams } from 'next/navigation'
+import { resetSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
+import { useDispatch } from 'react-redux'
 
 export const MenuLink = ({ category }: { category: Category }) => {
    const t = useTranslations('Index.categories.categoriesItems')
    //
    const router = useRouter()
    const pathname = useParams()
+
    const categoryPathname = pathname.categories || undefined
-   //
-   const matches = useMediaQuery('(min-width: 760px)')
    //
    const [open, setOpen] = useState<boolean>(true)
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
@@ -28,13 +29,15 @@ export const MenuLink = ({ category }: { category: Category }) => {
    const handleSelectLink = () => {
       setCount(count + 1)
       if (category.slugName !== categoryPathname) {
-         router.push(category.url)
+         router.push(category.url, { scroll: false })
+         setSelectedIndex(0)
+
          setOpen(true)
+
          return
       }
       setOpen(!open)
    }
-   //
 
    return (
       <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent py-2 baseTablet:w-full baseTablet:py-2">

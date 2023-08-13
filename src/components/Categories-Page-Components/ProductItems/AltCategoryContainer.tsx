@@ -5,12 +5,10 @@ import { AltCategory } from '../../../../libs/types/types'
 import { Products } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
 import { nanoid } from '@reduxjs/toolkit'
 import { DummyDataRender } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
-import useMeasure from 'react-use-measure'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getSelectedAltCategoryIndex, resetSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
-import { useMediaQuery } from '@mantine/hooks'
-
+import { useMediaQuery, useScrollIntoView } from '@mantine/hooks'
 type TProps = {
    index: number
    altCategory: AltCategory
@@ -19,24 +17,34 @@ type TProps = {
 
 export const AltCategoryContainer = ({ index, altCategory, products }: TProps) => {
    const data: Products | undefined = products.filter(p => p.altCategoryId === altCategory.id) || undefined
-
+   //
    const dispatch = useDispatch()
    const selectedIndexValue = useSelector(getSelectedAltCategoryIndex)
+   //
+   //
+   //
    const matches = useMediaQuery('(min-width: 760px)')
-
-   const [ref, bounds] = useMeasure()
-
+   const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({
+      offset: matches ? (index === 0 ? 50 : 0) : 140,
+   })
    useEffect(() => {
       if (selectedIndexValue === index) {
-         window.scrollTo({ left: 0, top: bounds.top - (matches ? (index === 0 ? 50 : 0) : 140), behavior: 'smooth' })
+         scrollIntoView({
+            alignment: 'start',
+         })
       }
-   }, [selectedIndexValue, bounds, index, matches])
+   }, [selectedIndexValue])
    useEffect(() => {
-      dispatch(resetSelectedAltCategoryIndex())
-   }, [dispatch])
+      return () => {
+         dispatch(resetSelectedAltCategoryIndex())
+      }
+   }, [])
 
    return (
-      <section id={altCategory.url} ref={ref} className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}>
+      <section
+         id={altCategory.url}
+         ref={targetRef}
+         className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}>
          {index !== 0 ? <h1 className={'text-[14px] text-slate-900'}>{altCategory.name}</h1> : null}
          <div className="grid h-fit w-full grid-cols-2 gap-[1px] rounded-lg bg-gray-100 smTablet:grid-cols-3 baseLaptop:grid-cols-4">
             {data !== undefined &&

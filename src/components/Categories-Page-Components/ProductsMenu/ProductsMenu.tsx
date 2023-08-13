@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 import { resetSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
 
 export const ProductsMenu = () => {
-   console.log('client')
+   const [client, setClient] = useState<boolean>(true)
 
    return (
       <aside className="sticky top-0 z-[200] w-full baseTablet:h-fit baseTablet:max-w-[240px] baseTablet:flex-shrink-0 baseTablet:flex-grow baseTablet:basis-[100%] baseTablet:py-2">

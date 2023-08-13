@@ -6,6 +6,7 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { useDispatch, useSelector } from 'react-redux'
 import { getSelectedAltCategoryIndex, setSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { usePathname } from 'next-intl/client'
 
 type TProps = {
    altCategory: AltCategory
@@ -15,8 +16,8 @@ type TProps = {
 }
 
 export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex }: TProps) => {
-   const searchParams = useSearchParams()
    const dispatch = useDispatch()
+
    const handleLinkButtonClick = () => {
       setSelectedIndex(index)
       dispatch(setSelectedAltCategoryIndex(index))
