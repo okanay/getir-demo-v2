@@ -12,6 +12,7 @@ import { getSelectedAltCategoryIndex, resetSelectedAltCategoryIndex } from '../.
 
 import { Product } from '@/components/Categories-Page-Components/ProductItems/Product'
 import { DummyDataRender } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
+import { useTranslations } from 'next-intl'
 
 type TProps = {
    index: number
@@ -20,6 +21,8 @@ type TProps = {
 }
 
 export const AltCategoryContainer = ({ index, altCategory, products }: TProps) => {
+   const t = useTranslations('Categories.CategoriesList')
+
    // FILTER FETCH PRODUCT LIKE, WATER, SODA,
    const data: TProducts | undefined = products.filter(p => p.altCategoryId === altCategory.id) || undefined
    //
@@ -50,7 +53,7 @@ export const AltCategoryContainer = ({ index, altCategory, products }: TProps) =
          ref={targetRef}
          className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}>
          {index !== 0 ? (
-            <h1 className={'px-4 text-[14px] font-semibold text-slate-900 baseTablet:px-0'}>{altCategory.name}</h1>
+            <h1 className={'px-4 text-[14px] font-semibold text-slate-900 baseTablet:px-0'}>{t(altCategory.languageCode)}</h1>
          ) : null}
          <div className="grid h-fit w-full grid-cols-2 gap-[1px] rounded-lg bg-gray-100 smTablet:grid-cols-3 desktop:grid-cols-4">
             {data !== undefined && data.map(d => <Product product={d} key={nanoid()} />)}

@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import { CategoryItems } from '@/components/Index-Page-Components/Categories-Section/CategoryItems'
 
 export const Categories = () => {
-   const t = useTranslations('Index.categories')
+   const t = useTranslations('Categories')
 
    return (
       <section
@@ -16,12 +16,12 @@ export const Categories = () => {
          {/*Categories text*/}
          <div className="grid h-full w-full grid-cols-4 baseTablet:grid-cols-5 lgTablet:grid-cols-10 lgTablet:gap-4 lgTablet:px-0">
             <div className="flex h-full w-full flex-col items-center py-2 text-center">
-               <h4 className={'text-[14px] font-semibold leading-[19px] text-slate-800'}>{t('title')}</h4>
+               <h4 className={'text-[14px] font-semibold leading-[19px] text-slate-800'}>{t('CategoriesMenuTitle')}</h4>
             </div>
          </div>
          {/*Categories*/}
          <div className="grid h-fit w-full grid-cols-4 items-center gap-2 baseTablet:grid-cols-5 lgTablet:grid-cols-10 lgTablet:gap-4 lgTablet:px-0">
-            <CategoryItems t={t} />
+            <CategoryItems />
          </div>
       </section>
    )

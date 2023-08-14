@@ -18,9 +18,9 @@ export const ProductsContainer = ({ data, products }: TProps) => {
    return (
       <div className={'w-full'}>
          <div className={'mb-1.5 flex flex-row items-center gap-2 px-4 text-[14px] font-semibold text-slate-900 baseTablet:px-0'}>
-            <h1>{t('Index.categories.categoriesItems.' + data?.languageCode)}</h1>
+            <h1>{t('Categories.CategoriesList.' + data?.languageCode)}</h1>
             <ChevronRightIcon className={'h-4 w-4 text-gray-400'} />
-            <h1>{data?.altCategories.at(0)?.name}</h1>
+            <h1>{t('Categories.CategoriesList.' + data?.altCategories[0].languageCode)}</h1>
          </div>
          {data.altCategories.map((altCategory, index) => (
             <AltCategoryContainer key={nanoid()} index={index} altCategory={altCategory} products={products} />

@@ -16,7 +16,7 @@ import { useDispatch } from 'react-redux'
 import { useMediaQuery } from '@mantine/hooks'
 
 export const MenuLink = ({ category }: { category: Category }) => {
-   const t = useTranslations('Index.categories.categoriesItems')
+   const t = useTranslations('Categories.CategoriesList')
    //
    const router = useRouter()
    const pathname = useParams()
@@ -42,8 +42,10 @@ export const MenuLink = ({ category }: { category: Category }) => {
    }
 
    return (
-      <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent py-2 baseTablet:w-full baseTablet:py-2">
-         <button className={'flex w-full flex-row items-center justify-between px-2'} onClick={handleSelectLink}>
+      <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent  baseTablet:w-full">
+         <button
+            className={'flex w-full flex-row items-center justify-between px-2 py-2 baseTablet:py-2'}
+            onClick={handleSelectLink}>
             <span className={'flex items-center justify-start gap-2'}>
                <div className={'hidden h-8 w-8 rounded border border-gray-200 baseTablet:block'}>
                   <ImageOptimization alt={{ tr: '', en: '' }} imageNormal={category.image} imageSmall={category.imageSmall} />
@@ -83,6 +85,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
                                     index={index}
                                     selectedIndex={selectedIndex}
                                     setSelectedIndex={setSelectedIndex}
+                                    t={t}
                                  />
                               </div>
                            ))}

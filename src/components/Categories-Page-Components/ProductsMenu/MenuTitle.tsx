@@ -7,6 +7,6 @@ type TProps = {
    className?: string
 }
 export const MenuTitle = ({ className }: TProps) => {
-   const t = useTranslations('Categories.ProductMenu')
-   return <h4 className={twMerge('', className)}>{t('Title')}</h4>
+   const t = useTranslations('Categories')
+   return <h4 className={twMerge('', className)}>{t('CategoriesMenuTitle')}</h4>
 }

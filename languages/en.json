@@ -22,32 +22,6 @@
         "deliveryButton" : "Select Delivery Address"
       }
     },
-    "categories" : {
-      "title" : "Categories",
-      "categoriesItems" : {
-        "category-1" : "Beverages",
-        "category-2" : "Fruits & Veg",
-        "category-3" : "Baked Goods",
-        "category-4" : "Food",
-
-        "category-5" : "Snacks",
-        "category-6" : "Ice Cream",
-        "category-7" : "Milk & Dairy",
-        "category-8" : "Breakfast",
-
-        "category-9" : "Ready to Eat",
-        "category-10" : "Fit & Form",
-        "category-11" : "Personal Care",
-        "category-12" : "Home Care",
-
-        "category-13" : "Home & Living",
-        "category-14" : "Tech",
-        "category-15" : "Pet Food",
-        "category-16" : "Baby Care",
-
-        "category-17" : "Sex Health"
-      }
-    },
     "promotions" : {
       "title" : "Promotions",
       "altTitle" : "Download Getir!",
@@ -75,8 +49,222 @@
     }
   },
   "Categories" : {
-    "ProductMenu" : {
-      "Title" : "Categories"
+    "CategoriesMenuTitle" : "Categories",
+    "CategoriesList" : {
+  "Category-1": {
+    "CategoryName": "Beverages",
+    "AltCategory": {
+      "Water": "Water",
+      "Ice": "Ice",
+      "Soda": "Soda",
+      "SparklingWater": "Sparkling Water",
+      "AyranKefir": "Ayran & Kefir",
+      "IcedTea": "Iced Tea",
+      "Juice": "Juice",
+      "Coffee": "Coffee",
+      "Tea": "Tea",
+      "EnergyDrink": "Energy Drink",
+      "FunctionalDrinks": "Functional Drinks"
+    }
+  },
+  "Category-2": {
+    "CategoryName": "Fruits & Veg",
+    "AltCategory": {
+      "Fruits": "Fruits",
+      "Vegetables": "Vegetables"
+    }
+  },
+  "Category-3": {
+    "CategoryName": "Baked Goods",
+    "AltCategory": {
+      "FreshBakery": "Fresh Bakery",
+      "Bakery": "Bakery",
+      "FrozenBakery": "Frozen Bakery",
+      "GlutenFree": "Gluten-Free"
+    }
+  },
+  "Category-4": {
+    "CategoryName": "Food",
+    "AltCategory": {
+      "Pasta": "Pasta",
+      "Rice": "Rice",
+      "Bulghur": "Bulghur",
+      "Legumes": "Legumes",
+      "Paste": "Paste",
+      "Sauce": "Sauce",
+      "CannedFood": "Canned Food",
+      "Flour": "Flour",
+      "Oil": "Oil",
+      "OliveOil": "Olive Oil",
+      "Sugar": "Sugar",
+      "VinegarSaladDressing": "Vinegar & Salad Dressing",
+      "Spices": "Spices",
+      "Soup": "Soup",
+      "Desserts": "Desserts",
+      "CakeIngredients": "Cake Ingredients",
+      "Cream": "Cream",
+      "ButterMargarine": "Butter & Margarine"
+    }
+  },
+  "Category-5": {
+    "CategoryName": "Snacks",
+    "AltCategory": {
+      "GoesWellWith": "Goes Well With",
+      "Chips": "Chips",
+      "Nuts": "Nuts",
+      "Cakes": "Cakes",
+      "Biscuits": "Biscuits",
+      "Wafer": "Wafer",
+      "TabletChocolate": "Tablet Chocolate",
+      "ChocolateBar": "Chocolate Bar",
+      "GiftBoxes": "Gift Boxes",
+      "Spreads": "Spreads",
+      "CrackersCookies": "Crackers & Cookies",
+      "CandyGum": "Candy & Gum",
+      "DrageesChocolatesKids": "Chocolates for Kids",
+      "FitForm": "Fit & Form",
+      "Dessert": "Dessert"
+    }
+  },
+  "Category-6": {
+    "CategoryName": "Ice Cream",
+    "AltCategory": {
+      "Stick": "Stick",
+      "Bar": "Bar",
+      "Cone": "Cone",
+      "IceCreamPacks": "Ice Cream Packs",
+      "Multipack": "Multipack",
+      "Cup": "Cup",
+      "IceCreamSauce": "Ice Cream Sauce"
+    }
+  },
+  "Category-7": {
+    "CategoryName": "Milk & Dairy",
+    "AltCategory": {
+      "Milk": "Milk",
+      "Cheese": "Cheese",
+      "Yogurt": "Yogurt",
+      "ButterMargarin": "Butter & Margarine",
+      "AyranKefir": "Ayran & Kefir"
+    }
+  },
+  "Category-8": {
+    "CategoryName": "Breakfast",
+    "AltCategory": {
+      "Eggs": "Eggs",
+      "DeliProducts": "Deli Products",
+      "Olives": "Olives",
+      "CerealGranola": "Cereal & Granola",
+      "HoneyJam": "Honey & Jam",
+      "Spreads": "Spreads",
+      "Cheese": "Cheese",
+      "Tea": "Tea",
+      "Halva": "Halva",
+      "Vegan": "Vegan"
+    }
+  },
+  "Category-9": {
+    "CategoryName": "Ready to Eat",
+    "AltCategory": {
+      "Sandwiches": "Sandwiches",
+      "InstantMeal": "Instant Meal",
+      "FrozenFoods": "Frozen Foods",
+      "Desserts": "Desserts",
+      "CigKofte": "Çiğ Köfte",
+      "Vegan": "Vegan",
+      "Appetizers": "Appetizers"
+    }
+  },
+  "Category-10": {
+    "CategoryName": "Fit & Form",
+    "AltCategory": {
+      "Bars": "Bars",
+      "Granola": "Granola",
+      "CrackersBiscuits": "Crackers & Biscuits",
+      "Cereal": "Cereal",
+      "GlutenFree": "Gluten-Free",
+      "Vegan": "Vegan"
+    }
+  },
+  "Category-11": {
+    "CategoryName": "Personal Care",
+    "AltCategory": {
+      "OralCare": "Oral Care",
+      "HairCare": "Hair Care",
+      "ShowerBath": "Shower & Bath",
+      "Soap": "Soap",
+      "Deodorant": "Deodorant",
+      "HygienicPads": "Hygienic Pads",
+      "Cosmetics": "Cosmetics",
+      "PrePostShave": "Pre & Post Shave",
+      "BodyHandCare": "Body & Hand Care",
+      "WaxDepilatory": "Wax & Depilatory",
+      "WetWipes": "Wet Wipes",
+      "HairDye": "Hair Dye",
+      "Health": "Health",
+      "Cologne": "Cologne"
+    }
+  },
+  "Category-12": {
+    "CategoryName": "Home Care",
+    "AltCategory": {
+      "Cleaning": "Cleaning",
+      "Laundry": "Laundry",
+      "Paper": "Paper",
+      "Kitchen": "Kitchen",
+      "Dishes": "Dishes",
+      "Soap": "Soap",
+      "Scents": "Scents"
+    }
+  },
+  "Category-13": {
+    "CategoryName": "Home & Living",
+    "AltCategory": {
+      "NewspaperMagazines": "Newspaper",
+      "Kitchenware": "Kitchenware",
+      "Batteries": "Batteries",
+      "GamesToys": "Games & Toys",
+      "ElectricityLighting": "Electricity & Lighting",
+      "Stationery": "Stationery",
+      "Picnic": "Picnic",
+      "Umbrella": "Umbrella",
+      "ShoeCare": "Shoe Care",
+      "Other": "Other"
+    }
+  },
+  "Category-14": {
+    "CategoryName": "Tech",
+    "AltCategory": {
+      "PhoneAccessories" : "Phone Accessories",
+      "BatteryChargersCable": "Battery & Cable",
+      "Music": "Music",
+      "ComputerAccessories": "Computer Accessories"
+    }
+  },
+  "Category-15": {
+    "CategoryName": "Pet Food",
+    "AltCategory": {
+      "Cats": "Cats",
+      "Dogs": "Dogs",
+      "Birds": "Birds"
+    }
+  },
+  "Category-16": {
+    "CategoryName": "Baby Care",
+    "AltCategory": {
+      "Diapers": "Diapers",
+      "BabyCare": "Baby Care",
+      "BabyFoods": "Baby Foods",
+      "BabyBottles": "Baby Bottles"
+    }
+  },
+  "Category-17": {
+    "CategoryName": "Sex Health",
+    "AltCategory": {
+      "Condoms": "Condoms",
+      "GelsLubricants": "Gels & Lubricants"
+    }
+  }
     }
   },
   "Footer" : {

@@ -1,23 +1,20 @@
+import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { Dispatch, SetStateAction } from 'react'
 import { AltCategory } from '../../../../libs/types/types'
 import { twMerge } from 'tailwind-merge'
-import Link from 'next/link'
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { useDispatch, useSelector } from 'react-redux'
-import { getSelectedAltCategoryIndex, setSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { usePathname } from 'next-intl/client'
+import { useDispatch } from 'react-redux'
+import { setSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
 
 type TProps = {
    altCategory: AltCategory
    index: number
    selectedIndex: number
    setSelectedIndex: Dispatch<SetStateAction<number>>
+   t: any
 }
 
-export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex }: TProps) => {
+export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex, t }: TProps) => {
    const dispatch = useDispatch()
-
    const handleLinkButtonClick = () => {
       setSelectedIndex(index)
       dispatch(setSelectedAltCategoryIndex(index))
@@ -35,7 +32,7 @@ export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex }:
                      'baseTablet:rounded-none baseTablet:border-0 baseTablet:bg-transparent baseTablet:px-0 baseTablet:py-0 baseTablet:py-0 baseTablet:text-[14px] baseTablet:text-slate-600',
                   index === selectedIndex && 'border-skin-theme-600 bg-skin-theme-700 text-white',
                )}>
-               {altCategory.languageCode}
+               {t(altCategory.languageCode)}
             </h6>
          </span>
          <ChevronRightIcon

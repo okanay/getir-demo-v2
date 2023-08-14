@@ -22,32 +22,6 @@
         "deliveryButton" : "Teslimat Adresini Belirle"
       }
     },
-    "categories" : {
-      "title" : "Kategoriler",
-      "categoriesItems" : {
-        "category-1" : "Su & İçecek",
-        "category-2" : "Meyve & Sebze",
-        "category-3" : "Fırından",
-        "category-4" : "Temel Gıda",
-
-        "category-5" : "Atıştırmalık",
-        "category-6" : "Dondurma",
-        "category-7" : "Süt Ürünleri",
-        "category-8" : "Kahvaltılık",
-
-        "category-9" : "Yiyecek",
-        "category-10" : "Fit & Form",
-        "category-11" : "Kişisel Bakım",
-        "category-12" : "Ev Bakım",
-
-        "category-13" : "Ev & Yaşam",
-        "category-14" : "Teknoloji",
-        "category-15" : "Evcil Hayvan",
-        "category-16" : "Bebek",
-
-        "category-17" : "Cinsel Sağlık"
-      }
-    },
     "promotions" : {
       "title" : "Kampanyalar",
       "altTitle" : "Getir'i indirin!",
@@ -75,8 +49,222 @@
     }
   },
   "Categories" : {
-    "ProductMenu" : {
-      "Title" : "Kategoriler"
+    "CategoriesMenuTitle" : "Kategoriler",
+    "CategoriesList" : {
+    "Category-1": {
+      "CategoryName": "Su & İçecek",
+      "AltCategory": {
+        "Water": "Su",
+        "Ice": "Buz",
+        "Soda": "Soda",
+        "SparklingWater": "Madensuyu",
+        "AyranKefir": "Ayran & Kefir",
+        "IcedTea": "Soğuk Çay",
+        "Juice": "Meyve Suyu",
+        "Coffee": "Kahve",
+        "Tea": "Çay",
+        "EnergyDrink": "Enerji İçeceği",
+        "FunctionalDrinks": "Fonksiyonel İçecekler"
+      }
+    },
+    "Category-2": {
+      "CategoryName": "Meyve & Sebze",
+      "AltCategory": {
+        "Fruits": "Meyveler",
+        "Vegetables": "Sebzeler"
+      }
+    },
+    "Category-3": {
+      "CategoryName": "Fırından",
+      "AltCategory": {
+        "FreshBakery": "Taze Fırın Ürünleri",
+        "Bakery": "Fırın Ürünleri",
+        "FrozenBakery": "Dondurulmuş",
+        "GlutenFree": "Gluten-Free"
+      }
+    },
+    "Category-4": {
+      "CategoryName": "Temel Gıda",
+      "AltCategory": {
+        "Pasta": "Makarna",
+        "Rice": "Pirinç",
+        "Bulghur": "Bulgur",
+        "Legumes": "Kuru Baklagiller",
+        "Paste": "Makarna Sosları",
+        "Sauce": "Soslar",
+        "CannedFood": "Konserve Ürünler",
+        "Flour": "Un",
+        "Oil": "Yağ",
+        "OliveOil": "Zeytinyağı",
+        "Sugar": "Şeker",
+        "VinegarSaladDressing": "Sirke & Salata Sosları",
+        "Spices": "Baharatlar",
+        "Soup": "Çorbalar",
+        "Desserts": "Tatlılar",
+        "CakeIngredients": "Kek Malzemeleri",
+        "Cream": "Krema",
+        "ButterMargarine": "Tereyağı & Margarin"
+      }
+    },
+    "Category-5": {
+      "CategoryName": "Atıştırmalık",
+      "AltCategory": {
+        "GoesWellWith": "İyi Gider",
+        "Chips": "Cips",
+        "Nuts": "Kuruyemişler",
+        "Cakes": "Pastalar",
+        "Biscuits": "Bisküviler",
+        "Wafer": "Vafel",
+        "TabletChocolate": "Tablet Çikolata",
+        "ChocolateBar": "Çikolata Bar",
+        "GiftBoxes": "Hediye Kutuları",
+        "Spreads": "Ezme & Krem",
+        "CrackersCookies": "Krakerler & Kurabiyeler",
+        "CandyGum": "Şeker & Sakız",
+        "DrageesChocolatesKids": "Çocuklar İçin",
+        "FitForm": "Fit & Form",
+        "Dessert": "Tatlı"
+      }
+    },
+    "Category-6": {
+      "CategoryName": "Dondurma",
+      "AltCategory": {
+        "Stick": "Çubuk Dondurma",
+        "Bar": "Bar Dondurma",
+        "Cone": "Koni Dondurma",
+        "IceCreamPacks": "Dondurma Paketleri",
+        "Multipack": "Çoklu Paket Dondurma",
+        "Cup": "Kase Dondurma",
+        "IceCreamSauce": "Dondurma Sosları"
+      }
+    },
+    "Category-7": {
+      "CategoryName": "Süt Ürünleri",
+      "AltCategory": {
+        "Milk": "Süt",
+        "Cheese": "Peynir",
+        "Yogurt": "Yoğurt",
+        "ButterMargarin": "Tereyağı & Margarin",
+        "AyranKefir": "Ayran & Kefir"
+      }
+    },
+    "Category-8": {
+      "CategoryName": "Kahvaltılık",
+      "AltCategory": {
+        "Eggs": "Yumurta",
+        "DeliProducts": "Şarküteri Ürünleri",
+        "Olives": "Zeytinler",
+        "CerealGranola": "Müsli & Granola",
+        "HoneyJam": "Bal & Reçel",
+        "Spreads": "Ezme & Krem",
+        "Cheese": "Peynir",
+        "Tea": "Çay",
+        "Halva": "Helva",
+        "Vegan": "Vegan"
+      }
+    },
+    "Category-9": {
+      "CategoryName": "Yiyecek",
+      "AltCategory": {
+        "Sandwiches": "Sandviçler",
+        "InstantMeal": "Hazır Yemekler",
+        "FrozenFoods": "Dondurulmuş Yiyecekler",
+        "Desserts": "Tatlılar",
+        "CigKofte": "Çiğ Köfte",
+        "Vegan": "Vegan",
+        "Appetizers": "Aperatifler"
+      }
+    },
+    "Category-10": {
+      "CategoryName": "Fit & Form",
+      "AltCategory": {
+        "Bars": "Barlar",
+        "Granola": "Granola",
+        "CrackersBiscuits": "Krakerler & Bisküviler",
+        "Cereal": "Tahıllar",
+        "GlutenFree": "Gluten-Free",
+        "Vegan": "Vegan"
+      }
+    },
+    "Category-11": {
+      "CategoryName": "Kişisel Bakım",
+      "AltCategory": {
+        "OralCare": "Ağız Bakımı",
+        "HairCare": "Saç Bakımı",
+        "ShowerBath": "Duş & Banyo",
+        "Soap": "Sabun",
+        "Deodorant": "Deodorant",
+        "HygienicPads": "Hijyenik Pedler",
+        "Cosmetics": "Kozmetik Ürünleri",
+        "PrePostShave": "Traş Öncesi & Sonrası",
+        "BodyHandCare": "Vücut & El Bakımı",
+        "WaxDepilatory": "Ağda & Epilasyon",
+        "WetWipes": "Islak Mendiller",
+        "HairDye": "Saç Boyaları",
+        "Health": "Sağlık Ürünleri",
+        "Cologne": "Kolonya"
+      }
+    },
+    "Category-12": {
+      "CategoryName": "Ev Bakım",
+      "AltCategory": {
+        "Cleaning": "Temizlik",
+        "Laundry": "Çamaşır",
+        "Paper": "Kağıt Ürünleri",
+        "Kitchen": "Mutfak",
+        "Dishes": "Bulaşıklar",
+        "Soap": "Sabun",
+        "Scents": "Kokular"
+      }
+    },
+    "Category-13": {
+      "CategoryName": "Ev & Yaşam",
+      "AltCategory": {
+        "NewspaperMagazines": "Gazete & Dergi",
+        "Kitchenware": "Mutfak Eşyaları",
+        "Batteries": "Piller",
+        "GamesToys": "Oyunlar & Oyuncaklar",
+        "ElectricityLighting": "Elektrik & Aydınlatma",
+        "Stationery": "Kırtasiye",
+        "Picnic": "Piknik",
+        "Umbrella": "Şemsiye",
+        "ShoeCare": "Ayakkabı Bakımı",
+        "Other": "Diğer"
+      }
+    },
+    "Category-14": {
+      "CategoryName": "Teknoloji",
+      "AltCategory": {
+        "PhoneAccessories" : "Telefon Parçaları",
+        "BatteryChargersCable": "Batarya & Kablo",
+        "Music": "Müzik",
+        "ComputerAccessories": "Bilgiyar Parçaları"
+      }
+    },
+    "Category-15": {
+      "CategoryName": "Evcil Hayvan",
+      "AltCategory": {
+        "Cats": "Kediler",
+        "Dogs": "Köpekler",
+        "Birds": "Kuşlar"
+      }
+    },
+    "Category-16": {
+      "CategoryName": "Bebek",
+      "AltCategory": {
+        "Diapers": "Bebek Bezi",
+        "BabyCare": "Bebek Bakımı",
+        "BabyFoods": "Bebek Mamaları",
+        "BabyBottles": "Biberonlar"
+      }
+    },
+    "Category-17": {
+      "CategoryName": "Cinsel Sağlık",
+      "AltCategory": {
+        "Condoms": "Kondomlar",
+        "GelsLubricants": "Jeller & Lubrikantlar"
+      }
+    }
     }
   },
   "Footer" : {

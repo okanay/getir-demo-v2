@@ -4,9 +4,10 @@ import Link from 'next/link'
 
 import { Category } from '../../../../libs/types/types'
 import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
-export const CategoryItem = ({ category, t }: { category: Category; t: any }) => {
+export const CategoryItem = ({ category }: { category: Category }) => {
+   const t = useTranslations('Categories.CategoriesList')
    const locale = useLocale()
 
    return (
@@ -19,7 +20,7 @@ export const CategoryItem = ({ category, t }: { category: Category; t: any }) =>
                <ImageOptimization alt={{ tr: '', en: '' }} imageNormal={category.image} imageSmall={category.imageSmall} />
             </div>
             <h4 className={'text-[10px] font-medium leading-[16px] text-slate-700 smPhone:text-[14px]'}>
-               {t('categoriesItems.' + category.languageCode)}
+               {t(category.languageCode)}
             </h4>
          </div>
       </Link>
