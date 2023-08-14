@@ -41,9 +41,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
 
    return (
       <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent  baseTablet:w-full">
-         <button
-            className={'flex w-full flex-row items-center justify-between px-2 py-2 baseTablet:py-2'}
-            onClick={handleSelectLink}>
+         <button className={'flex w-full flex-row items-center justify-between'} onClick={handleSelectLink}>
             <span className={'flex items-center justify-start gap-2'}>
                <div className={'hidden h-8 w-8 rounded border border-gray-200 baseTablet:block'}>
                   <ImageOptimization alt={{ tr: '', en: '' }} imageNormal={category.image} imageSmall={category.imageSmall} />
