@@ -1,6 +1,5 @@
 import { ProductItemLoadingSkeleton } from '@/components/Categories-Page-Components/ProductItems/ProductItemLoadingSkeleton'
 import { nanoid } from '@reduxjs/toolkit'
-import { useState } from 'react'
 
 export const ProductsLoading = () => {
    return (

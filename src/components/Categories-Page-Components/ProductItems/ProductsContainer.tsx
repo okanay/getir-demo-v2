@@ -1,11 +1,11 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { Category } from '../../../../libs/types/types'
-import { TProducts } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
+import { useTranslations } from 'next-intl'
 import { nanoid } from '@reduxjs/toolkit'
 import { AltCategoryContainer } from '@/components/Categories-Page-Components/ProductItems/AltCategoryContainer'
+import { TProducts } from '../../../../libs/constants/DummyProducts'
+import { Category } from '../../../../libs/types/types'
 
 type TProps = {
    data: Category

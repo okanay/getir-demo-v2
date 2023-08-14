@@ -1,21 +1,21 @@
 import { Suspense } from 'react'
-import { Category } from '../../../../libs/types/types'
 import { ProductsContainer } from '@/components/Categories-Page-Components/ProductItems/ProductsContainer'
 import { ProductsLoading } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
 import { DummyData } from '../../../../libs/constants/DummyProducts'
+import { Category } from '../../../../libs/types/types'
 
 type TProps = {
    categories?: string
    searchParams?: { [key: string]: string | string[] | undefined }
-   data: Category
+   category: Category
 }
 
-export const ProductItemsFetch = async ({ categories = 'beverages', data }: TProps) => {
-   const products = await ProductFetch(data)
+export const ProductItemsFetch = async ({ categories = 'beverages', category }: TProps) => {
+   const products = await ProductFetch(category)
 
    return (
       <Suspense fallback={<ProductsLoading />}>
-         <ProductsContainer data={data} products={products} />{' '}
+         <ProductsContainer data={category} products={products} />{' '}
       </Suspense>
    )
 }

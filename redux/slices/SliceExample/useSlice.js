@@ -14,4 +14,4 @@ export const useSlice = () => {
 
 // 'use client'
 // import { useSlice } from '../../redux/slices/useSlice'
-// const { data, loading, errorValues, message } = useSlice()
+// const { category, loading, errorValues, message } = useSlice()

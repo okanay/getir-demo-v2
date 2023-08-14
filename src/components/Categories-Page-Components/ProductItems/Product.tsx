@@ -1,8 +1,8 @@
 import { PlusIcon } from '@heroicons/react/20/solid'
 import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
-import { TProduct } from '../../../../libs/constants/DummyProducts'
 import { twMerge } from 'tailwind-merge'
 import { useLocale } from 'next-intl'
+import { TProduct } from '../../../../libs/constants/DummyProducts'
 
 type TProps = {
    product: TProduct
