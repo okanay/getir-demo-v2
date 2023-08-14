@@ -3,13 +3,13 @@
 import { useTranslations } from 'next-intl'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { Category } from '../../../../libs/types/types'
-import { Products } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
+import { TProducts } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
 import { nanoid } from '@reduxjs/toolkit'
 import { AltCategoryContainer } from '@/components/Categories-Page-Components/ProductItems/AltCategoryContainer'
 
 type TProps = {
    data: Category
-   products: Products
+   products: TProducts
 }
 
 export const ProductsContainer = ({ data, products }: TProps) => {

@@ -195,7 +195,7 @@ export const CategoryList: Categories = [
 
       altCategories: [
          { unique: 'C8', id: 100, languageCode: 'Eggs', name: 'Eggs', url: '#eggs' },
-         { unique: 'C8', id: 101, languageCode: 'DeliProducts', name: 'Deli Products', url: '#deli-products' },
+         { unique: 'C8', id: 101, languageCode: 'DeliProducts', name: 'Deli TProducts', url: '#deli-products' },
          { unique: 'C8', id: 102, languageCode: 'Olives', name: 'Olives', url: '#olives' },
          { unique: 'C8', id: 103, languageCode: 'CerealGranola', name: 'Cereal & Granola', url: '#cereal-granola' },
          { unique: 'C8', id: 104, languageCode: 'HoneyJam', name: 'Honey & Jam', url: '#honey-jam' },

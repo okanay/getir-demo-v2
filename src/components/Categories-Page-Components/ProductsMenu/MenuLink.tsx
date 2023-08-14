@@ -4,7 +4,7 @@ import { Category } from '../../../../libs/types/types'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
-import { CategoryItemImage } from '@/components/Index-Page-Components/Categories-Section/CategoryItemImage'
+import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
 
 import { useEffect, useState } from 'react'
 import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/AltLink'
@@ -46,7 +46,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
          <button className={'flex w-full flex-row items-center justify-between px-2'} onClick={handleSelectLink}>
             <span className={'flex items-center justify-start gap-2'}>
                <div className={'hidden h-8 w-8 rounded border border-gray-200 baseTablet:block'}>
-                  <CategoryItemImage category={category} />
+                  <ImageOptimization alt={{ tr: '', en: '' }} imageNormal={category.image} imageSmall={category.imageSmall} />
                </div>
                <h4 className="text-[12px] font-semibold text-slate-100 baseTablet:text-[14px] baseTablet:text-slate-600">
                   {t(category.languageCode)}
@@ -67,11 +67,11 @@ export const MenuLink = ({ category }: { category: Category }) => {
                         }}
                         animate={{
                            height: open ? 'var(--to-height, 0)' : 'var(--from-height, 0)',
-                           transition: { duration: 0.5, type: 'tween', ease: 'linear' },
+                           transition: { duration: 0.75, type: 'tween', ease: 'linear' },
                         }}
                         exit={{
                            height: 'var(--from-height, 0)',
-                           transition: { duration: 0.25, type: 'tween', ease: 'linear' },
+                           transition: { duration: 0.75, type: 'tween', ease: 'linear' },
                         }}>
                         <div className="flex flex-row items-center justify-start gap-2 px-4 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0">
                            {category.altCategories.map((altCategory, index) => (

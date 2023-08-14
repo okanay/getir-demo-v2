@@ -24,7 +24,7 @@ async function ProductFetch(category: Category) {
    return DummyData.filter(d => d.uniqueId === unique) || []
 }
 
-export const DummyData: Products = [
+export const DummyData: TProducts = [
    {
       productId: 1,
       uniqueId: '1',
@@ -41,13 +41,14 @@ export const DummyData: Products = [
             description: '12 x 330 ml',
          },
       ],
-      imageDetails: [
-         {
-            baseSrc: '',
-            smallSrc: '',
-            alt: '',
+      imageDetails: {
+         imageNormal: '/images/Products/Beverages/Water/1Normal.jpg',
+         imageSmall: '/images/Products/Beverages/Water/1Small.png',
+         alt: {
+            tr: '',
+            en: '',
          },
-      ],
+      },
       brand: {
          brandId: 1000,
          brandName: 'Kuzeyden Su',
@@ -62,12 +63,12 @@ export const DummyData: Products = [
    },
 ]
 
-export type Product = {
+export type TProduct = {
    productId: number
    uniqueId: string
    altCategoryId: number
-   productDetails: ProductDetail[]
-   imageDetails: ImageDetail[]
+   productDetails: TProductDetail[]
+   imageDetails: TProductImageDetail
    brand: {
       brandId: number
       brandName: string
@@ -81,16 +82,19 @@ export type Product = {
    }
 }
 
-export type ProductDetail = {
+export type TProductDetail = {
    lan: string
    text: string
    description: string
 }
 
-export type ImageDetail = {
-   baseSrc: string
-   smallSrc: string
-   alt: string
+export type TProductImageDetail = {
+   imageNormal: string
+   imageSmall: string
+   alt: {
+      tr: string
+      en: string
+   }
 }
 
-export type Products = Product[]
+export type TProducts = TProduct[]
