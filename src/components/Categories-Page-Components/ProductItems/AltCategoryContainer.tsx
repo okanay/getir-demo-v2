@@ -1,7 +1,7 @@
 'use client'
 
-import { TProducts } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
 import { AltCategory } from '../../../../libs/types/types'
+import { TProducts } from '../../../../libs/constants/DummyProducts'
 
 import { nanoid } from '@reduxjs/toolkit'
 import { useEffect } from 'react'
