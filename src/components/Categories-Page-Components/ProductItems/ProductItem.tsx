@@ -8,7 +8,7 @@ type TProps = {
    product: TProduct
 }
 
-export const Product = ({ product }: TProps) => {
+export const ProductItem = ({ product }: TProps) => {
    const { imageDetails, price, productDetails } = product
    const locale = useLocale()
 

@@ -10,8 +10,8 @@ import { useMediaQuery, useScrollIntoView } from '@mantine/hooks'
 
 import { getSelectedAltCategoryIndex, resetSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
 
-import { Product } from '@/components/Categories-Page-Components/ProductItems/Product'
-import { DummyDataRender } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
+import { ProductItem } from '@/components/Categories-Page-Components/ProductItems/ProductItem'
+import { DummyDataRender } from '@/components/Categories-Page-Components/ProductItems/LoadingItems'
 import { useTranslations } from 'next-intl'
 
 type TProps = {
@@ -20,7 +20,7 @@ type TProps = {
    products: TProducts
 }
 
-export const AltCategoryContainer = ({ index, altCategory, products }: TProps) => {
+export const ProductsAltCategory = ({ index, altCategory, products }: TProps) => {
    const t = useTranslations('Categories.CategoriesList')
 
    // FILTER FETCH PRODUCT LIKE, WATER, SODA,
@@ -56,7 +56,7 @@ export const AltCategoryContainer = ({ index, altCategory, products }: TProps) =
             <h1 className={'px-4 text-[14px] font-semibold text-slate-900 baseTablet:px-0'}>{t(altCategory.languageCode)}</h1>
          ) : null}
          <div className="grid h-fit w-full grid-cols-2 gap-[1px] rounded-lg bg-gray-100 smTablet:grid-cols-3 desktop:grid-cols-4">
-            {data !== undefined && data.map(d => <Product product={d} key={nanoid()} />)}
+            {data !== undefined && data.map(d => <ProductItem product={d} key={nanoid()} />)}
             <DummyDataRender copyCount={6} />
          </div>
       </section>

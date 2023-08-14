@@ -12,7 +12,7 @@ export const CategoriesFooter = () => {
       <>
          {/*<div*/}
          {/*    onPointerDown={onPointerDown}*/}
-         {/*className={'h-20 w-40 bg-red-400 transition-all duration-500 category-[open=true]:h-40 category-[open=true]:bg-blue-400'}></div>*/}
+         {/*className={'h-20 w-40 bg-red-400 transition-all duration-500 data-[open=true]:h-40 data-[open=true]:bg-blue-400'}></div>*/}
          )
       </>
    )

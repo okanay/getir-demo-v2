@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import { ProductsContainer } from '@/components/Categories-Page-Components/ProductItems/ProductsContainer'
-import { ProductsLoading } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
+import { LoadingItems } from '@/components/Categories-Page-Components/ProductItems/LoadingItems'
 import { DummyData } from '../../../../libs/constants/DummyProducts'
 import { Category } from '../../../../libs/types/types'
 
@@ -14,7 +14,7 @@ export const ProductItemsFetch = async ({ categories = 'beverages', category }: 
    const products = await ProductFetch(category)
 
    return (
-      <Suspense fallback={<ProductsLoading />}>
+      <Suspense fallback={<LoadingItems />}>
          <ProductsContainer data={category} products={products} />{' '}
       </Suspense>
    )

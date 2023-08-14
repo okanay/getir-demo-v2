@@ -1,5 +1,5 @@
-import { ProductsLoading } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
+import { LoadingItems } from '@/components/Categories-Page-Components/ProductItems/LoadingItems'
 
 export default function Loading() {
-   return <ProductsLoading />
+   return <LoadingItems />
 }

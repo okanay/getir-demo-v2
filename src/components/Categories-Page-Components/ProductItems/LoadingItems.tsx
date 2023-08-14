@@ -1,6 +1,18 @@
 import { PlusIcon } from '@heroicons/react/20/solid'
+import { nanoid } from '@reduxjs/toolkit'
 
-export const ProductItemLoadingSkeleton = () => {
+export const LoadingItems = () => {
+   return (
+      <div className="flex h-full w-full w-full flex-col items-start justify-start gap-2">
+         <div className={'h-4 w-[200px] animate-pulse bg-slate-400/40'} />
+         <div className="grid h-fit w-full grid-cols-2 gap-[1px] rounded-lg bg-gray-100 smTablet:grid-cols-3 baseLaptop:grid-cols-4">
+            <DummyDataRender copyCount={12} />
+         </div>
+      </div>
+   )
+}
+
+export const ProductItemSkeleton = () => {
    return (
       <article className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
          <div className={'relative row-span-1 flex h-full w-full flex-col items-center justify-center'}>
@@ -16,4 +28,12 @@ export const ProductItemLoadingSkeleton = () => {
          </div>
       </article>
    )
+}
+
+export const DummyDataRender = ({ copyCount }: { copyCount: number }) => {
+   const divs = []
+   for (let i = 0; i < copyCount; i++) {
+      divs.push(<ProductItemSkeleton key={nanoid()} />)
+   }
+   return divs
 }
