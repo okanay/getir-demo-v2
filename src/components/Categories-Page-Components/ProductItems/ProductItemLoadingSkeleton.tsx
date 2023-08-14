@@ -4,7 +4,7 @@ export const ProductItemLoadingSkeleton = () => {
    return (
       <article className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
          <div className={'relative row-span-1 flex h-full w-full flex-col items-center justify-center'}>
-            <div className={'mt-4 h-[96px] w-[96px] animate-pulse rounded-full bg-gray-200'}></div>
+            <div className={'mt-4 h-[80px] w-[80px] animate-pulse bg-gray-200'}></div>
             <div className={'absolute right-1.5 top-1.5 h-[32px] w-[32px] rounded-lg border border-gray-200 bg-slate-300'}>
                <PlusIcon className={'w-full p-1 text-white '} />
             </div>

@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation'
 import { useParams } from 'next/navigation'
 import { resetSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
 import { useDispatch } from 'react-redux'
+import { useMediaQuery } from '@mantine/hooks'
 
 export const MenuLink = ({ category }: { category: Category }) => {
    const t = useTranslations('Index.categories.categoriesItems')
@@ -22,6 +23,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
 
    const categoryPathname = pathname.categories || undefined
    //
+   const matches = useMediaQuery('(min-width: 760px)')
    const [open, setOpen] = useState<boolean>(true)
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
    const [count, setCount] = useState(0)
@@ -29,7 +31,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
    const handleSelectLink = () => {
       setCount(count + 1)
       if (category.slugName !== categoryPathname) {
-         router.push(category.url, { scroll: false })
+         router.push(category.url, { scroll: !matches })
          setSelectedIndex(0)
 
          setOpen(true)

@@ -45,8 +45,10 @@ export const AltCategoryContainer = ({ index, altCategory, products }: TProps) =
          id={altCategory.url}
          ref={targetRef}
          className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}>
-         {index !== 0 ? <h1 className={'text-[14px] text-slate-900'}>{altCategory.name}</h1> : null}
-         <div className="grid h-fit w-full grid-cols-2 gap-[1px] rounded-lg bg-gray-100 smTablet:grid-cols-3 baseLaptop:grid-cols-4">
+         {index !== 0 ? (
+            <h1 className={'px-4 text-[14px] font-semibold text-slate-900 baseTablet:px-0'}>{altCategory.name}</h1>
+         ) : null}
+         <div className="grid h-fit w-full grid-cols-2 gap-[1px] rounded-lg bg-gray-100 smTablet:grid-cols-3 desktop:grid-cols-4">
             {data !== undefined &&
                data.map(d => (
                   <article key={nanoid()} className={'grid h-[210px] w-full grid-rows-2 bg-white'}>

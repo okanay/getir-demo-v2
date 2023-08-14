@@ -10,9 +10,9 @@ export const ProductsMenu = () => {
    const [client, setClient] = useState<boolean>(true)
 
    return (
-      <aside className="sticky top-0 z-[200] w-full baseTablet:h-fit baseTablet:max-w-[240px] baseTablet:flex-shrink-0 baseTablet:flex-grow baseTablet:basis-[100%] baseTablet:py-2">
+      <aside className="sticky top-0 z-[200] mb-16 w-full baseTablet:h-fit baseTablet:max-w-[240px] baseTablet:flex-shrink-0 baseTablet:flex-grow baseTablet:basis-[100%]">
          <div className={'flex-start flex flex-col gap-y-2'}>
-            <MenuTitle className={'hidden text-[14px] text-slate-900 baseTablet:block'} />
+            <MenuTitle className={'hidden text-[14px] font-semibold text-slate-900 baseTablet:block'} />
             <MenuLinks />
          </div>
       </aside>

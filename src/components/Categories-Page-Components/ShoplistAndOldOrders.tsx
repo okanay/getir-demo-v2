@@ -1,13 +1,23 @@
+import ShopBGImage from '../../../public/images/shoplist-bg-image.svg'
+import Image from 'next/image'
+
 export const ShoplistAndOldOrders = () => {
    return (
-      <aside className="flex-grow-1 sticky top-0 mt-14 hidden h-96 h-fit w-full max-w-[240px] flex-shrink-0 basis-[100%] px-6 py-2 baseTablet:mt-0 baseTablet:px-4 baseLaptop:block">
-         <div className={'flex flex-col items-start justify-start gap-16 '}>
-            <div className={'flex-start flex flex-col'}>
-               <h4>Sepet</h4>
-            </div>
-
-            <div className={'flex-start flex flex-col'}>
-               <h4>Onceki Siparisler</h4>
+      <aside className="flex-grow-1 sticky top-0 hidden flex-shrink-0 font-openSans baseLaptop:block">
+         <div className={'flex h-full flex-col items-start justify-start gap-16'}>
+            <div className={'flex-start flex h-full flex-shrink-0 flex-col gap-y-2'}>
+               <h4 className={'text-[14px] font-semibold text-slate-900'}>Sepetim</h4>
+               <div className={'rounded-lg border-2 border-amber-400 bg-white px-4 py-16'}>
+                  <div className={'flex h-full flex-col items-center justify-center gap-8'}>
+                     <Image src={ShopBGImage} alt={''} className={'scale-125'} />
+                     <div className={'flex h-full max-w-[280px] flex-col items-center justify-center gap-1 text-center'}>
+                        <span className={'text-[16px] font-semibold text-skin-theme-700'}>Sepetiniz şu an boş</span>
+                        <span className={'text-[14px] font-semibold text-gray-400'}>
+                           Sipariş vermek için sepetinize ürün ekleyin
+                        </span>
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
       </aside>
