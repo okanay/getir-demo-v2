@@ -1,14 +1,18 @@
 'use client'
 
+import { TProducts } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
 import { AltCategory } from '../../../../libs/types/types'
+
 import { nanoid } from '@reduxjs/toolkit'
-import { DummyDataRender } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getSelectedAltCategoryIndex, resetSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
 import { useMediaQuery, useScrollIntoView } from '@mantine/hooks'
+
+import { getSelectedAltCategoryIndex, resetSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
+
 import { Product } from '@/components/Categories-Page-Components/ProductItems/Product'
-import { TProducts } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
+import { DummyDataRender } from '@/components/Categories-Page-Components/ProductItems/ProductsLoading'
+
 type TProps = {
    index: number
    altCategory: AltCategory
