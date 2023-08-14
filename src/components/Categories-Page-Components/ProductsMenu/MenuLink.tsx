@@ -1,18 +1,14 @@
-'use client'
-
 import { Category } from '../../../../libs/types/types'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
 import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/AltLink'
 import { useRouter } from 'next/navigation'
 
 import { useParams } from 'next/navigation'
-import { resetSelectedAltCategoryIndex } from '../../../../redux/slices/SelectedAltCatIndexSlice'
-import { useDispatch } from 'react-redux'
 import { useMediaQuery } from '@mantine/hooks'
 
 export const MenuLink = ({ category }: { category: Category }) => {
