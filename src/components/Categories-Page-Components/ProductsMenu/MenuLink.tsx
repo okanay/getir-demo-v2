@@ -1,18 +1,16 @@
 'use client'
 
-import { ButtonTypeElement, Category } from '../../../../libs/types/types'
-import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
+import { Category } from '../../../../libs/types/types'
+import { motion, MotionConfig } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
 import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
 
-import { ButtonHTMLAttributes, PointerEventHandler, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/AltLink'
 import { useRouter } from 'next/navigation'
 
 import { useParams } from 'next/navigation'
-import { useMediaQuery } from '@mantine/hooks'
-import Link from 'next/link'
 
 export const MenuLink = ({ category }: { category: Category }) => {
    const t = useTranslations('Categories.CategoriesList')

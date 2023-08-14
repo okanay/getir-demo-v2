@@ -1,6 +1,7 @@
 import { CategoryList } from '../../../../../libs/constants/CategoriesList'
 import { redirect } from 'next/navigation'
 import { ProductItemsFetch } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
+import { LoadingItems } from '@/components/Categories-Page-Components/ProductItems/LoadingItems'
 
 type TProps = {
    params: { categories: string }
@@ -12,5 +13,6 @@ export default async function CategoriesRootPage({ searchParams, params: { categ
    if (validCategory === undefined) redirect('/')
    if (validCategory.slugName !== categories) redirect('/')
 
-   return <ProductItemsFetch searchParams={searchParams} category={validCategory} />
+   // return <ProductItemsFetch searchParams={searchParams} category={validCategory} />
+   return <LoadingItems />
 }
