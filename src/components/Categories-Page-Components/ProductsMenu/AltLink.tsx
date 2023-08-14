@@ -1,3 +1,5 @@
+'use client'
+
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { Dispatch, SetStateAction } from 'react'
 import { AltCategory } from '../../../../libs/types/types'

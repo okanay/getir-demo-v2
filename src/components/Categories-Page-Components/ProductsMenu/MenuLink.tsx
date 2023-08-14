@@ -1,3 +1,5 @@
+'use client'
+
 import { Category } from '../../../../libs/types/types'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
