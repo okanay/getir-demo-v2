@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-   index: 0 as number,
+   index: -1 as number,
 }
 
 export const SelectedAltCatIndexSlice = createSlice({
@@ -9,7 +9,7 @@ export const SelectedAltCatIndexSlice = createSlice({
    initialState,
    reducers: {
       resetSelectedAltCategoryIndex: state => {
-         state.index = 0
+         state.index = -1
       },
 
       setSelectedAltCategoryIndex: (state, action: { payload: number }) => {

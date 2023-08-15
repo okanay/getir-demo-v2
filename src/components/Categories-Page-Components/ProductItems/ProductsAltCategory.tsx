@@ -4,7 +4,7 @@ import { AltCategory } from '../../../../libs/types/types'
 import { TProducts } from '../../../../libs/constants/DummyProducts'
 
 import { nanoid } from '@reduxjs/toolkit'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useMediaQuery, useScrollIntoView } from '@mantine/hooks'
 
@@ -23,7 +23,6 @@ type TProps = {
 export const ProductsAltCategory = ({ index, altCategory, products }: TProps) => {
    const t = useTranslations('Categories.CategoriesList')
 
-   // FILTER FETCH PRODUCT LIKE, WATER, SODA,
    const data: TProducts | undefined = products.filter(p => p.altCategoryId === altCategory.id) || undefined
    //
    const dispatch = useDispatch()

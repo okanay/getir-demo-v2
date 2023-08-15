@@ -32,7 +32,8 @@ export const MenuLink = ({ category }: { category: Category }) => {
          event.preventDefault()
          if (matches) return setOpen(!open)
       } else {
-         router.push(category.url, { scroll: false })
+         window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+         router.push(category.url)
       }
    }
 
@@ -46,7 +47,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
    }, [isCurrentCategory])
 
    return (
-      <MotionConfig transition={{ duration: !matches ? 0 : 0.4, type: 'tween', ease: 'linear' }}>
+      <MotionConfig transition={{ duration: !matches ? 0 : 0.6, type: 'tween', ease: 'circOut' }}>
          <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent baseTablet:w-full">
             <button
                type={'button'}
