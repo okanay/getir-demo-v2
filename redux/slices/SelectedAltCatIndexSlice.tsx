@@ -18,7 +18,6 @@ export const SelectedAltCatIndexSlice = createSlice({
    },
 })
 
-export const getSelectedAltCategoriesIndexSlice = (state: any) => state.selectedAltCatIndexSlice
 export const getSelectedAltCategoryIndex = (state: any) => state.selectedAltCatIndexSlice.index
 export const { resetSelectedAltCategoryIndex, setSelectedAltCategoryIndex } = SelectedAltCatIndexSlice.actions
 export default SelectedAltCatIndexSlice.reducer

@@ -1,8 +1,13 @@
+'use client'
+
+import { TProduct, TProducts } from '../../../../libs/constants/DummyProducts'
 import { PlusIcon } from '@heroicons/react/20/solid'
+import { useDispatch, useSelector } from 'react-redux'
 import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
 import { twMerge } from 'tailwind-merge'
 import { useLocale } from 'next-intl'
-import { TProduct } from '../../../../libs/constants/DummyProducts'
+import { addProductsToShopList, getShopListProducts } from '../../../../redux/slices/ShopListSlice'
+import { useEffect } from 'react'
 
 type TProps = {
    product: TProduct
@@ -11,6 +16,18 @@ type TProps = {
 export const ProductItem = ({ product }: TProps) => {
    const { imageDetails, price, productDetails } = product
    const locale = useLocale()
+
+   const dispatch = useDispatch()
+   const products: TProducts = useSelector(getShopListProducts)
+
+   // useEffect(() => {
+   //    const selectedProductCount = products.filter(p => p.productId === product.productId)
+   //
+   // }, [product.productId, products])
+
+   const handleAddShopListButton = () => {
+      dispatch(addProductsToShopList(product.productId))
+   }
 
    return (
       <article className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
@@ -22,7 +39,9 @@ export const ProductItem = ({ product }: TProps) => {
                   alt={imageDetails.alt}
                />
             </div>
-            <button className={'absolute right-1.5 top-1.5 h-[32px] w-[32px] rounded-lg border border-gray-200 bg-white'}>
+            <button
+               onClick={handleAddShopListButton}
+               className={'absolute right-1.5 top-1.5 h-[32px] w-[32px] rounded-lg border border-gray-200 bg-white'}>
                <PlusIcon className={'w-full p-1 text-skin-theme-700 '} />
             </button>
          </div>

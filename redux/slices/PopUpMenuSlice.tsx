@@ -32,7 +32,6 @@ export const PopUpMenuSlice = createSlice({
       },
    },
 })
-export const getMenu = (state: any) => state.popUpMenu
 export const getMenuName = (state: any) => state.popUpMenu.menu
 export const { closeMenu, setMenu } = PopUpMenuSlice.actions
 export default PopUpMenuSlice.reducer
