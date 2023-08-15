@@ -11,6 +11,7 @@ import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/Al
 import { useRouter } from 'next/navigation'
 
 import { useParams } from 'next/navigation'
+import { useMediaQuery } from '@mantine/hooks'
 
 export const MenuLink = ({ category }: { category: Category }) => {
    const t = useTranslations('Categories.CategoriesList')
@@ -21,6 +22,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
    const isCurrentCategory = useMemo(() => {
       return category.slugName === pathname.categories
    }, [category.slugName, pathname.categories])
+   const matches = useMediaQuery('(min-width: 760px)')
 
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
    const [open, setOpen] = useState(pathname.categories === category.slugName)
@@ -30,7 +32,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
          event.preventDefault()
          setOpen(!open)
       } else {
-         router.push(category.url)
+         router.push(category.url, { scroll: !matches })
       }
    }
 
