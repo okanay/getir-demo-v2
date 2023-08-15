@@ -21,3 +21,6 @@ const YourComponent = () => {
     return <h1>{t('title')}</h1>
 }
 ```
+```
+hey
+```
