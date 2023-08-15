@@ -15,7 +15,7 @@ export const ProductItemsFetch = async ({ categories = 'beverages', category }: 
 
    return (
       <Suspense fallback={<LoadingItems />}>
-         <ProductsContainer data={category} products={products} />{' '}
+         <ProductsContainer category={category} products={products} />{' '}
       </Suspense>
    )
 }

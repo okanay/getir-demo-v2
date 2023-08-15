@@ -39,6 +39,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
    useEffect(() => {
       if (!isCurrentCategory) {
          setOpen(false)
+         setSelectedIndex(0)
       } else {
          setOpen(true)
       }
@@ -46,7 +47,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
 
    return (
       <MotionConfig transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}>
-         <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent  baseTablet:w-full">
+         <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent baseTablet:w-full">
             <button
                type={'button'}
                onClick={handleLinkButtonOnClick}
@@ -55,7 +56,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
                   <div className={'hidden h-8 w-8 rounded border border-gray-200 baseTablet:block'}>
                      <ImageOptimization alt={{ tr: '', en: '' }} imageNormal={category.image} imageSmall={category.imageSmall} />
                   </div>
-                  <h4 className="text-[12px] font-semibold text-slate-100 baseTablet:text-[14px] baseTablet:text-slate-600">
+                  <h4 className="text-[14px] font-semibold text-slate-100 baseTablet:text-[14px] baseTablet:text-slate-600">
                      {t(category.languageCode)}
                   </h4>
                </span>
@@ -74,7 +75,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
                      initial={{ height: 'var(--height-from)' }}
                      animate={{ height: open ? 'var(--height-to, 0)' : 'var(--height-from, 0)' }}>
                      <div
-                        className={`flex h-fit flex-row items-center justify-start gap-2 px-4 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0`}>
+                        className={`flex h-fit flex-row items-center justify-start gap-2 px-2 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0`}>
                         {category.altCategories.map((altCategory, index) => (
                            <motion.div
                               animate={{

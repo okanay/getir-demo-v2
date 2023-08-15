@@ -28,7 +28,7 @@ export const AltLink = ({ altCategory, index, setSelectedIndex, selectedIndex, t
             <div className={'hidden h-8 w-8 baseTablet:block'} />
             <h6
                className={twMerge(
-                  'font-regular rounded border border-gray-200 bg-white px-2 py-1 text-[12px] text-skin-theme-700 ' +
+                  'font-regular rounded border border-gray-200 bg-white px-2 py-1 text-start text-[14px] text-skin-theme-700 ' +
                      'baseTablet:rounded-none baseTablet:border-0 baseTablet:bg-transparent baseTablet:px-0 baseTablet:py-0 baseTablet:py-0 baseTablet:text-[14px] baseTablet:text-slate-600',
                   index === selectedIndex && 'border-skin-theme-600 bg-skin-theme-700 text-white',
                )}>
