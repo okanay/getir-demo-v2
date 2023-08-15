@@ -13,6 +13,6 @@ export default async function CategoriesRootPage({ searchParams, params: { categ
    if (validCategory === undefined) redirect('/')
    if (validCategory.slugName !== categories) redirect('/')
 
-   // return <ProductItemsFetch searchParams={searchParams} category={validCategory} />
-   return <LoadingItems />
+   return <ProductItemsFetch searchParams={searchParams} category={validCategory} />
+   // return <LoadingItems />
 }
