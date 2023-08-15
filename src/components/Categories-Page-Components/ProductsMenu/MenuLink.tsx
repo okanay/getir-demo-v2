@@ -30,9 +30,9 @@ export const MenuLink = ({ category }: { category: Category }) => {
    const handleLinkButtonOnClick = (event: React.MouseEvent<HTMLElement>) => {
       if (isCurrentCategory) {
          event.preventDefault()
-         setOpen(!open)
+         if (matches) return setOpen(!open)
       } else {
-         router.push(category.url, { scroll: !matches })
+         router.push(category.url, { scroll: false })
       }
    }
 
@@ -46,7 +46,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
    }, [isCurrentCategory])
 
    return (
-      <MotionConfig transition={{ duration: 0.5, type: 'tween', ease: 'linear' }}>
+      <MotionConfig transition={{ duration: !matches ? 0 : 0.4, type: 'tween', ease: 'linear' }}>
          <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent baseTablet:w-full">
             <button
                type={'button'}
@@ -64,12 +64,15 @@ export const MenuLink = ({ category }: { category: Category }) => {
             </button>
             <div
                className={
-                  'w-full overflow-y-hidden [--height-from:auto] [--height-to:auto] [--opacity-from:100%] [--opacity-to:100%] baseTablet:[--height-from:0px] baseTablet:[--height-to:auto] baseTablet:[--opacity-from:0%] baseTablet:[--opacity-to:100%]'
+                  ' w-full overflow-y-hidden ' +
+                  ' [--height-from:auto] [--height-to:auto] ' +
+                  ' [--opacity-from:100%] [--opacity-to:100%]' +
+                  ' baseTablet:[--height-from:0px] baseTablet:[--height-to:auto] ' +
+                  ' baseTablet:[--opacity-from:0%] baseTablet:[--opacity-to:100%] '
                }>
                <div
-                  className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto bg-white baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:bg-transparent ${
-                     open ? 'z-[200]' : 'z-[199]'
-                  } `}>
+                  className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto bg-white baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:bg-transparent 
+                  ${open ? 'z-[999]' : 'z-[200]'}`}>
                   <motion.div
                      className="overflow-y-hidden"
                      initial={{ height: 'var(--height-from)' }}
