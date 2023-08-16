@@ -5,7 +5,6 @@ import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 //
 //
-//github callS
 
 import PopUpMenuReducer from './slices/PopUpMenuSlice'
 import SelectedAltCatIndexReducer from './slices/SelectedAltCatIndexSlice'

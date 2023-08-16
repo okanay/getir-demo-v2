@@ -1,33 +1,49 @@
 'use client'
 
 import { TProduct, TProducts } from '../../../../libs/constants/DummyProducts'
-import { PlusIcon } from '@heroicons/react/20/solid'
+import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/react/20/solid'
 import { useDispatch, useSelector } from 'react-redux'
 import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
 import { twMerge } from 'tailwind-merge'
 import { useLocale } from 'next-intl'
-import { addProductsToShopList, getShopListProducts } from '../../../../redux/slices/ShopListSlice'
-import { useEffect } from 'react'
+import {
+   addProductsToShopList,
+   getShopListProducts,
+   minusProductsToShopList,
+   TSelectedProduct,
+} from '../../../../redux/slices/ShopListSlice'
+import { useEffect, useState } from 'react'
 
 type TProps = {
    product: TProduct
 }
 
 export const ProductItem = ({ product }: TProps) => {
+   const [selectedCount, setSelectedCount] = useState<number>(0)
+
    const { imageDetails, price, productDetails } = product
    const locale = useLocale()
 
    const dispatch = useDispatch()
-   const products: TProducts = useSelector(getShopListProducts)
-
-   // useEffect(() => {
-   //    const selectedProductCount = products.filter(p => p.productId === product.productId)
-   //
-   // }, [product.productId, products])
+   const products: TSelectedProduct[] = useSelector(getShopListProducts)
 
    const handleAddShopListButton = () => {
       dispatch(addProductsToShopList(product.productId))
    }
+
+   const handleMinusShopListButton = () => {
+      dispatch(minusProductsToShopList(product.productId))
+   }
+
+   useEffect(() => {
+      const selectedProductCount = products.find(p => p.productId === product.productId)
+
+      if (selectedProductCount !== undefined) {
+         setSelectedCount(selectedProductCount.quantity)
+      } else {
+         setSelectedCount(0)
+      }
+   }, [product.productId, products])
 
    return (
       <article className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
@@ -39,11 +55,25 @@ export const ProductItem = ({ product }: TProps) => {
                   alt={imageDetails.alt}
                />
             </div>
-            <button
-               onClick={handleAddShopListButton}
-               className={'absolute right-1.5 top-1.5 h-[32px] w-[32px] rounded-lg border border-gray-200 bg-white'}>
-               <PlusIcon className={'w-full p-1 text-skin-theme-700 '} />
-            </button>
+            <div className={'absolute right-1.5 top-1.5 h-[32px] w-[32px]'}>
+               <div className={'flex flex-col items-center justify-center'}>
+                  <button onClick={handleAddShopListButton} className={'rounded-lg border border-gray-200 bg-white'}>
+                     <PlusIcon className={'w-full p-1 text-skin-theme-700 '} />
+                  </button>
+                  {selectedCount !== 0 && (
+                     <>
+                        <h4>{selectedCount}</h4>
+                        <button onClick={handleMinusShopListButton} className={'rounded-lg border border-gray-200 bg-white'}>
+                           {selectedCount === 1 ? (
+                              <TrashIcon className={'w-full p-1 text-skin-theme-700 '} />
+                           ) : (
+                              <MinusIcon className={'w-full p-1 text-skin-theme-700 '} />
+                           )}
+                        </button>
+                     </>
+                  )}
+               </div>
+            </div>
          </div>
          <div className="row-span-1 flex h-full w-full flex-col items-center justify-center gap-0.5 px-4 text-[14px]">
             <div className={'flex flex-row items-center justify-center gap-1'}>
