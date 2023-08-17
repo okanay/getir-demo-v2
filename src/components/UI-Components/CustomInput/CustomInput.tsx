@@ -32,7 +32,8 @@ export const CustomInput = ({ name, type, value, handleOnChange, handleOnBlur, e
             <label
                htmlFor={name}
                className={`peer pointer-events-none absolute left-4 top-1 text-[12px] font-normal transition-all duration-300 peer-placeholder-shown:left-4 peer-placeholder-shown:top-[18px] peer-placeholder-shown:text-[14px] peer-placeholder-shown:text-gray-400
-                                ${errorStatus ? 'text-red-400' : 'text-skin-theme-700'}`}>
+                                ${errorStatus ? 'text-red-400' : 'text-skin-theme-700'}`}
+            >
                {t('placeholder')}
             </label>
 

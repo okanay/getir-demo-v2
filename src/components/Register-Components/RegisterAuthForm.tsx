@@ -38,7 +38,8 @@ export const RegisterAuthForm = () => {
          <RegisterInformationAndTerm t={t} />
          <button
             type="submit"
-            className="w-full rounded-lg border border-gray-200 bg-skin-theme-700 px-4 py-3.5 text-[16px] font-semibold text-white transition-colors duration-200 hover:bg-skin-theme-600 hover:text-white baseTablet:mb-12">
+            className="w-full rounded-lg border border-gray-200 bg-skin-theme-700 px-4 py-3.5 text-[16px] font-semibold text-white transition-colors duration-200 hover:bg-skin-theme-600 hover:text-white baseTablet:mb-12"
+         >
             {t('registerButton')}
          </button>
       </form>

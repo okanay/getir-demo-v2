@@ -36,7 +36,8 @@ export const LandingSlider = () => {
                      animate={'center'}
                      exit={'exit'}
                      custom={index}
-                     className={`absolute inset-0`}>
+                     className={`absolute inset-0`}
+                  >
                      <div className={'absolute inset-0'}>
                         <Image src={images[index % 4]} alt={''} className={'h-full w-full object-cover'} />
                      </div>

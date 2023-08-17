@@ -50,7 +50,8 @@ export const ProductsAltCategory = ({ index, altCategory, products }: TProps) =>
       <section
          id={altCategory.url}
          ref={targetRef}
-         className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}>
+         className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}
+      >
          {index !== 0 ? (
             <h1 className={'px-4 text-[14px] font-semibold text-slate-900 baseTablet:px-0'}>{t(altCategory.languageCode)}</h1>
          ) : null}

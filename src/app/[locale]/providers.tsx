@@ -11,9 +11,9 @@ import { store, persistor } from '../../../redux/store'
 export const Providers = ({ children }: { children: React.ReactNode }) => {
    return (
       <NextAuthProvider>
-         <PersistGate persistor={persistor}>
-            <ReduxProvider store={store}>{children}</ReduxProvider>
-         </PersistGate>
+         <ReduxProvider store={store}>
+            <PersistGate persistor={persistor}>{children}</PersistGate>
+         </ReduxProvider>
       </NextAuthProvider>
    )
 }

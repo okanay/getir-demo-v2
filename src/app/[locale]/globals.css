@@ -10,7 +10,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -40,13 +39,13 @@
    max-height: var(--categories-max-h-calc);
 }
 
-.max-screen-all-devices-types{
+.max-screen-all-devices-types {
    height: 100vh;
    height: 100dvh;
 }
 
 .menu-container {
-   @apply relative flex h-full w-full flex-col items-center justify-start gap-[32px] bg-white px-[24px] py-[32px] baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center
+   @apply relative flex h-full w-full flex-col items-center justify-start gap-[32px] bg-white px-[24px] py-[32px] baseTablet:h-fit baseTablet:w-[28rem] baseTablet:justify-center;
 }
 
 .slider {
@@ -79,7 +78,8 @@
    0% {
       transform: translateX(0%);
    }
-   100% { /* Başlangıçta ve sonunda 1. resim gösteriliyor */
+   100% {
+      /* Başlangıçta ve sonunda 1. resim gösteriliyor */
       transform: translateX(-50%);
    }
 }

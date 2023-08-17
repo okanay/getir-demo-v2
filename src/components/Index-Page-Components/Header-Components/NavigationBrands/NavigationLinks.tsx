@@ -36,11 +36,13 @@ export const NavigationLinks = () => {
          key={link.key}
          className={`flex cursor-pointer flex-col items-center justify-center rounded-t py-[8px] ${
             link.isSelected ? 'bg-skin-theme-700' : 'hover:bg-skin-theme-700'
-         } px-4`}>
+         } px-4`}
+      >
          <span
             className={`${
                link.isSelected ? 'text-yellow-400' : 'text-slate-300'
-            }  -tracking-wide smPhone:text-sm baseTablet:text-base`}>
+            }  -tracking-wide smPhone:text-sm baseTablet:text-base`}
+         >
             {t(link.localizationId)}
          </span>
       </li>

@@ -14,6 +14,7 @@ const persistConfig = {
    key: 'root',
    storage,
    whitelist: ['shopListSlice'],
+   blacklist : ['popUpMenu', 'selectedAltCatIndexSlice']
 }
 
 const reducers = combineReducers({

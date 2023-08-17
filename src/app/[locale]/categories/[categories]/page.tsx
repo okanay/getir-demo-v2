@@ -9,10 +9,12 @@ type TProps = {
 }
 
 export default async function CategoriesRootPage({ searchParams, params: { categories } }: TProps) {
-   const validCategory = await CategoryList.find(c => c.slugName === categories)
-   if (validCategory === undefined) redirect('/')
-   if (validCategory.slugName !== categories) redirect('/')
+   // const validCategory = await CategoryList.find(c => c.slugName === categories)
+   // if (validCategory === undefined) redirect('/')
+   // if (validCategory.slugName !== categories) redirect('/')
 
-   return <ProductItemsFetch searchParams={searchParams} category={validCategory} />
+
+   return <h1 className={'w-full h-screen'}>{categories}</h1>
+   // return <ProductItemsFetch searchParams={searchParams} category={validCategory} />
    // return <LoadingItems />
 }

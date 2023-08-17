@@ -58,7 +58,8 @@ export const PhoneCodeInput = ({ selectedCode, setSelectedCode }: Props) => {
          ref={togglePhoneCodeListMenuButtonRef}
          onClick={handleTogglePhoneCodeSelectMenu}
          className={`relative flex h-14 w-36 cursor-pointer items-center justify-between rounded border-2 border-gray-200 bg-white pl-3 pr-2 text-[14px] transition-colors duration-200 baseTablet:pl-3 baseTablet:pr-2
-                          ${isPhoneCodeListMenuVisible ? 'border-skin-theme-700' : 'border-gray-200'}`}>
+                          ${isPhoneCodeListMenuVisible ? 'border-skin-theme-700' : 'border-gray-200'}`}
+      >
          <div className="flex items-center gap-2">
             <FlagIcon code={selectedCode.flagCode as FlagIconCode} size={16} />
             <p>+{selectedCode.phoneCode}</p>
@@ -70,7 +71,8 @@ export const PhoneCodeInput = ({ selectedCode, setSelectedCode }: Props) => {
          {isPhoneCodeListMenuVisible && (
             <ul
                ref={countriesPhoneCodeListMenuRef}
-               className="absolute -left-[2.5%] top-[120%] z-[101] flex h-44 w-[105%] flex-col items-start justify-start overflow-y-scroll border border-gray-100 bg-white text-[14px] text-gray-600">
+               className="absolute -left-[2.5%] top-[120%] z-[101] flex h-44 w-[105%] flex-col items-start justify-start overflow-y-scroll border border-gray-100 bg-white text-[14px] text-gray-600"
+            >
                {Object.entries(CountriesPhoneCodes).map(([flagCode, phoneCode], index) => (
                   <li
                      onClick={() => {
@@ -78,7 +80,8 @@ export const PhoneCodeInput = ({ selectedCode, setSelectedCode }: Props) => {
                      }}
                      className={`flex w-full cursor-pointer items-center justify-start gap-2 px-2 py-1 text-start hover:bg-gray-100 
                                        ${index === selectedPhoneCodeIndex && 'bg-skin-theme-50'}`}
-                     key={nanoid()}>
+                     key={nanoid()}
+                  >
                      <FlagIcon code={flagCode as FlagIconCode} size={16} />
                      {'+' + phoneCode}
                   </li>

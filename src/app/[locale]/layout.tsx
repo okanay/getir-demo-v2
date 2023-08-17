@@ -34,9 +34,9 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
          <body>
             <NextIntlClientProvider locale={locale} messages={messages}>
                <Providers>
-                  <Header />
+                  {/*<Header />*/}
                   {children}
-                  <Footer />
+                  {/*<Footer />*/}
                </Providers>
             </NextIntlClientProvider>
          </body>

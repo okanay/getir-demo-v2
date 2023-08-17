@@ -52,7 +52,8 @@ export const MenuLink = ({ category }: { category: Category }) => {
             <button
                type={'button'}
                onClick={handleLinkButtonOnClick}
-               className={'flex w-full flex-row items-center justify-between px-2 py-2 baseTablet:py-2'}>
+               className={'flex w-full flex-row items-center justify-between px-2 py-2 baseTablet:py-2'}
+            >
                <span className={'flex items-center justify-start gap-2'}>
                   <div className={'hidden h-8 w-8 rounded border border-gray-200 baseTablet:block'}>
                      <ImageOptimization alt={{ tr: '', en: '' }} imageNormal={category.image} imageSmall={category.imageSmall} />
@@ -70,23 +71,28 @@ export const MenuLink = ({ category }: { category: Category }) => {
                   ' [--opacity-from:100%] [--opacity-to:100%]' +
                   ' baseTablet:[--height-from:0px] baseTablet:[--height-to:auto] ' +
                   ' baseTablet:[--opacity-from:0%] baseTablet:[--opacity-to:100%] '
-               }>
+               }
+            >
                <div
                   className={`absolute bottom-0 left-0 w-full translate-y-full overflow-x-auto bg-white baseTablet:relative baseTablet:h-fit baseTablet:translate-y-0 baseTablet:bg-transparent 
-                  ${open ? 'z-[999]' : 'z-[200]'}`}>
+                  ${open ? 'z-[999]' : 'z-[200]'}`}
+               >
                   <motion.div
                      className="overflow-y-hidden"
                      initial={{ height: 'var(--height-from)' }}
-                     animate={{ height: open ? 'var(--height-to, 0)' : 'var(--height-from, 0)' }}>
+                     animate={{ height: open ? 'var(--height-to, 0)' : 'var(--height-from, 0)' }}
+                  >
                      <div
-                        className={`flex h-fit flex-row items-center justify-start gap-2 px-2 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0`}>
+                        className={`flex h-fit flex-row items-center justify-start gap-2 px-2 py-2 baseTablet:block baseTablet:px-0 baseTablet:py-0`}
+                     >
                         {category.altCategories.map((altCategory, index) => (
                            <motion.div
                               animate={{
                                  opacity: open ? 'var(--opacity-to)' : 'var(--opacity-from)',
                               }}
                               key={altCategory.languageCode + index}
-                              className={`w-fit flex-shrink-0 flex-grow-0 baseTablet:w-full`}>
+                              className={`w-fit flex-shrink-0 flex-grow-0 baseTablet:w-full`}
+                           >
                               <AltLink
                                  altCategory={altCategory}
                                  index={index}

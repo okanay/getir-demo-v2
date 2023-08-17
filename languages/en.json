@@ -1,389 +1,376 @@
 {
-  "Header" : {
-    "NavigationBrands" : {
-      "brand-1" : "getir",
-      "brand-2" : "getirfood",
-      "brand-3" : "getirmore",
-      "brand-4" : "getirwater",
-      "brand-5" : "getirlocals"
-    },
-    "Options" : {
-      "selectedLanguage" : "English (EN)",
-      "login" : "Login",
-      "signUp" : "Sign Up"
-    }
-  },
-  "Index" : {
-    "landing" : {
-      "image" : "/images/LandingImages/getir-mutluluk-en.svg",
-      "title" : "At your door in minutes",
-      "loginOrRegister" : "Login or register",
-      "delivery" : {
-        "deliveryButton" : "Select Delivery Address"
-      }
-    },
-    "promotions" : {
-      "title" : "Promotions",
-      "altTitle" : "Download Getir!",
-      "altText" : "Let us deliver your order to your door in minutes.",
-      "images" : {
-        "appleDownload" : "/images/PromotionImages/appstore-app-image-en.svg",
-        "googleDownload" : "/images/PromotionImages/googleplay-app-image-en.svg",
-        "huaweiDownload" : "/images/PromotionImages/huawei-app-image-en.svg",
-        "landingPoster" : "/images/PromotionImages/image-getir-landing-en.png"
+   "Header": {
+      "NavigationBrands": {
+         "brand-1": "getir",
+         "brand-2": "getirfood",
+         "brand-3": "getirmore",
+         "brand-4": "getirwater",
+         "brand-5": "getirlocals"
       },
-      "cards" : [
-        {
-          "cardTitle" : "A promotion for every order",
-          "cardAlt" : "At Getir, you can find a promotion for every order."
-        },
-        {
-          "cardTitle" : "At your door in minutes",
-          "cardAlt" : "Your order is at your door in minutes with Getir."
-        },
-        {
-          "cardTitle" : "Thousand kinds of happiness\n",
-          "cardAlt" : "At Getir, you can choose from thousands of varieties."
-        }
+      "Options": {
+         "selectedLanguage": "English (EN)",
+         "login": "Login",
+         "signUp": "Sign Up"
+      }
+   },
+   "Index": {
+      "landing": {
+         "image": "/images/LandingImages/getir-mutluluk-en.svg",
+         "title": "At your door in minutes",
+         "loginOrRegister": "Login or register",
+         "delivery": {
+            "deliveryButton": "Select Delivery Address"
+         }
+      },
+      "promotions": {
+         "title": "Promotions",
+         "altTitle": "Download Getir!",
+         "altText": "Let us deliver your order to your door in minutes.",
+         "images": {
+            "appleDownload": "/images/PromotionImages/appstore-app-image-en.svg",
+            "googleDownload": "/images/PromotionImages/googleplay-app-image-en.svg",
+            "huaweiDownload": "/images/PromotionImages/huawei-app-image-en.svg",
+            "landingPoster": "/images/PromotionImages/image-getir-landing-en.png"
+         },
+         "cards": [
+            {
+               "cardTitle": "A promotion for every order",
+               "cardAlt": "At Getir, you can find a promotion for every order."
+            },
+            {
+               "cardTitle": "At your door in minutes",
+               "cardAlt": "Your order is at your door in minutes with Getir."
+            },
+            {
+               "cardTitle": "Thousand kinds of happiness\n",
+               "cardAlt": "At Getir, you can choose from thousands of varieties."
+            }
+         ]
+      }
+   },
+   "Categories": {
+      "CategoriesMenuTitle": "Categories",
+      "CategoriesList": {
+         "Category-1": {
+            "CategoryName": "Beverages",
+            "AltCategory": {
+               "Water": "Water",
+               "Ice": "Ice",
+               "Soda": "Soda",
+               "SparklingWater": "Sparkling Water",
+               "AyranKefir": "Ayran & Kefir",
+               "IcedTea": "Iced Tea",
+               "Juice": "Juice",
+               "Coffee": "Coffee",
+               "Tea": "Tea",
+               "EnergyDrink": "Energy Drink",
+               "FunctionalDrinks": "Functional Drinks"
+            }
+         },
+         "Category-2": {
+            "CategoryName": "Fruits & Veg",
+            "AltCategory": {
+               "Fruits": "Fruits",
+               "Vegetables": "Vegetables"
+            }
+         },
+         "Category-3": {
+            "CategoryName": "Baked Goods",
+            "AltCategory": {
+               "FreshBakery": "Fresh Bakery",
+               "Bakery": "Bakery",
+               "FrozenBakery": "Frozen Bakery",
+               "GlutenFree": "Gluten-Free"
+            }
+         },
+         "Category-4": {
+            "CategoryName": "Food",
+            "AltCategory": {
+               "Pasta": "Pasta",
+               "Rice": "Rice",
+               "Bulghur": "Bulghur",
+               "Legumes": "Legumes",
+               "Paste": "Paste",
+               "Sauce": "Sauce",
+               "CannedFood": "Canned Food",
+               "Flour": "Flour",
+               "Oil": "Oil",
+               "OliveOil": "Olive Oil",
+               "Sugar": "Sugar",
+               "VinegarSaladDressing": "Vinegar & Salad",
+               "Spices": "Spices",
+               "Soup": "Soup",
+               "Desserts": "Desserts",
+               "CakeIngredients": "Cake Ingredients",
+               "Cream": "Cream",
+               "ButterMargarine": "Butter & Margarine"
+            }
+         },
+         "Category-5": {
+            "CategoryName": "Snacks",
+            "AltCategory": {
+               "GoesWellWith": "Goes Well With",
+               "Chips": "Chips",
+               "Nuts": "Nuts",
+               "Cakes": "Cakes",
+               "Biscuits": "Biscuits",
+               "Wafer": "Wafer",
+               "TabletChocolate": "Tablet Chocolate",
+               "ChocolateBar": "Chocolate Bar",
+               "GiftBoxes": "Gift Boxes",
+               "Spreads": "Spreads",
+               "CrackersCookies": "Crackers & Cookies",
+               "CandyGum": "Candy & Gum",
+               "DrageesChocolatesKids": "Chocolates for Kids",
+               "FitForm": "Fit & Form",
+               "Dessert": "Dessert"
+            }
+         },
+         "Category-6": {
+            "CategoryName": "Ice Cream",
+            "AltCategory": {
+               "Stick": "Stick",
+               "Bar": "Bar",
+               "Cone": "Cone",
+               "IceCreamPacks": "Ice Cream Packs",
+               "Multipack": "Multipack",
+               "Cup": "Cup",
+               "IceCreamSauce": "Ice Cream Sauce"
+            }
+         },
+         "Category-7": {
+            "CategoryName": "Milk & Dairy",
+            "AltCategory": {
+               "Milk": "Milk",
+               "Cheese": "Cheese",
+               "Yogurt": "Yogurt",
+               "ButterMargarin": "Butter & Margarine",
+               "AyranKefir": "Ayran & Kefir"
+            }
+         },
+         "Category-8": {
+            "CategoryName": "Breakfast",
+            "AltCategory": {
+               "Eggs": "Eggs",
+               "DeliProducts": "Deli Products",
+               "Olives": "Olives",
+               "CerealGranola": "Cereal & Granola",
+               "HoneyJam": "Honey & Jam",
+               "Spreads": "Spreads",
+               "Cheese": "Cheese",
+               "Tea": "Tea",
+               "Halva": "Halva",
+               "Vegan": "Vegan"
+            }
+         },
+         "Category-9": {
+            "CategoryName": "Ready to Eat",
+            "AltCategory": {
+               "Sandwiches": "Sandwiches",
+               "InstantMeal": "Instant Meal",
+               "FrozenFoods": "Frozen Foods",
+               "Desserts": "Desserts",
+               "CigKofte": "Çiğ Köfte",
+               "Vegan": "Vegan",
+               "Appetizers": "Appetizers"
+            }
+         },
+         "Category-10": {
+            "CategoryName": "Fit & Form",
+            "AltCategory": {
+               "Bars": "Bars",
+               "Granola": "Granola",
+               "CrackersBiscuits": "Crackers & Biscuits",
+               "Cereal": "Cereal",
+               "GlutenFree": "Gluten-Free",
+               "Vegan": "Vegan"
+            }
+         },
+         "Category-11": {
+            "CategoryName": "Personal Care",
+            "AltCategory": {
+               "OralCare": "Oral Care",
+               "HairCare": "Hair Care",
+               "ShowerBath": "Shower & Bath",
+               "Soap": "Soap",
+               "Deodorant": "Deodorant",
+               "HygienicPads": "Hygienic Pads",
+               "Cosmetics": "Cosmetics",
+               "PrePostShave": "Pre & Post Shave",
+               "BodyHandCare": "Body & Hand Care",
+               "WaxDepilatory": "Wax & Depilatory",
+               "WetWipes": "Wet Wipes",
+               "HairDye": "Hair Dye",
+               "Health": "Health",
+               "Cologne": "Cologne"
+            }
+         },
+         "Category-12": {
+            "CategoryName": "Home Care",
+            "AltCategory": {
+               "Cleaning": "Cleaning",
+               "Laundry": "Laundry",
+               "Paper": "Paper",
+               "Kitchen": "Kitchen",
+               "Dishes": "Dishes",
+               "Soap": "Soap",
+               "Scents": "Scents"
+            }
+         },
+         "Category-13": {
+            "CategoryName": "Home & Living",
+            "AltCategory": {
+               "NewspaperMagazines": "Newspaper",
+               "Kitchenware": "Kitchenware",
+               "Batteries": "Batteries",
+               "GamesToys": "Games & Toys",
+               "ElectricityLighting": "Electricity & Lighting",
+               "Stationery": "Stationery",
+               "Picnic": "Picnic",
+               "Umbrella": "Umbrella",
+               "ShoeCare": "Shoe Care",
+               "Other": "Other"
+            }
+         },
+         "Category-14": {
+            "CategoryName": "Tech",
+            "AltCategory": {
+               "PhoneAccessories": "Phone Accessories",
+               "BatteryChargersCable": "Battery & Cable",
+               "Music": "Music",
+               "ComputerAccessories": "Computer Accessories"
+            }
+         },
+         "Category-15": {
+            "CategoryName": "Pet Food",
+            "AltCategory": {
+               "Cats": "Cats",
+               "Dogs": "Dogs",
+               "Birds": "Birds"
+            }
+         },
+         "Category-16": {
+            "CategoryName": "Baby Care",
+            "AltCategory": {
+               "Diapers": "Diapers",
+               "BabyCare": "Baby Care",
+               "BabyFoods": "Baby Foods",
+               "BabyBottles": "Baby Bottles"
+            }
+         },
+         "Category-17": {
+            "CategoryName": "Sex Health",
+            "AltCategory": {
+               "Condoms": "Condoms",
+               "GelsLubricants": "Gels & Lubricants"
+            }
+         }
+      }
+   },
+   "Footer": {
+      "Navigations": [
+         {
+            "title": "Download Getir!",
+            "imageSrc1": "/images/PromotionImages/appstore-app-image-en.svg",
+            "imageSrc2": "/images/PromotionImages/googleplay-app-image-en.svg",
+            "imageSrc3": "/images/PromotionImages/huawei-app-image-en.svg"
+         },
+         {
+            "title": "Discover Getir",
+            "link1": "About us",
+            "link2": "Careers",
+            "link3": "Technology Careers",
+            "link4": "Contact us",
+            "link5": "Social Responsibility Projects"
+         },
+         {
+            "title": "Need help?",
+            "link1": "FAQ",
+            "link2": "Protection of Personal",
+            "link3": "Privacy Policy",
+            "link4": "Terms & Conditions",
+            "link5": "Cookie Policy"
+         },
+         {
+            "title": "Become Our Business Partner",
+            "link1": "Become a Franchisee",
+            "link2": "Rent Your Warehouse",
+            "link3": "Become a GetirFood Restaurant",
+            "link4": "Become a GetirLocals Business",
+            "link5": "Chain Restaurants"
+         }
       ]
-    }
-  },
-  "Categories" : {
-    "CategoriesMenuTitle" : "Categories",
-    "CategoriesList" : {
-  "Category-1": {
-    "CategoryName": "Beverages",
-    "AltCategory": {
-      "Water": "Water",
-      "Ice": "Ice",
-      "Soda": "Soda",
-      "SparklingWater": "Sparkling Water",
-      "AyranKefir": "Ayran & Kefir",
-      "IcedTea": "Iced Tea",
-      "Juice": "Juice",
-      "Coffee": "Coffee",
-      "Tea": "Tea",
-      "EnergyDrink": "Energy Drink",
-      "FunctionalDrinks": "Functional Drinks"
-    }
-  },
-  "Category-2": {
-    "CategoryName": "Fruits & Veg",
-    "AltCategory": {
-      "Fruits": "Fruits",
-      "Vegetables": "Vegetables"
-    }
-  },
-  "Category-3": {
-    "CategoryName": "Baked Goods",
-    "AltCategory": {
-      "FreshBakery": "Fresh Bakery",
-      "Bakery": "Bakery",
-      "FrozenBakery": "Frozen Bakery",
-      "GlutenFree": "Gluten-Free"
-    }
-  },
-  "Category-4": {
-    "CategoryName": "Food",
-    "AltCategory": {
-      "Pasta": "Pasta",
-      "Rice": "Rice",
-      "Bulghur": "Bulghur",
-      "Legumes": "Legumes",
-      "Paste": "Paste",
-      "Sauce": "Sauce",
-      "CannedFood": "Canned Food",
-      "Flour": "Flour",
-      "Oil": "Oil",
-      "OliveOil": "Olive Oil",
-      "Sugar": "Sugar",
-      "VinegarSaladDressing": "Vinegar & Salad",
-      "Spices": "Spices",
-      "Soup": "Soup",
-      "Desserts": "Desserts",
-      "CakeIngredients": "Cake Ingredients",
-      "Cream": "Cream",
-      "ButterMargarine": "Butter & Margarine"
-    }
-  },
-  "Category-5": {
-    "CategoryName": "Snacks",
-    "AltCategory": {
-      "GoesWellWith": "Goes Well With",
-      "Chips": "Chips",
-      "Nuts": "Nuts",
-      "Cakes": "Cakes",
-      "Biscuits": "Biscuits",
-      "Wafer": "Wafer",
-      "TabletChocolate": "Tablet Chocolate",
-      "ChocolateBar": "Chocolate Bar",
-      "GiftBoxes": "Gift Boxes",
-      "Spreads": "Spreads",
-      "CrackersCookies": "Crackers & Cookies",
-      "CandyGum": "Candy & Gum",
-      "DrageesChocolatesKids": "Chocolates for Kids",
-      "FitForm": "Fit & Form",
-      "Dessert": "Dessert"
-    }
-  },
-  "Category-6": {
-    "CategoryName": "Ice Cream",
-    "AltCategory": {
-      "Stick": "Stick",
-      "Bar": "Bar",
-      "Cone": "Cone",
-      "IceCreamPacks": "Ice Cream Packs",
-      "Multipack": "Multipack",
-      "Cup": "Cup",
-      "IceCreamSauce": "Ice Cream Sauce"
-    }
-  },
-  "Category-7": {
-    "CategoryName": "Milk & Dairy",
-    "AltCategory": {
-      "Milk": "Milk",
-      "Cheese": "Cheese",
-      "Yogurt": "Yogurt",
-      "ButterMargarin": "Butter & Margarine",
-      "AyranKefir": "Ayran & Kefir"
-    }
-  },
-  "Category-8": {
-    "CategoryName": "Breakfast",
-    "AltCategory": {
-      "Eggs": "Eggs",
-      "DeliProducts": "Deli Products",
-      "Olives": "Olives",
-      "CerealGranola": "Cereal & Granola",
-      "HoneyJam": "Honey & Jam",
-      "Spreads": "Spreads",
-      "Cheese": "Cheese",
-      "Tea": "Tea",
-      "Halva": "Halva",
-      "Vegan": "Vegan"
-    }
-  },
-  "Category-9": {
-    "CategoryName": "Ready to Eat",
-    "AltCategory": {
-      "Sandwiches": "Sandwiches",
-      "InstantMeal": "Instant Meal",
-      "FrozenFoods": "Frozen Foods",
-      "Desserts": "Desserts",
-      "CigKofte": "Çiğ Köfte",
-      "Vegan": "Vegan",
-      "Appetizers": "Appetizers"
-    }
-  },
-  "Category-10": {
-    "CategoryName": "Fit & Form",
-    "AltCategory": {
-      "Bars": "Bars",
-      "Granola": "Granola",
-      "CrackersBiscuits": "Crackers & Biscuits",
-      "Cereal": "Cereal",
-      "GlutenFree": "Gluten-Free",
-      "Vegan": "Vegan"
-    }
-  },
-  "Category-11": {
-    "CategoryName": "Personal Care",
-    "AltCategory": {
-      "OralCare": "Oral Care",
-      "HairCare": "Hair Care",
-      "ShowerBath": "Shower & Bath",
-      "Soap": "Soap",
-      "Deodorant": "Deodorant",
-      "HygienicPads": "Hygienic Pads",
-      "Cosmetics": "Cosmetics",
-      "PrePostShave": "Pre & Post Shave",
-      "BodyHandCare": "Body & Hand Care",
-      "WaxDepilatory": "Wax & Depilatory",
-      "WetWipes": "Wet Wipes",
-      "HairDye": "Hair Dye",
-      "Health": "Health",
-      "Cologne": "Cologne"
-    }
-  },
-  "Category-12": {
-    "CategoryName": "Home Care",
-    "AltCategory": {
-      "Cleaning": "Cleaning",
-      "Laundry": "Laundry",
-      "Paper": "Paper",
-      "Kitchen": "Kitchen",
-      "Dishes": "Dishes",
-      "Soap": "Soap",
-      "Scents": "Scents"
-    }
-  },
-  "Category-13": {
-    "CategoryName": "Home & Living",
-    "AltCategory": {
-      "NewspaperMagazines": "Newspaper",
-      "Kitchenware": "Kitchenware",
-      "Batteries": "Batteries",
-      "GamesToys": "Games & Toys",
-      "ElectricityLighting": "Electricity & Lighting",
-      "Stationery": "Stationery",
-      "Picnic": "Picnic",
-      "Umbrella": "Umbrella",
-      "ShoeCare": "Shoe Care",
-      "Other": "Other"
-    }
-  },
-  "Category-14": {
-    "CategoryName": "Tech",
-    "AltCategory": {
-      "PhoneAccessories" : "Phone Accessories",
-      "BatteryChargersCable": "Battery & Cable",
-      "Music": "Music",
-      "ComputerAccessories": "Computer Accessories"
-    }
-  },
-  "Category-15": {
-    "CategoryName": "Pet Food",
-    "AltCategory": {
-      "Cats": "Cats",
-      "Dogs": "Dogs",
-      "Birds": "Birds"
-    }
-  },
-  "Category-16": {
-    "CategoryName": "Baby Care",
-    "AltCategory": {
-      "Diapers": "Diapers",
-      "BabyCare": "Baby Care",
-      "BabyFoods": "Baby Foods",
-      "BabyBottles": "Baby Bottles"
-    }
-  },
-  "Category-17": {
-    "CategoryName": "Sex Health",
-    "AltCategory": {
-      "Condoms": "Condoms",
-      "GelsLubricants": "Gels & Lubricants"
-    }
-  }
-    }
-  },
-  "Footer" : {
-    "Navigations" : [
-      {
-        "title" : "Download Getir!",
-        "imageSrc1" : "/images/PromotionImages/appstore-app-image-en.svg",
-        "imageSrc2" : "/images/PromotionImages/googleplay-app-image-en.svg",
-        "imageSrc3" : "/images/PromotionImages/huawei-app-image-en.svg"
+   },
+   "Menus": {
+      "LanguageMenu": {
+         "title": "Change Language",
+         "button": "Update"
       },
-      {
-        "title" : "Discover Getir",
-        "link1" : "About us",
-        "link2" : "Careers",
-        "link3" : "Technology Careers",
-        "link4" : "Contact us",
-        "link5" : "Social Responsibility Projects"
+      "LoginMenu": {
+         "title": "Login or register",
+         "information": {
+            "info-first": "For the GDPR document regarding your personal information. ",
+            "link-first": "Click"
+         },
+         "loginButton": "Continue with phone number",
+         "signup": {
+            "text": "Still haven't signed up?",
+            "button": "Sign Up"
+         }
       },
-      {
-        "title" : "Need help?",
-        "link1" : "FAQ",
-        "link2" : "Protection of Personal",
-        "link3" : "Privacy Policy",
-        "link4" : "Terms & Conditions",
-        "link5" : "Cookie Policy"
+      "RegisterMenu": {
+         "title": "Sign Up",
+         "information": {
+            "info-first": "Please click ",
+            "link-first": "here ",
+            "info-second": "to review our Privacy Notice regarding your personal data. By registering, you accept our ",
+            "link-second": "Terms of Conditions.",
+            "info-third": ""
+         },
+         "registerButton": "Sign Up",
+         "signin": {
+            "text": "If you're a member of Getir ",
+            "button": "Login"
+         }
       },
-      {
-        "title" : "Become Our Business Partner",
-        "link1" : "Become a Franchisee",
-        "link2" : "Rent Your Warehouse",
-        "link3" : "Become a GetirFood Restaurant",
-        "link4" : "Become a GetirLocals Business",
-        "link5" : "Chain Restaurants"
+      "CustomInput": {
+         "PhoneNumberInput": {
+            "placeholder": "Mobile Phone",
+            "Errors": {
+               "Error100": "Bad Request",
+               "Error101": "Enter phone number.",
+               "Error102": "Enter phone number.",
+               "Error103": "Enter phone number."
+            }
+         },
+         "NameInput": {
+            "placeholder": "Name Surname",
+            "Errors": {
+               "Error100": "Bad Request",
+               "Error101": "101",
+               "Error102": "102",
+               "Error103": "103",
+               "Error104": "104"
+            }
+         },
+         "EmailInput": {
+            "placeholder": "E-mail",
+            "Errors": {
+               "Error100": "Bad Request",
+               "Error101": "101",
+               "Error102": "102",
+               "Error103": "103",
+               "Error104": "104"
+            }
+         },
+         "SelectAdsCampaign": {
+            "text": "I want to be informed of special promotions and news regarding Getir."
+         }
       }
-    ]
-  },
-  "Menus" : {
-    "LanguageMenu" : {
-      "title" : "Change Language",
-      "button" : "Update"
-    },
-    "LoginMenu" : {
-      "title" : "Login or register",
-      "information" : {
-        "info-first" : "For the GDPR document regarding your personal information. ",
-        "link-first" : "Click"
-      },
-      "loginButton" : "Continue with phone number",
-      "signup" : {
-        "text" : "Still haven't signed up?",
-        "button" : "Sign Up"
-      }
-    },
-    "RegisterMenu" : {
-      "title" : "Sign Up",
-      "information" : {
-        "info-first" : "Please click ",
-        "link-first" : "here ",
-        "info-second" : "to review our Privacy Notice regarding your personal data. By registering, you accept our ",
-        "link-second" : "Terms of Conditions.",
-        "info-third" : ""
-      },
-      "registerButton" : "Sign Up",
-      "signin" : {
-        "text" : "If you're a member of Getir ",
-        "button" : "Login"
-      }
-    },
-    "CustomInput" : {
-      "PhoneNumberInput" : {
-        "placeholder": "Mobile Phone",
-        "Errors": {
-          "Error100" : "Bad Request",
-          "Error101" : "Enter phone number.",
-          "Error102" : "Enter phone number.",
-          "Error103" : "Enter phone number."
-        }
-      },
-      "NameInput" : {
-        "placeholder": "Name Surname",
-        "Errors": {
-          "Error100" : "Bad Request",
-          "Error101": "101",
-          "Error102": "102",
-          "Error103": "103",
-          "Error104": "104"
-        }
-      },
-      "EmailInput" : {
-        "placeholder" : "E-mail",
-        "Errors" : {
-          "Error100" : "Bad Request",
-          "Error101" : "101",
-          "Error102" : "102",
-          "Error103" : "103",
-          "Error104" : "104"
-        }
-      },
-      "SelectAdsCampaign" : {
-        "text" : "I want to be informed of special promotions and news regarding Getir."
-      }
-    }
-  },
-  "Error" : {},
-  "NotFoundPage": {
-    "title": "EN",
-    "description": "EN-DES"
-  }
+   },
+   "Error": {},
+   "NotFoundPage": {
+      "title": "EN",
+      "description": "EN-DES"
+   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

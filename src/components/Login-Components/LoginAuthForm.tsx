@@ -37,14 +37,16 @@ export const LoginAuthForm = ({ shownInformationTerm = true }) => {
    return (
       <form
          onSubmit={handleFormSubmit}
-         className="relative flex w-full flex-col items-start justify-center gap-[12px] baseTablet:w-full">
+         className="relative flex w-full flex-col items-start justify-center gap-[12px] baseTablet:w-full"
+      >
          <div className="flex w-full items-start gap-[8px]">
             <PhoneCodeInput selectedCode={selectedCode} setSelectedCode={setSelectedCode} />
             <PhoneNumberInput phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
          </div>
          <button
             type="submit"
-            className="w-full rounded border border-gray-200 bg-yellow-400 py-3.5 text-[16px] font-semibold text-skin-theme-700 transition-colors duration-200 hover:bg-skin-theme-700 hover:text-yellow-400">
+            className="w-full rounded border border-gray-200 bg-yellow-400 py-3.5 text-[16px] font-semibold text-skin-theme-700 transition-colors duration-200 hover:bg-skin-theme-700 hover:text-yellow-400"
+         >
             {t('loginButton')}
          </button>
          {shownInformationTerm && <LoginInformationAndTerm t={t} />}

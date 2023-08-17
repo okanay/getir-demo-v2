@@ -12,7 +12,8 @@ export const Promotions = () => {
    return (
       <section id={'promotions'} className={'border-y border-gray-100 bg-gray-100 font-openSans'}>
          <div
-            className={'mx-auto flex w-full max-w-7xl flex-col items-start justify-start gap-1 baseTablet:px-8 baseTablet:py-12'}>
+            className={'mx-auto flex w-full max-w-7xl flex-col items-start justify-start gap-1 baseTablet:px-8 baseTablet:py-12'}
+         >
             {/* Promotions Text*/}
             <div className="hidden h-full w-full grid-cols-4 baseTablet:grid baseTablet:grid-cols-5 lgTablet:grid-cols-10 lgTablet:gap-4 lgTablet:px-0">
                <div className="flex h-full w-full flex-col items-center py-2 text-center">
@@ -42,7 +43,8 @@ export const Promotions = () => {
                {CardsList.map(card => (
                   <div
                      key={card.key}
-                     className="flex h-[24rem] w-full flex-col items-center justify-start gap-4 rounded-lg border border-slate-100 bg-white px-8 py-16 text-center">
+                     className="flex h-[24rem] w-full flex-col items-center justify-start gap-4 rounded-lg border border-slate-100 bg-white px-8 py-16 text-center"
+                  >
                      <Image
                         src={card.cardImage}
                         alt={''}

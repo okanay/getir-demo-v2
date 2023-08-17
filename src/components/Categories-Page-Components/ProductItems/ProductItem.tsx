@@ -78,10 +78,8 @@ export const ProductItem = ({ product }: TProps) => {
          <div className="row-span-1 flex h-full w-full flex-col items-center justify-center gap-0.5 px-4 text-[14px]">
             <div className={'flex flex-row items-center justify-center gap-1'}>
                <h1
-                  className={twMerge(
-                     'font-semibold text-skin-theme-700 ',
-                     price.discount.status && 'text-gray-400 line-through',
-                  )}>
+                  className={twMerge('font-semibold text-skin-theme-700 ', price.discount.status && 'text-gray-400 line-through')}
+               >
                   ₺{price.fullPrice}
                </h1>
                {product.price.discount.status && (
