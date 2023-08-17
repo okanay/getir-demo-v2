@@ -24,6 +24,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
    const dispatch = useDispatch()
    const openIndex = useSelector(getCategoryOpenCloseIndex)
 
+   const [isFirstRender, setIsFirstRender] = useState<boolean>(true)
    const [open, setOpen] = useState(false)
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
 
@@ -35,18 +36,53 @@ export const MenuLink = ({ category }: { category: Category }) => {
       if (openIndex !== catId) {
          dispatch(setCategoryOpenCloseIndex(catId))
          router.push(category.url)
-      } else {
+      }
+      else
+      {
          return setOpen(!open)
       }
    }
 
    useEffect(() => {
-      if (slugs.categories !== category.slugName && openIndex === Number(category.unique)) {
-         dispatch(setCategoryOpenCloseIndex(Number(category.unique)))
-         setOpen(true)
-      } else if (openIndex === Number(category.unique)) setOpen(true)
-      else if (openIndex !== Number(category.unique)) setOpen(false)
-   }, [category.slugName, category.unique, dispatch, openIndex, slugs.categories])
+
+      const openIndexCategory: Category | undefined = CategoryList.find(c => Number(c.unique) === openIndex)
+      const slugNameCategory: Category | undefined = CategoryList.find(c => c.slugName === slugs.categories)
+
+      if(slugNameCategory?.slugName !== openIndexCategory?.slugName)
+      {
+         if (category.slugName === slugNameCategory?.slugName)
+         {
+            setOpen(true)
+            dispatch(setCategoryOpenCloseIndex(Number(category.unique)))
+         }
+      }
+      else
+      {
+         if (Number(category.unique) === openIndex)
+         {
+            setOpen(true)
+         }
+      }
+
+      setIsFirstRender(false)
+
+   }, [])
+
+   useEffect(() => {
+
+      if (!isFirstRender)
+      {
+         if (openIndex === Number(category.unique))
+         {
+            setOpen(true)
+         }
+         else
+         {
+            setOpen(false)
+         }
+      }
+
+   }, [openIndex])
 
    return (
       <MotionConfig transition={{ duration: 0.6, type: 'tween', ease: 'circOut' }}>
