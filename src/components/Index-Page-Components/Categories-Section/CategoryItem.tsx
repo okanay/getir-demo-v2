@@ -5,14 +5,22 @@ import Link from 'next/link'
 import { Category } from '../../../../libs/types/types'
 import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
 import { useLocale, useTranslations } from 'next-intl'
+import { useDispatch } from 'react-redux'
+import { setCategoryOpenCloseIndex } from '../../../../redux/slices/CategoryOpenCloseSlice'
 
 export const CategoryItem = ({ category }: { category: Category }) => {
    const t = useTranslations('Categories.CategoriesList')
    const locale = useLocale()
 
+   const dispatch = useDispatch()
+   const handleOnClick = () => {
+      dispatch(setCategoryOpenCloseIndex(Number(category.unique)))
+   }
+
    return (
       <Link
          href={category.url}
+         onClick={handleOnClick}
          locale={locale}
          className="flex h-24 w-full flex-col items-center justify-start gap-1 rounded-lg border border-transparent py-2 text-center transition-colors duration-300 hover:border-skin-theme-50 hover:bg-skin-theme-50"
       >

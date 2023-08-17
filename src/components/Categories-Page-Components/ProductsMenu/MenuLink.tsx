@@ -6,34 +6,47 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
 import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
 
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/AltLink'
 import { useRouter } from 'next/navigation'
 
 import { useParams } from 'next/navigation'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategoryOpenCloseIndex, setCategoryOpenCloseIndex } from '../../../../redux/slices/CategoryOpenCloseSlice'
+import { usePathname } from 'next-intl/client'
+import { CategoryList } from '../../../../libs/constants/CategoriesList'
 
 export const MenuLink = ({ category }: { category: Category }) => {
    const t = useTranslations('Categories.CategoriesList')
 
    const router = useRouter()
+   const slugs = useParams()
    const dispatch = useDispatch()
    const openIndex = useSelector(getCategoryOpenCloseIndex)
 
-   const [selectedIndex, setSelectedIndex] = useState<number>(0)
    const [open, setOpen] = useState(false)
+   const [selectedIndex, setSelectedIndex] = useState<number>(0)
 
    const handleLinkButtonOnClick = (event: React.MouseEvent<HTMLElement>) => {
-      dispatch(setCategoryOpenCloseIndex(Number(category.unique)))
-      return setOpen(!open)
+      event.preventDefault()
+
+      const catId = Number(category.unique)
+
+      if (openIndex !== catId) {
+         dispatch(setCategoryOpenCloseIndex(catId))
+         router.push(category.url)
+      } else {
+         return setOpen(!open)
+      }
    }
 
    useEffect(() => {
-
-      if (openIndex !== Number(category.unique)) setOpen(false)
-
-   }, [openIndex])
+      if (slugs.categories !== category.slugName && openIndex === Number(category.unique)) {
+         dispatch(setCategoryOpenCloseIndex(Number(category.unique)))
+         setOpen(true)
+      } else if (openIndex === Number(category.unique)) setOpen(true)
+      else if (openIndex !== Number(category.unique)) setOpen(false)
+   }, [category.slugName, category.unique, dispatch, openIndex, slugs.categories])
 
    return (
       <MotionConfig transition={{ duration: 0.6, type: 'tween', ease: 'circOut' }}>
