@@ -84,13 +84,15 @@ export const NavigationLinks = () => {
    return links.map(link => (
       <li
          key={link.key}
-         className={`group flex h-full w-auto flex-col items-center justify-center rounded-t-[0.3rem] px-3 py-3 baseTablet:px-5 baseTablet:py-3 ${
+         className={`group flex h-full w-auto flex-col items-center justify-center rounded-t-[0.3rem] px-3 py-3 transition duration-300 baseTablet:px-5 baseTablet:py-3 ${
             link.isSelected ? 'cursor-pointer bg-skin-theme-700' : 'cursor-not-allowed hover:bg-skin-theme-700'
          }`}>
          <Image
             src={locale === 'tr' ? link.image?.tr.src : link.image?.en.src}
             alt={''}
-            className={`h-[14px] w-auto baseTablet:h-[16px] ${!link.isSelected && 'grayscale group-hover:grayscale-0'}`}
+            className={`h-[14px] w-auto transition duration-300 baseTablet:h-[16px] ${
+               !link.isSelected && 'contrast-[30%] grayscale group-hover:contrast-100 group-hover:grayscale-0'
+            }`}
          />
       </li>
    ))
