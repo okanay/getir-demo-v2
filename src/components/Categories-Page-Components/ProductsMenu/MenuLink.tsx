@@ -46,6 +46,10 @@ export const MenuLink = ({ category }: { category: Category }) => {
       }
    }, [isCurrentCategory])
 
+   useEffect(() => {
+      console.log("matches = " + matches + " // " + "slugName = " + category.slugName + " // " + "open = " + open)
+   }, [matches, open, category.slugName])
+
    return (
       <MotionConfig transition={{ duration: !matches ? 0 : 0.6, type: 'tween', ease: 'circOut' }}>
          <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent baseTablet:w-full">
