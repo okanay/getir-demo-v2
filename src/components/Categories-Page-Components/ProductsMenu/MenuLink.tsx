@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getCategoryOpenCloseIndex, setCategoryOpenCloseIndex } from '../../../../redux/slices/CategoryOpenCloseSlice'
 import { usePathname } from 'next-intl/client'
 import { CategoryList } from '../../../../libs/constants/CategoriesList'
+import { useMediaQuery } from '@mantine/hooks'
 
 export const MenuLink = ({ category }: { category: Category }) => {
    const t = useTranslations('Categories.CategoriesList')
@@ -24,6 +25,7 @@ export const MenuLink = ({ category }: { category: Category }) => {
    const dispatch = useDispatch()
    const openIndex = useSelector(getCategoryOpenCloseIndex)
 
+   const matches = useMediaQuery('(min-width: 760px)')
    const [isFirstRender, setIsFirstRender] = useState<boolean>(true)
    const [open, setOpen] = useState(false)
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
@@ -39,7 +41,10 @@ export const MenuLink = ({ category }: { category: Category }) => {
       }
       else
       {
-         return setOpen(!open)
+         if (matches)
+         {
+            return setOpen(!open)
+         }
       }
    }
 
