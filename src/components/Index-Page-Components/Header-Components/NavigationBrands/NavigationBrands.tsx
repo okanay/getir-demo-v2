@@ -12,7 +12,7 @@ export const NavigationBrands = () => {
    return (
       <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between bg-skin-theme-800 font-spaceGrotesk font-medium tracking-wide text-gray-300">
          <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between gap-4 bg-skin-theme-800">
-            <ul className="mt-1 flex h-full w-full flex-row items-center justify-start gap-1 px-2 baseTablet:px-6">
+            <ul className="mt-1 flex h-full w-full flex-row items-center justify-start gap-1 overflow-x-auto px-2 baseTablet:px-6">
                <NavigationLinks />
             </ul>
             <ul className="hidden flex-shrink-0 items-center justify-end gap-8 font-openSans text-sm baseTablet:flex lgTablet:gap-10">

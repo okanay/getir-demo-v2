@@ -84,7 +84,7 @@ export const NavigationLinks = () => {
    return links.map(link => (
       <li
          key={link.key}
-         className={`group flex h-full w-auto flex-col items-center justify-center rounded-t-[0.3rem] px-3 py-3 transition duration-300 baseTablet:px-5 baseTablet:py-3 ${
+         className={`group flex h-full w-auto flex-shrink-0 flex-col items-center justify-center rounded-t-[0.3rem] px-3 py-3 transition duration-300 baseTablet:px-5 baseTablet:py-3 ${
             link.isSelected ? 'cursor-pointer bg-skin-theme-700' : 'cursor-not-allowed hover:bg-skin-theme-700'
          }`}>
          <Image
