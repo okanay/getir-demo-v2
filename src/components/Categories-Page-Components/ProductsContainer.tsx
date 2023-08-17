@@ -6,9 +6,6 @@ type TProps = {
    children: React.ReactNode
 }
 export const ProductsContainer = ({ children }: TProps) => {
-
-
-
    return (
       <div className={'bg-gray-50'}>
          <section

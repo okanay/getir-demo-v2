@@ -22,7 +22,8 @@ export const MenuLink = ({ category }: { category: Category }) => {
    const isCurrentCategory = useMemo(() => {
       return category.slugName === pathname.categories
    }, [category.slugName, pathname.categories])
-   const matches = useMediaQuery('(min-width: 760px)')
+
+   // const matches = useMediaQuery('(min-width: 760px)')
 
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
    const [open, setOpen] = useState(pathname.categories === category.slugName)
@@ -30,28 +31,15 @@ export const MenuLink = ({ category }: { category: Category }) => {
    const handleLinkButtonOnClick = (event: React.MouseEvent<HTMLElement>) => {
       if (isCurrentCategory) {
          event.preventDefault()
-         if (matches) return setOpen(!open)
+         setOpen(!open)
       } else {
          window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
          router.push(category.url)
       }
    }
 
-   useEffect(() => {
-      if (!isCurrentCategory) {
-         setOpen(false)
-         setSelectedIndex(0)
-      } else {
-         setOpen(true)
-      }
-   }, [isCurrentCategory])
-
-   useEffect(() => {
-      console.log("matches = " + matches + " // " + "slugName = " + category.slugName + " // " + "open = " + open)
-   }, [matches, open, category.slugName])
-
    return (
-      <MotionConfig transition={{ duration: !matches ? 0 : 0.6, type: 'tween', ease: 'circOut' }}>
+      <MotionConfig transition={{ duration: 0.6, type: 'tween', ease: 'circOut' }}>
          <div className="flex w-fit flex-shrink-0 flex-col items-start justify-start bg-transparent baseTablet:w-full">
             <button
                type={'button'}

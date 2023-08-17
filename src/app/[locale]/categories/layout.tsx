@@ -9,8 +9,6 @@ type TProps = {
 }
 
 export default function CategoriesLayout({ children }: TProps) {
-
-
    return (
       <main className={'w-full h-full'}>
          <CategoriesHeader />

@@ -5,7 +5,6 @@ import { MenuTitle } from '@/components/Categories-Page-Components/ProductsMenu/
 import { useEffect } from 'react'
 
 export const ProductsMenu = () => {
-
    useEffect(() => {
       console.log('render')
       return () => {
