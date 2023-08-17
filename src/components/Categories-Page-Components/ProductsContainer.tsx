@@ -11,9 +11,8 @@ export const ProductsContainer = ({ children }: TProps) => {
          <section
             id={'categories'}
             className={
-               'relative top-0 mx-auto flex max-w-7xl flex-col font-openSans baseTablet:mt-4 baseTablet:flex-row baseTablet:gap-2 baseTablet:py-2 baseTablet:pl-5'
-            }
-         >
+               'relative top-0 mx-auto flex max-w-7xl flex-col font-openSans baseTablet:mt-4 baseTablet:flex-row baseTablet:gap-4 baseTablet:py-2 baseTablet:pl-5'
+            }>
             {children}
          </section>
       </div>

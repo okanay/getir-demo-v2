@@ -1,11 +1,11 @@
 {
    "Header": {
       "NavigationBrands": {
-         "brand-1": "getir",
-         "brand-2": "getiryemek",
-         "brand-3": "getirbüyük",
-         "brand-4": "getirsu",
-         "brand-5": "getirçarsı"
+         "brand-1": "/images/HeaderImages/getir.svg",
+         "brand-2": "/images/HeaderImages/getiryemek.svg",
+         "brand-3": "/images/HeaderImages/getirbuyuk.svg",
+         "brand-4": "/images/HeaderImages/getirsu.svg",
+         "brand-5": "/images/HeaderImages/getircarsi.svg"
       },
       "Options": {
          "selectedLanguage": "Türkçe (TR)",

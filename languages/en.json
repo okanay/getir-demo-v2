@@ -1,11 +1,11 @@
 {
    "Header": {
       "NavigationBrands": {
-         "brand-1": "getir",
-         "brand-2": "getirfood",
-         "brand-3": "getirmore",
-         "brand-4": "getirwater",
-         "brand-5": "getirlocals"
+         "brand-1": "/images/HeaderImages/getir.svg",
+         "brand-2": "/images/HeaderImages/getirfood.svg",
+         "brand-3": "/images/HeaderImages/getirmore.svg",
+         "brand-4": "/images/HeaderImages/getirwater.svg",
+         "brand-5": "/images/HeaderImages/getirlocals.svg"
       },
       "Options": {
          "selectedLanguage": "English (EN)",

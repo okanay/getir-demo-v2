@@ -36,57 +36,41 @@ export const MenuLink = ({ category }: { category: Category }) => {
       const catId = Number(category.unique)
 
       if (openIndex !== catId) {
-         dispatch(setCategoryOpenCloseIndex(catId))
          router.push(category.url)
-      }
-      else
-      {
-         if (matches)
-         {
+         dispatch(setCategoryOpenCloseIndex(catId))
+      } else {
+         if (matches) {
             return setOpen(!open)
          }
       }
    }
 
    useEffect(() => {
-
       const openIndexCategory: Category | undefined = CategoryList.find(c => Number(c.unique) === openIndex)
       const slugNameCategory: Category | undefined = CategoryList.find(c => c.slugName === slugs.categories)
 
-      if(slugNameCategory?.slugName !== openIndexCategory?.slugName)
-      {
-         if (category.slugName === slugNameCategory?.slugName)
-         {
+      if (slugNameCategory?.slugName !== openIndexCategory?.slugName) {
+         if (category.slugName === slugNameCategory?.slugName) {
             setOpen(true)
             dispatch(setCategoryOpenCloseIndex(Number(category.unique)))
          }
-      }
-      else
-      {
-         if (Number(category.unique) === openIndex)
-         {
+      } else {
+         if (Number(category.unique) === openIndex) {
             setOpen(true)
          }
       }
 
       setIsFirstRender(false)
-
    }, [])
 
    useEffect(() => {
-
-      if (!isFirstRender)
-      {
-         if (openIndex === Number(category.unique))
-         {
+      if (!isFirstRender) {
+         if (openIndex === Number(category.unique)) {
             setOpen(true)
-         }
-         else
-         {
+         } else {
             setOpen(false)
          }
       }
-
    }, [openIndex])
 
    return (
