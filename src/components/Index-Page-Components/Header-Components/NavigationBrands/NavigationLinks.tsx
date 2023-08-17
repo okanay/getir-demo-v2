@@ -84,13 +84,13 @@ export const NavigationLinks = () => {
    return links.map(link => (
       <li
          key={link.key}
-         className={`group flex h-full w-auto flex-col items-center justify-center px-2 pb-2 pt-4 ${
+         className={`group flex h-full w-auto flex-col items-center justify-center rounded-t-[0.3rem] px-2 pb-2 pt-4 ${
             link.isSelected ? 'cursor-pointer bg-skin-theme-700' : 'cursor-not-allowed hover:bg-skin-theme-700'
          }`}>
          <Image
             src={locale === 'tr' ? link.image?.tr.src : link.image?.en.src}
             alt={''}
-            className={`h-[16px] w-auto ${!link.isSelected && 'grayscale group-hover:grayscale-0'}`}
+            className={`h-[14px] w-auto baseTablet:h-[16px] ${!link.isSelected && 'grayscale group-hover:grayscale-0'}`}
          />
       </li>
    ))
