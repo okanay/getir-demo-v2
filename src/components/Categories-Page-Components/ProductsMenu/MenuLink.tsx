@@ -16,6 +16,8 @@ import { useMediaQuery } from '@mantine/hooks'
 export const MenuLink = ({ category }: { category: Category }) => {
    const t = useTranslations('Categories.CategoriesList')
 
+   // const matches = useMediaQuery('(min-width: 760px)')
+
    const pathname = useParams()
    const router = useRouter()
 
@@ -23,20 +25,25 @@ export const MenuLink = ({ category }: { category: Category }) => {
       return category.slugName === pathname.categories
    }, [category.slugName, pathname.categories])
 
-   // const matches = useMediaQuery('(min-width: 760px)')
 
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
    const [open, setOpen] = useState(pathname.categories === category.slugName)
 
    const handleLinkButtonOnClick = (event: React.MouseEvent<HTMLElement>) => {
-      if (isCurrentCategory) {
-         event.preventDefault()
-         setOpen(!open)
-      } else {
-         window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-         router.push(category.url)
-      }
+      if (pathname.categories === category.slugName)
+         return setOpen(!open)
+
+      router.push(category.slugName)
    }
+
+   useEffect(() => {
+
+      console.log(isCurrentCategory + " : " + category.slugName)
+
+      if (isCurrentCategory) setOpen(true)
+      if (!isCurrentCategory) setOpen(false)
+
+   }, [isCurrentCategory])
 
    return (
       <MotionConfig transition={{ duration: 0.6, type: 'tween', ease: 'circOut' }}>
