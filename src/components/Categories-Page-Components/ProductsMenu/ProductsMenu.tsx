@@ -2,8 +2,17 @@
 
 import { MenuLinks } from '@/components/Categories-Page-Components/ProductsMenu/MenuLinks'
 import { MenuTitle } from '@/components/Categories-Page-Components/ProductsMenu/MenuTitle'
+import { useEffect, useState } from 'react'
 
 export const ProductsMenu = () => {
+
+   const [render, setRender] = useState(0)
+
+   useEffect(() => {
+      console.log(render)
+      setRender(render + 1)
+   }, [])
+
    return (
       <aside className="sticky top-0 z-[200] mb-16 w-full baseTablet:h-fit baseTablet:max-w-[240px] baseTablet:flex-shrink-0 baseTablet:flex-grow baseTablet:basis-[100%]">
          <div className={'flex-start flex flex-col gap-y-2'}>
