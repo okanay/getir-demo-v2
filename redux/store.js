@@ -8,18 +8,22 @@ import thunk from 'redux-thunk'
 
 import PopUpMenuReducer from './slices/PopUpMenuSlice'
 import SelectedAltCatIndexReducer from './slices/SelectedAltCatIndexSlice'
+import CategoryOpenCloseReducer from './slices/CategoryOpenCloseSlice'
+
 import ShopListReducer from './slices/ShopListSlice'
 
 const persistConfig = {
    key: 'root',
    storage,
    whitelist: ['shopListSlice'],
-   blacklist: ['popUpMenu', 'selectedAltCatIndexSlice'],
+   blacklist: ['popUpMenu', 'selectedAltCatIndexSlice', 'CategoryOpenCloseReducer'],
 }
 
 const reducers = combineReducers({
    popUpMenu: PopUpMenuReducer,
    selectedAltCatIndexSlice: SelectedAltCatIndexReducer,
+   categoryOpenCloseSlice: CategoryOpenCloseReducer,
+
    shopListSlice: ShopListReducer,
 })
 

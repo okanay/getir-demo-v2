@@ -6,44 +6,34 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useTranslations } from 'next-intl'
 import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AltLink } from '@/components/Categories-Page-Components/ProductsMenu/AltLink'
 import { useRouter } from 'next/navigation'
 
 import { useParams } from 'next/navigation'
-import { useMediaQuery } from '@mantine/hooks'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCategoryOpenCloseIndex, setCategoryOpenCloseIndex } from '../../../../redux/slices/CategoryOpenCloseSlice'
 
 export const MenuLink = ({ category }: { category: Category }) => {
    const t = useTranslations('Categories.CategoriesList')
 
-   // const matches = useMediaQuery('(min-width: 760px)')
-
-   const pathname = useParams()
    const router = useRouter()
-
-   const isCurrentCategory = useMemo(() => {
-      return category.slugName === pathname.categories
-   }, [category.slugName, pathname.categories])
-
+   const dispatch = useDispatch()
+   const openIndex = useSelector(getCategoryOpenCloseIndex)
 
    const [selectedIndex, setSelectedIndex] = useState<number>(0)
-   const [open, setOpen] = useState(pathname.categories === category.slugName)
+   const [open, setOpen] = useState(false)
 
    const handleLinkButtonOnClick = (event: React.MouseEvent<HTMLElement>) => {
-      if (pathname.categories === category.slugName)
-         return setOpen(!open)
-
-      router.push(category.slugName)
+      dispatch(setCategoryOpenCloseIndex(Number(category.unique)))
+      return setOpen(!open)
    }
 
    useEffect(() => {
 
-      console.log(isCurrentCategory + " : " + category.slugName)
+      if (openIndex !== Number(category.unique)) setOpen(false)
 
-      if (isCurrentCategory) setOpen(true)
-      if (!isCurrentCategory) setOpen(false)
-
-   }, [isCurrentCategory])
+   }, [openIndex])
 
    return (
       <MotionConfig transition={{ duration: 0.6, type: 'tween', ease: 'circOut' }}>
