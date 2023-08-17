@@ -21,6 +21,8 @@ export const CategoryItem = ({ category }: { category: Category }) => {
       <Link
          href={category.url}
          onClick={handleOnClick}
+         replace={true}
+         prefetch={false}
          locale={locale}
          className="flex h-24 w-full flex-col items-center justify-start gap-1 rounded-lg border border-transparent py-2 text-center transition-colors duration-300 hover:border-skin-theme-50 hover:bg-skin-theme-50"
       >
