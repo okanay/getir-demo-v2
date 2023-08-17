@@ -11,16 +11,13 @@ type TProps = {
 }
 
 export const CategoriesPageLayout = ({ children }: TProps) => {
-   return (
-      <>
-         <CategoriesHeader />
-         {/*<CategoriesPromotions />*/}
-         <ProductsContainer>
-            <ProductsMenu />
-            {children}
-            <RightAsideShopList />
-         </ProductsContainer>
-         <CategoriesFooter />
-      </>
-   )
+   return <>
+      <CategoriesHeader />
+      {/*<CategoriesPromotions />*/}
+      <ProductsContainer>
+         <ProductsMenu />
+         {children}
+         <RightAsideShopList />
+      </ProductsContainer>
+      <CategoriesFooter /></>
 }
