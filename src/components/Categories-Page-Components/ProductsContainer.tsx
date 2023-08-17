@@ -7,12 +7,7 @@ type TProps = {
 }
 export const ProductsContainer = ({ children }: TProps) => {
 
-   useEffect(() => {
-      console.log('render')
-      return () => {
-         console.log('unmount')
-      }
-   }, [])
+
 
    return (
       <div className={'bg-gray-50'}>
