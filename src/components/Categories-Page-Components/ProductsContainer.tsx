@@ -1,9 +1,19 @@
 'use client'
 
+import { useEffect } from 'react'
+
 type TProps = {
    children: React.ReactNode
 }
 export const ProductsContainer = ({ children }: TProps) => {
+
+   useEffect(() => {
+      console.log('render')
+      return () => {
+         console.log('unmount')
+      }
+   }, [])
+
    return (
       <div className={'bg-gray-50'}>
          <section
