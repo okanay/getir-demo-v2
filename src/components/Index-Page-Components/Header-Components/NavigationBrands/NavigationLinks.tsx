@@ -1,63 +1,97 @@
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import Image from 'next/image'
 
+import getir from '../../../../../public/images/HeaderImages/getir.svg'
+import getirfood from '../../../../../public/images/HeaderImages/getirfood.svg'
+import getiryemek from '../../../../../public/images/HeaderImages/getiryemek.svg'
+import getirmore from '../../../../../public/images/HeaderImages/getirmore.svg'
+import getirbuyuk from '../../../../../public/images/HeaderImages/getirbuyuk.svg'
+import getirwater from '../../../../../public/images/HeaderImages/getirwater.svg'
+import getirsu from '../../../../../public/images/HeaderImages/getirsu.svg'
+import getirlocals from '../../../../../public/images/HeaderImages/getirlocals.svg'
+import getircarsi from '../../../../../public/images/HeaderImages/getircarsi.svg'
+
 export const NavigationLinks = () => {
    const t = useTranslations('Header.NavigationBrands')
+   const locale = useLocale()
 
    const links = [
       {
          key: 'link-getir',
-         localizationId: 'brand-1',
+         image: {
+            tr: {
+               src: getir,
+            },
+            en: {
+               src: getir,
+            },
+         },
          isSelected: true,
-         width: 53,
-         height: 24,
       },
       {
          key: 'link-getiryemek',
-         localizationId: 'brand-2',
+         image: {
+            tr: {
+               src: getiryemek,
+            },
+            en: {
+               src: getirfood,
+            },
+         },
          isSelected: false,
-         width: 125,
-         height: 40,
       },
       {
          key: 'link-getirbuyuk',
-         localizationId: 'brand-3',
+         image: {
+            tr: {
+               src: getirbuyuk,
+            },
+            en: {
+               src: getirmore,
+            },
+         },
          isSelected: false,
-         width: 122,
-         height: 24,
       },
       {
          key: 'link-getirsu',
-         localizationId: 'brand-4',
+         image: {
+            tr: {
+               src: getirsu,
+            },
+            en: {
+               src: getirwater,
+            },
+         },
          isSelected: false,
-         width: 92,
-         height: 40,
       },
       {
          key: 'link-getircarsi',
-         localizationId: 'brand-5',
+         image: {
+            tr: {
+               src: getircarsi,
+            },
+            en: {
+               src: getirlocals,
+            },
+         },
          isSelected: false,
-         width: 112,
-         height: 40,
+         width: 120,
+         height: 24,
       },
    ]
 
    return links.map(link => (
       <li
          key={link.key}
-         className={`flex flex-shrink-0 cursor-pointer flex-col items-center justify-center overflow-x-auto rounded-t py-[16px] baseTablet:flex-shrink ${
-            link.isSelected ? 'bg-skin-theme-700' : 'hover:bg-skin-theme-700'
-         } px-4`}>
-         <figure className={'h-[12px] w-auto lgPhone:h-[14px] baseTablet:h-[16px]'}>
-            <Image
-               src={t(link.localizationId)}
-               alt={link.localizationId}
-               width={100}
-               height={25}
-               className={`h-full w-full object-fill ${link.isSelected ? '' : 'grayscale'}`}
-            />
-         </figure>
+         className={`group flex h-full w-auto flex-col items-center justify-center px-2 pb-2 pt-4 ${
+            link.isSelected ? 'cursor-pointer bg-skin-theme-700' : 'cursor-not-allowed hover:bg-skin-theme-700'
+         }`}>
+         <Image
+            src={locale === 'tr' ? link.image?.tr.src : link.image?.en.src}
+            alt={''}
+            className={`h-[16px] w-auto ${!link.isSelected && 'grayscale group-hover:grayscale-0'}`}
+         />
       </li>
    ))
 }

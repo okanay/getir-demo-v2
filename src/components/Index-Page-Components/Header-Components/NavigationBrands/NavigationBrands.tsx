@@ -11,11 +11,11 @@ export const NavigationBrands = () => {
 
    return (
       <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between bg-skin-theme-800 font-spaceGrotesk font-medium tracking-wide text-gray-300">
-         <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between gap-4 bg-skin-theme-800 px-1 pt-1 baseTablet:px-8">
-            <ul className="no-scrollbar flex items-center justify-start gap-1 overflow-x-scroll baseTablet:overflow-hidden">
+         <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between gap-4 bg-skin-theme-800">
+            <ul className="flex h-full w-full flex-row items-center justify-start gap-2">
                <NavigationLinks />
             </ul>
-            <ul className="hidden items-center justify-end gap-8 font-openSans text-sm baseTablet:flex lgTablet:gap-10">
+            <ul className="hidden flex-shrink-0 items-center justify-end gap-8 font-openSans text-sm baseTablet:flex lgTablet:gap-10">
                <LanguageButton type={'header'} />
                <LoginMenuButton t={t} />
                <RegisterMenuButton t={t} />
