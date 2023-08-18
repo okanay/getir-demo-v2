@@ -10,7 +10,7 @@ type TProps = {
 
 export default function CategoriesLayout({ children }: TProps) {
    return (
-      <main className={'h-full w-full'}>
+      <main className={'h-full w-full bg-white'}>
          <CategoriesHeader />
          {/*<CategoriesPromotions />*/}
          <ProductsContainer>
