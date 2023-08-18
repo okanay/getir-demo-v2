@@ -29,7 +29,7 @@ export const NavigationLinks = () => {
             },
          },
          isSelectable: true,
-         href: '/[key]',
+         href: '/',
          as: '../categories/beverages',
       },
       {
@@ -98,7 +98,7 @@ export const NavigationLinks = () => {
                ? 'cursor-pointer bg-skin-theme-700'
                : 'pointer-events-none cursor-not-allowed hover:bg-skin-theme-700'
          }`}>
-         <Link href={'/[key]'} as={link.isSelectable ? '../categories/beverages' : '/'}>
+         <Link href={'/'} as={link.isSelectable ? '../categories/beverages' : '/'}>
             <Image
                src={locale === 'tr' ? link.image?.tr.src : link.image?.en.src}
                alt={''}
