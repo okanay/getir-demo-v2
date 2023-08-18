@@ -11,9 +11,8 @@ export const Categories = () => {
       <section
          id={'categories'}
          className={
-            'mx-auto flex h-full w-full max-w-7xl flex-col items-start justify-start gap-1 py-12 font-openSans baseTablet:px-8'
-         }
-      >
+            'mx-auto flex h-full w-full max-w-7xl flex-col items-start justify-start gap-1 bg-white py-12 font-openSans baseTablet:px-8'
+         }>
          {/*Categories text*/}
          <div className="grid h-full w-full grid-cols-4 baseTablet:grid-cols-5 lgTablet:grid-cols-10 lgTablet:gap-4 lgTablet:px-0">
             <div className="flex h-full w-full flex-col items-center py-2 text-center">

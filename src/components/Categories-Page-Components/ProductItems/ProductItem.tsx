@@ -47,6 +47,13 @@ export const ProductItem = ({ product }: TProps) => {
       }
    }, [])
 
+   const FormatPrice = (price: number) => {
+      return new Intl.NumberFormat('tr-TR', {
+         style: 'currency',
+         currency: 'TRY',
+      }).format(price)
+   }
+
    return (
       <article className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
          <div className={'relative row-span-1 flex h-full w-full flex-col items-center justify-center'}>
@@ -59,15 +66,19 @@ export const ProductItem = ({ product }: TProps) => {
             </div>
             <div className={'absolute right-1.5 top-1.5 h-[32px] w-[32px]'}>
                <div className={'flex flex-col items-center justify-center'}>
-                  <button onClick={handleAddShopListButton} className={'rounded-lg border border-gray-200 bg-white'}>
+                  <button
+                     onClick={handleAddShopListButton}
+                     className={`${selectedCount === 0 ? 'rounded-lg' : 'rounded-t-lg'} border border-gray-200 bg-white`}>
                      <PlusIcon className={'w-full p-1 text-skin-theme-700 '} />
                   </button>
                   {selectedCount !== 0 && (
                      <>
-                        <h4>{selectedCount}</h4>
-                        <button onClick={handleMinusShopListButton} className={'rounded-lg border border-gray-200 bg-white'}>
+                        <h4 className={'h-full w-full border-x border-gray-200 bg-skin-theme-700 text-center text-white'}>
+                           {selectedCount}
+                        </h4>
+                        <button onClick={handleMinusShopListButton} className={'rounded-b-lg border border-gray-200 bg-white'}>
                            {selectedCount === 1 ? (
-                              <TrashIcon className={'w-full p-1 text-skin-theme-700 '} />
+                              <TrashIcon className={'w-full scale-y-90 p-1 text-skin-theme-700 '} />
                            ) : (
                               <MinusIcon className={'w-full p-1 text-skin-theme-700 '} />
                            )}
@@ -84,10 +95,10 @@ export const ProductItem = ({ product }: TProps) => {
                      'font-semibold text-skin-theme-700 ',
                      price.discount.status && 'text-gray-400 line-through',
                   )}>
-                  ₺{price.fullPrice}
+                  {FormatPrice(price.fullPrice)}
                </h1>
                {product.price.discount.status && (
-                  <h1 className={'font-semibold text-skin-theme-700'}>₺{price.discount.discountedPrice}</h1>
+                  <h1 className={'font-semibold text-skin-theme-700'}>{FormatPrice(price.discount.discountedPrice)}</h1>
                )}
             </div>
             <h1 className={'font-semibold text-slate-900'}>

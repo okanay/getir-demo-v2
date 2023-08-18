@@ -19,6 +19,7 @@ module.exports = {
    theme: {
       extend: {
          screens: {
+            standalone: { raw: '(display-mode : standalone)' },
             xsPhone: '320px',
             smPhone: '360px',
             lgPhone: '400px',
