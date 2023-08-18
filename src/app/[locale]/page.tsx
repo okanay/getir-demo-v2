@@ -4,10 +4,10 @@ import { Promotions } from '@/components/Index-Page-Components/Promotions-Sectio
 
 export default function Index() {
    return (
-      <main className={'bg-white'}>
+      <>
          <Landing />
          <Categories />
          <Promotions />
-      </main>
+      </>
    )
 }

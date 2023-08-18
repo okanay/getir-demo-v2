@@ -204,15 +204,11 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
    return (
       <html className="" lang={locale}>
          <body style={{ WebkitTapHighlightColor: 'transparent', backgroundColor: 'rgb(76, 51, 152)' }}>
-            <div
-               className={
-                  'standalone:fixed standalone:left-0 standalone:top-0 standalone:z-[999] standalone:h-11 standalone:w-full standalone:bg-skin-theme-800'
-               }
-            />
+            <div className="standalone:fixed standalone:left-0 standalone:top-0 standalone:z-[999] standalone:h-11 standalone:w-full standalone:bg-skin-theme-800" />
             <NextIntlClientProvider locale={locale} messages={messages}>
                <Providers>
                   <Header />
-                  {children}
+                  <main className={'h-full w-full bg-white'}>{children}</main>
                   <Footer />
                </Providers>
             </NextIntlClientProvider>
