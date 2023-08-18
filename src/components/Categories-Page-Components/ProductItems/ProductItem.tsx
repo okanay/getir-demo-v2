@@ -19,31 +19,33 @@ type TProps = {
 }
 
 export const ProductItem = ({ product }: TProps) => {
-   const [selectedCount, setSelectedCount] = useState<number>(0)
-
    const { imageDetails, price, productDetails } = product
    const locale = useLocale()
 
    const dispatch = useDispatch()
+
+   const [selectedCount, setSelectedCount] = useState<number>(0)
    const products: TSelectedProduct[] = useSelector(getShopListProducts)
 
    const handleAddShopListButton = () => {
-      dispatch(addProductsToShopList(product.productId))
+      dispatch(addProductsToShopList(product))
+      setSelectedCount(selectedCount + 1)
    }
 
    const handleMinusShopListButton = () => {
-      dispatch(minusProductsToShopList(product.productId))
+      dispatch(minusProductsToShopList(product))
+      setSelectedCount(selectedCount - 1)
    }
 
    useEffect(() => {
-      const selectedProductCount = products.find(p => p.productId === product.productId)
+      const isExist = products.find(p => p.product.productId === product.productId)
 
-      if (selectedProductCount !== undefined) {
-         setSelectedCount(selectedProductCount.quantity)
+      if (isExist !== undefined) {
+         setSelectedCount(isExist.quantity)
       } else {
          setSelectedCount(0)
       }
-   }, [product.productId, products])
+   }, [])
 
    return (
       <article className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
@@ -78,8 +80,10 @@ export const ProductItem = ({ product }: TProps) => {
          <div className="row-span-1 flex h-full w-full flex-col items-center justify-center gap-0.5 px-4 text-[14px]">
             <div className={'flex flex-row items-center justify-center gap-1'}>
                <h1
-                  className={twMerge('font-semibold text-skin-theme-700 ', price.discount.status && 'text-gray-400 line-through')}
-               >
+                  className={twMerge(
+                     'font-semibold text-skin-theme-700 ',
+                     price.discount.status && 'text-gray-400 line-through',
+                  )}>
                   ₺{price.fullPrice}
                </h1>
                {product.price.discount.status && (

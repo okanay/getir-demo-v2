@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { TProduct } from '../../libs/constants/DummyProducts'
 
 export type TSelectedProduct = {
-   productId: number
+   product: TProduct
    quantity: number
 }
 
@@ -17,37 +18,31 @@ export const ShopListSlice = createSlice({
          state.products = []
       },
 
-      addProductsToShopList: (state, action: { payload: number }) => {
-         const isNewProductAlreadyExist: boolean = Boolean(state.products.find(p => p.productId === action.payload))
+      addProductsToShopList: (state, action: { payload: TProduct }) => {
+         const { payload } = action
 
-         if (isNewProductAlreadyExist) {
-            state.products = state.products.map(p => {
-               if (p.productId === action.payload) {
-                  return { ...p, quantity: p.quantity + 1 }
-               }
-               return p
-            })
+         const existingProduct = state.products.find(p => p.product.productId === payload.productId)
+
+         if (existingProduct) {
+            existingProduct.quantity += 1
          } else {
-            state.products = [...state.products, { quantity: 1, productId: action.payload }]
+            state.products.push({
+               product: payload,
+               quantity: 1,
+            })
          }
       },
 
-      minusProductsToShopList: (state, action: { payload: number }) => {
-         const targetProduct: TSelectedProduct | undefined = state.products.find(p => p.productId === action.payload)
+      minusProductsToShopList: (state, action: { payload: TProduct }) => {
+         const { payload } = action
 
-         if (targetProduct !== undefined) {
-            if (targetProduct.quantity > 1) {
-               state.products = state.products.map(p => {
-                  if (p.productId === action.payload) {
-                     return {
-                        ...p,
-                        quantity: p.quantity - 1,
-                     }
-                  }
-                  return p
-               })
+         const existingProduct = state.products.find(p => p.product.productId === payload.productId)
+
+         if (existingProduct) {
+            if (existingProduct.quantity > 1) {
+               existingProduct.quantity -= 1
             } else {
-               state.products = state.products.filter(p => p.productId !== action.payload)
+               state.products = state.products.filter(p => p.product.productId !== payload.productId)
             }
          }
       },

@@ -15,8 +15,8 @@ import ShopListReducer from './slices/ShopListSlice'
 const persistConfig = {
    key: 'root',
    storage,
-   whitelist: ['shopListSlice', 'categoryOpenCloseSlice'],
-   blacklist: ['popUpMenu', 'selectedAltCatIndexSlice'],
+   whitelist: ['shopListSlice'],
+   blacklist: ['popUpMenu', 'selectedAltCatIndexSlice', 'categoryOpenCloseSlice'],
 }
 
 const reducers = combineReducers({
