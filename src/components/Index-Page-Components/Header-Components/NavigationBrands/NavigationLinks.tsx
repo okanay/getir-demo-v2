@@ -11,6 +11,7 @@ import getirwater from '../../../../../public/images/HeaderImages/getirwater.svg
 import getirsu from '../../../../../public/images/HeaderImages/getirsu.svg'
 import getirlocals from '../../../../../public/images/HeaderImages/getirlocals.svg'
 import getircarsi from '../../../../../public/images/HeaderImages/getircarsi.svg'
+import Link from 'next/link'
 
 export const NavigationLinks = () => {
    const t = useTranslations('Header.NavigationBrands')
@@ -27,7 +28,9 @@ export const NavigationLinks = () => {
                src: getir,
             },
          },
-         isSelected: true,
+         isSelectable: true,
+         href: '/[key]',
+         as: '../categories/beverages',
       },
       {
          key: 'link-getiryemek',
@@ -39,7 +42,9 @@ export const NavigationLinks = () => {
                src: getirfood,
             },
          },
-         isSelected: false,
+         isSelectable: false,
+         href: '/',
+         as: '../',
       },
       {
          key: 'link-getirbuyuk',
@@ -51,7 +56,9 @@ export const NavigationLinks = () => {
                src: getirmore,
             },
          },
-         isSelected: false,
+         isSelectable: false,
+         href: '/',
+         as: '../',
       },
       {
          key: 'link-getirsu',
@@ -63,7 +70,9 @@ export const NavigationLinks = () => {
                src: getirwater,
             },
          },
-         isSelected: false,
+         isSelectable: false,
+         href: '/',
+         as: '../',
       },
       {
          key: 'link-getircarsi',
@@ -75,9 +84,9 @@ export const NavigationLinks = () => {
                src: getirlocals,
             },
          },
-         isSelected: false,
-         width: 120,
-         height: 24,
+         isSelectable: false,
+         href: '/',
+         as: '../',
       },
    ]
 
@@ -85,15 +94,19 @@ export const NavigationLinks = () => {
       <li
          key={link.key}
          className={`group flex h-full w-auto flex-shrink-0 flex-col items-center justify-center rounded-t-[0.3rem] px-3 py-3 transition duration-300 baseTablet:px-5 baseTablet:py-3 ${
-            link.isSelected ? 'cursor-pointer bg-skin-theme-700' : 'cursor-not-allowed hover:bg-skin-theme-700'
+            link.isSelectable
+               ? 'cursor-pointer bg-skin-theme-700'
+               : 'pointer-events-none cursor-not-allowed hover:bg-skin-theme-700'
          }`}>
-         <Image
-            src={locale === 'tr' ? link.image?.tr.src : link.image?.en.src}
-            alt={''}
-            className={`h-[14px] w-auto transition duration-300 baseTablet:h-[16px] ${
-               !link.isSelected && 'contrast-[30%] grayscale group-hover:contrast-100 group-hover:grayscale-0'
-            }`}
-         />
+         <Link href={'/[key]'} as={link.isSelectable ? '../categories/beverages' : '/'}>
+            <Image
+               src={locale === 'tr' ? link.image?.tr.src : link.image?.en.src}
+               alt={''}
+               className={`h-[14px] w-auto transition duration-300 baseTablet:h-[16px] ${
+                  !link.isSelectable && 'contrast-[30%] grayscale group-hover:contrast-100 group-hover:grayscale-0'
+               }`}
+            />
+         </Link>
       </li>
    ))
 }
