@@ -18,7 +18,7 @@ export const CategoriesFooter = () => {
                   initial={'initial'}
                   animate={'enter'}
                   exit={'exit'}
-                  className={'pointer-events-auto absolute bottom-0 mb-4 h-[48px] w-full px-6'}>
+                  className={'pointer-events-auto absolute bottom-0 mb-4 h-[48px] w-full px-6 standalone:mb-12'}>
                   <div className={'flex h-full w-full items-center justify-between rounded-lg bg-skin-theme-700'}>
                      <span />
                      <h4 className={'w-full text-center text-[14px] font-semibold text-white'}>Sepete Git</h4>
