@@ -58,22 +58,6 @@
    animation-fill-mode: forwards;
 }
 
-@media (prefers-color-scheme: dark) {
-   :root {
-      --theme-950: 239, 239, 254;
-      --theme-900: 225, 227, 254;
-      --theme-800: 201, 201, 252;
-      --theme-700: 171, 169, 248;
-      --theme-600: 144, 134, 243;
-      --theme-500: 126, 105, 235;
-      --theme-400: 112, 77, 222;
-      --theme-300: 97, 62, 196;
-      --theme-200: 76, 51, 152;
-      --theme-100: 66, 50, 125;
-      --theme-50: 40, 29, 73;
-   }
-}
-
 @keyframes slide {
    0% {
       transform: translateX(0%);
