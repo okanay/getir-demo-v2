@@ -43,6 +43,7 @@ const buttonVariants = {
    enter: { y: 0 },
    exit: {
       y: 200,
+      opacity: 0,
       transition: {
          type: 'spring',
          stiffness: 120,
