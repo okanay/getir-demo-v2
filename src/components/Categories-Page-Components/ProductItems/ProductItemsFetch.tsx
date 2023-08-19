@@ -23,7 +23,7 @@ export const ProductItemsFetch = async ({ categories = 'beverages', category }: 
 async function ProductFetch(category: Category) {
    const { unique } = category || -1
 
-   await new Promise(resolve => setTimeout(resolve, 2000))
+   await new Promise(resolve => setTimeout(resolve, 500))
 
    return DummyData.filter(d => d.uniqueId === unique) || []
 }

@@ -7,6 +7,7 @@ import { ReactNode } from 'react'
 import { Providers } from '@/app/[locale]/providers'
 import { Header } from '@/components/Index-Page-Components/Header-Components/Header'
 import { Footer } from '@/components/Index-Page-Components/Footer-Components/Footer'
+import { PageContainer } from '@/app/[locale]/PageContainer'
 
 export const metadata: Metadata = {
    title: 'Getir | Okan Ay',
@@ -208,7 +209,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
             <NextIntlClientProvider locale={locale} messages={messages}>
                <Providers>
                   <Header />
-                  <main className={'h-full w-full bg-white'}>{children}</main>
+                  <PageContainer>{children}</PageContainer>
                   <Footer />
                </Providers>
             </NextIntlClientProvider>

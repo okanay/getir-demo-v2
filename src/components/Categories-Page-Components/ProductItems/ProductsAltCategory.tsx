@@ -50,14 +50,12 @@ export const ProductsAltCategory = ({ index, altCategory, products }: TProps) =>
       <section
          id={altCategory.url}
          ref={targetRef}
-         className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}
-      >
+         className={'my-2 flex flex-col items-start justify-start gap-2 overflow-y-hidden'}>
          {index !== 0 ? (
             <h1 className={'px-4 text-[14px] font-semibold text-slate-900 baseTablet:px-0'}>{t(altCategory.languageCode)}</h1>
          ) : null}
          <div className="grid h-fit w-full grid-cols-2 gap-[1px] rounded-lg bg-gray-100 smTablet:grid-cols-3 desktop:grid-cols-4">
-            {data !== undefined && data.map(d => <ProductItem product={d} key={nanoid()} />)}
-            <DummyDataRender copyCount={6} />
+            {data?.length > 0 ? data?.map(d => <ProductItem product={d} key={nanoid()} />) : <DummyDataRender copyCount={4} />}
          </div>
       </section>
    )
