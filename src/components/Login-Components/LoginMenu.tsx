@@ -22,7 +22,7 @@ export const LoginMenu = () => {
       <div className="menu-container baseTablet:rounded-t-lg">
          <MenuTitleAndCloseButton locale={'Menus.LoginMenu'} />
          <LoginAuthForm />
-         <div className="absolute bottom-0 z-[203] flex w-full flex-col items-center justify-center gap-1 rounded-b-lg border-t border-gray-200 bg-gray-100 py-[16px] text-[16px] font-normal text-gray-600 baseTablet:translate-y-full">
+         <div className="absolute bottom-0 z-[203] flex w-full flex-col items-center justify-center gap-1 rounded-b-lg border-t border-gray-200 bg-gray-100 py-[16px] text-[16px] font-normal text-gray-600 standalone:bottom-14 baseTablet:translate-y-full">
             <div className={'flex flex-row gap-1'}>
                <span> {t('signup.text')}</span>
                <button onClick={handleOpenRegisterMenu} className={'font-semibold text-skin-theme-700'}>

@@ -14,7 +14,7 @@ export function RegisterMenu() {
       <div className="menu-container baseTablet:rounded-t-lg">
          <MenuTitleAndCloseButton locale={'Menus.RegisterMenu'} />
          <RegisterAuthForm />
-         <div className="pointer-events-none absolute bottom-0 z-[203] flex w-full flex-col items-center justify-center gap-1 rounded-b-lg border-t border-gray-200 bg-gray-100 py-[16px] text-[16px] font-normal text-gray-600 baseTablet:translate-y-full">
+         <div className="pointer-events-none absolute bottom-0 z-[203] flex w-full flex-col items-center justify-center gap-1 rounded-b-lg border-t border-gray-200 bg-gray-100 py-[16px] text-[16px] font-normal text-gray-600 standalone:bottom-12 baseTablet:translate-y-full">
             <div className={'flex flex-row gap-1'}>
                <span> {t('signin.text')}</span>
                <button onClick={handleOpenLoginMenu} className={'pointer-events-auto font-semibold text-skin-theme-700'}>
