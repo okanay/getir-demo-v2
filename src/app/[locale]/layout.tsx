@@ -32,36 +32,36 @@ export const metadata: Metadata = {
          rel: 'apple-touch-startup-image',
          url: './icons/apple-icon-180.png',
       },
-      // {
-      //    rel: 'apple-touch-startup-image',
-      //    url: './icons/apple-splash-2048-2732.jpg',
-      //    media: '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-      // },
-      // {
-      //    rel: 'apple-touch-startup-image',
-      //    url: './icons/apple-splash-2732-2048.jpg',
-      //    media: '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)',
-      // },
-      // {
-      //    rel: 'apple-touch-startup-image',
-      //    url: './icons/apple-splash-1668-2388.jpg',
-      //    media: '(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-      // },
-      // {
-      //    rel: 'apple-touch-startup-image',
-      //    url: './icons/apple-splash-2388-1668.jpg',
-      //    media: '(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)',
-      // },
-      // {
-      //    rel: 'apple-touch-startup-image',
-      //    url: './icons/apple-splash-1536-2048.jpg',
-      //    media: '(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-      // },
-      // {
-      //    rel: 'apple-touch-startup-image',
-      //    url: './icons/apple-splash-2048-1536.jpg',
-      //    media: '(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)',
-      // },
+      {
+         rel: 'apple-touch-startup-image',
+         url: './icons/apple-splash-2048-2732.jpg',
+         media: '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
+      },
+      {
+         rel: 'apple-touch-startup-image',
+         url: './icons/apple-splash-2732-2048.jpg',
+         media: '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)',
+      },
+      {
+         rel: 'apple-touch-startup-image',
+         url: './icons/apple-splash-1668-2388.jpg',
+         media: '(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
+      },
+      {
+         rel: 'apple-touch-startup-image',
+         url: './icons/apple-splash-2388-1668.jpg',
+         media: '(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)',
+      },
+      {
+         rel: 'apple-touch-startup-image',
+         url: './icons/apple-splash-1536-2048.jpg',
+         media: '(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
+      },
+      {
+         rel: 'apple-touch-startup-image',
+         url: './icons/apple-splash-2048-1536.jpg',
+         media: '(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)',
+      },
       // {
       //    rel: 'apple-touch-startup-image',
       //    url: './icons/apple-splash-1668-2224.jpg',
@@ -204,6 +204,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
    return (
       <html className="" lang={locale}>
          <body style={{ WebkitTapHighlightColor: 'rgba(97, 62, 196, 0.1)' }}>
+            <div className="standalone:fixed standalone:left-0 standalone:top-0 standalone:z-[999] standalone:h-11 standalone:w-full standalone:bg-skin-theme-800" />
             <NextIntlClientProvider locale={locale} messages={messages}>
                <Providers>
                   <Header />
