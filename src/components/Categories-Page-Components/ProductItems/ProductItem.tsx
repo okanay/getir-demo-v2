@@ -13,46 +13,20 @@ import {
    TSelectedProduct,
 } from '../../../../redux/slices/ShopListSlice'
 import { useEffect, useState } from 'react'
+import { FormatPrice } from '../../../../libs/helpers/LiraFormatedPrice'
+import { useGetTotalPrice } from '@/hooks/useGetTotalPrice'
 
 type TProps = {
    product: TProduct
 }
 
 export const ProductItem = ({ product }: TProps) => {
+   const { products } = useGetTotalPrice()
    const { imageDetails, price, productDetails } = product
+   const selectedCount = products.find(p => p.product.productId === product.productId)?.quantity || 0
+
    const locale = useLocale()
-
    const dispatch = useDispatch()
-
-   const [selectedCount, setSelectedCount] = useState<number>(0)
-   const products: TSelectedProduct[] = useSelector(getShopListProducts)
-
-   const handleAddShopListButton = () => {
-      dispatch(addProductsToShopList(product))
-      setSelectedCount(selectedCount + 1)
-   }
-
-   const handleMinusShopListButton = () => {
-      dispatch(minusProductsToShopList(product))
-      setSelectedCount(selectedCount - 1)
-   }
-
-   useEffect(() => {
-      const isExist = products.find(p => p.product.productId === product.productId)
-
-      if (isExist !== undefined) {
-         setSelectedCount(isExist.quantity)
-      } else {
-         setSelectedCount(0)
-      }
-   }, [])
-
-   const FormatPrice = (price: number) => {
-      return new Intl.NumberFormat('tr-TR', {
-         style: 'currency',
-         currency: 'TRY',
-      }).format(price)
-   }
 
    return (
       <article className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
@@ -67,7 +41,9 @@ export const ProductItem = ({ product }: TProps) => {
             <div className={'absolute right-1.5 top-1.5 h-[32px] w-[32px]'}>
                <div className={'flex flex-col items-center justify-center'}>
                   <button
-                     onClick={handleAddShopListButton}
+                     onClick={() => {
+                        dispatch(addProductsToShopList(product))
+                     }}
                      className={`${selectedCount === 0 ? 'rounded-lg' : 'rounded-t-lg'} border border-gray-200 bg-white`}>
                      <PlusIcon className={'w-full p-1 text-skin-theme-700 '} />
                   </button>
@@ -76,7 +52,11 @@ export const ProductItem = ({ product }: TProps) => {
                         <h4 className={'h-full w-full border-x border-gray-200 bg-skin-theme-700 text-center text-white'}>
                            {selectedCount}
                         </h4>
-                        <button onClick={handleMinusShopListButton} className={'rounded-b-lg border border-gray-200 bg-white'}>
+                        <button
+                           onClick={() => {
+                              dispatch(minusProductsToShopList(product))
+                           }}
+                           className={'rounded-b-lg border border-gray-200 bg-white'}>
                            {selectedCount === 1 ? (
                               <TrashIcon className={'w-full scale-y-90 p-1 text-skin-theme-700 '} />
                            ) : (

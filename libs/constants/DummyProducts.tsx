@@ -107,6 +107,114 @@ export const DummyData: TProducts = [
          },
       },
    },
+   {
+      productId: 4,
+      uniqueId: '1',
+      altCategoryId: 101,
+      productDetails: [
+         {
+            lan: 'tr',
+            text: 'Damla Cam Su',
+            description: '2 x 750ml',
+         },
+         {
+            lan: 'en',
+            text: 'Damla Glass Water',
+            description: '2 x 750ml',
+         },
+      ],
+      imageDetails: {
+         imageNormal: '/images/ProductsImages/Beverages/Water/3Normal.webp',
+         imageSmall: '/images/ProductsImages/Beverages/Water/3Small.webp',
+         alt: {
+            tr: '',
+            en: '',
+         },
+      },
+      brand: {
+         brandId: 1002,
+         brandName: 'Damla Su',
+      },
+      price: {
+         fullPrice: 36.4,
+         discount: {
+            status: false,
+            discountedPrice: 0,
+         },
+      },
+   },
+   {
+      productId: 5,
+      uniqueId: '1',
+      altCategoryId: 102,
+      productDetails: [
+         {
+            lan: 'tr',
+            text: 'Damla Cam Su',
+            description: '2 x 750ml',
+         },
+         {
+            lan: 'en',
+            text: 'Damla Glass Water',
+            description: '2 x 750ml',
+         },
+      ],
+      imageDetails: {
+         imageNormal: '/images/ProductsImages/Beverages/Water/3Normal.webp',
+         imageSmall: '/images/ProductsImages/Beverages/Water/3Small.webp',
+         alt: {
+            tr: '',
+            en: '',
+         },
+      },
+      brand: {
+         brandId: 1002,
+         brandName: 'Damla Su',
+      },
+      price: {
+         fullPrice: 62.4,
+         discount: {
+            status: false,
+            discountedPrice: 0,
+         },
+      },
+   },
+   {
+      productId: 6,
+      uniqueId: '1',
+      altCategoryId: 103,
+      productDetails: [
+         {
+            lan: 'tr',
+            text: 'Damla Cam Su',
+            description: '2 x 750ml',
+         },
+         {
+            lan: 'en',
+            text: 'Damla Glass Water',
+            description: '2 x 750ml',
+         },
+      ],
+      imageDetails: {
+         imageNormal: '/images/ProductsImages/Beverages/Water/3Normal.webp',
+         imageSmall: '/images/ProductsImages/Beverages/Water/3Small.webp',
+         alt: {
+            tr: '',
+            en: '',
+         },
+      },
+      brand: {
+         brandId: 1002,
+         brandName: 'Damla Su',
+      },
+      price: {
+         fullPrice: 22.4,
+         discount: {
+            status: false,
+            discountedPrice: 0,
+         },
+      },
+   },
 ]
 
 export type TProduct = {

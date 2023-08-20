@@ -40,5 +40,5 @@ export const useGetTotalPrice = () => {
       }
    }, [products, isProductExistInShopList])
 
-   return { isProductExistInShopList, totalPrice }
+   return { products, isProductExistInShopList, totalPrice }
 }
