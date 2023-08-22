@@ -20,7 +20,6 @@ export const EmailInput = ({ email, setEmail }: Props) => {
    // Handle's
    const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>) => {
       const enteredEmail = event.target.value || ''
-      console.log('here')
 
       const isEnteredEmailValid = EmailSchemas.EmailSchema.safeParse(enteredEmail)
       if (!isEnteredEmailValid.success) setErrorWithZodValidationSchema(isEnteredEmailValid)
