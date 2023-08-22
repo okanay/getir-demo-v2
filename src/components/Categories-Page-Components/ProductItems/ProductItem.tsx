@@ -3,7 +3,7 @@
 import { TProduct, TProducts } from '../../../../libs/constants/DummyProducts'
 import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/react/20/solid'
 import { useDispatch, useSelector } from 'react-redux'
-import { ImageOptimization } from '@/components/UI-Components/ImageOptimization'
+import { ImageLocalization } from '@/components/UI-Components/ImageLocalization'
 import { twMerge } from 'tailwind-merge'
 import { useLocale } from 'next-intl'
 import {
@@ -32,11 +32,7 @@ export const ProductItem = ({ product }: TProps) => {
       <article className={'grid h-[210px] w-full grid-rows-2 bg-white'}>
          <div className={'relative row-span-1 flex h-full w-full flex-col items-center justify-center'}>
             <div className={'mt-4 h-[96px] w-[96px]'}>
-               <ImageOptimization
-                  imageSmall={imageDetails.imageSmall}
-                  imageNormal={imageDetails.imageNormal}
-                  alt={imageDetails.alt}
-               />
+               <ImageLocalization image={imageDetails.image} alt={imageDetails.alt} />
             </div>
             <div className={'absolute right-1.5 top-1.5 h-[32px] w-[32px]'}>
                <div className={'flex flex-col items-center justify-center'}>

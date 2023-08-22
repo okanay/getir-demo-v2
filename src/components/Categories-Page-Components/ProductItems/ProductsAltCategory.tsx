@@ -23,7 +23,7 @@ type TProps = {
 export const ProductsAltCategory = ({ index, altCategory, products }: TProps) => {
    const t = useTranslations('Categories.CategoriesList')
 
-   const data: TProducts | undefined = products.filter(p => p.altCategoryId === altCategory.id) || undefined
+   const data: TProducts | null = products.filter(p => p.altCategoryId === altCategory.id) || null
    //
    const dispatch = useDispatch()
    const selectedIndexValue = useSelector(getSelectedAltCategoryIndex)

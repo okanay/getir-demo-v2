@@ -16,14 +16,14 @@ import { useLocale } from 'next-intl'
 import { FormatPrice } from '../../../libs/helpers/LiraFormatedPrice'
 
 export const RightAsideShopList = () => {
-   const { isProductExistInShopList, totalPrice } = useGetTotalPrice()
+   const { isProductExistInShopList } = useGetTotalPrice()
 
    return (
       <aside className="sticky top-0 z-[200] mb-16 hidden w-full baseLaptop:block baseLaptop:h-fit baseLaptop:max-w-[300px] baseLaptop:flex-shrink-0 baseLaptop:flex-grow baseLaptop:basis-[100%]">
          <div className={'flex h-full flex-col items-start justify-start gap-16'}>
             <div className={'flex-start flex h-full flex-shrink-0 flex-col gap-y-2'}>
                <h4 className={'text-[14px] font-semibold text-slate-900'}>Sepetim</h4>
-               <div className={'min-w-[280px] rounded-lg border-2 border-amber-400 bg-white px-4'}>
+               <div className={'min-w-[300px] rounded-lg border-2 border-amber-400 bg-white px-4'}>
                   {!isProductExistInShopList ? <EmptyShopList /> : <ShopList />}
                </div>
             </div>

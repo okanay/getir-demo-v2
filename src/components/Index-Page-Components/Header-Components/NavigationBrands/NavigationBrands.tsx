@@ -15,7 +15,7 @@ export const NavigationBrands = () => {
             <ul className="mt-1 flex h-full w-full flex-row items-center justify-start gap-1 overflow-x-auto px-2 baseTablet:px-6">
                <NavigationLinks />
             </ul>
-            <ul className="hidden flex-shrink-0 items-center justify-end gap-8 font-openSans text-sm baseTablet:flex lgTablet:gap-10">
+            <ul className="hidden flex-shrink-0 items-center justify-end gap-8 pr-4 font-openSans text-sm baseTablet:flex baseLaptop:gap-10 baseLaptop:pr-8">
                <LanguageButton type={'header'} />
                <LoginMenuButton t={t} />
                <RegisterMenuButton t={t} />

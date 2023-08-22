@@ -1,3 +1,8 @@
+import Water_1 from '../../public/images/ProductsImages/Beverages/Water/1Normal.webp'
+import Water_2 from '../../public/images/ProductsImages/Beverages/Water/2Normal.webp'
+import Water_3 from '../../public/images/ProductsImages/Beverages/Water/3Normal.webp'
+import { StaticImageData } from 'next/dist/shared/lib/get-img-props'
+
 export const DummyData: TProducts = [
    {
       productId: 1,
@@ -16,8 +21,7 @@ export const DummyData: TProducts = [
          },
       ],
       imageDetails: {
-         imageNormal: '/images/ProductsImages/Beverages/Water/1Normal.webp',
-         imageSmall: '/images/ProductsImages/Beverages/Water/1Small.webp',
+         image: Water_1,
          alt: {
             tr: '',
             en: '',
@@ -52,8 +56,7 @@ export const DummyData: TProducts = [
          },
       ],
       imageDetails: {
-         imageNormal: '/images/ProductsImages/Beverages/Water/2Normal.webp',
-         imageSmall: '/images/ProductsImages/Beverages/Water/2Small.webp',
+         image: Water_2,
          alt: {
             tr: '',
             en: '',
@@ -88,8 +91,7 @@ export const DummyData: TProducts = [
          },
       ],
       imageDetails: {
-         imageNormal: '/images/ProductsImages/Beverages/Water/3Normal.webp',
-         imageSmall: '/images/ProductsImages/Beverages/Water/3Small.webp',
+         image: Water_3,
          alt: {
             tr: '',
             en: '',
@@ -107,116 +109,7 @@ export const DummyData: TProducts = [
          },
       },
    },
-   {
-      productId: 4,
-      uniqueId: '1',
-      altCategoryId: 101,
-      productDetails: [
-         {
-            lan: 'tr',
-            text: 'Damla Cam Su',
-            description: '2 x 750ml',
-         },
-         {
-            lan: 'en',
-            text: 'Damla Glass Water',
-            description: '2 x 750ml',
-         },
-      ],
-      imageDetails: {
-         imageNormal: '/images/ProductsImages/Beverages/Water/3Normal.webp',
-         imageSmall: '/images/ProductsImages/Beverages/Water/3Small.webp',
-         alt: {
-            tr: '',
-            en: '',
-         },
-      },
-      brand: {
-         brandId: 1002,
-         brandName: 'Damla Su',
-      },
-      price: {
-         fullPrice: 36.4,
-         discount: {
-            status: false,
-            discountedPrice: 0,
-         },
-      },
-   },
-   {
-      productId: 5,
-      uniqueId: '1',
-      altCategoryId: 102,
-      productDetails: [
-         {
-            lan: 'tr',
-            text: 'Damla Cam Su',
-            description: '2 x 750ml',
-         },
-         {
-            lan: 'en',
-            text: 'Damla Glass Water',
-            description: '2 x 750ml',
-         },
-      ],
-      imageDetails: {
-         imageNormal: '/images/ProductsImages/Beverages/Water/3Normal.webp',
-         imageSmall: '/images/ProductsImages/Beverages/Water/3Small.webp',
-         alt: {
-            tr: '',
-            en: '',
-         },
-      },
-      brand: {
-         brandId: 1002,
-         brandName: 'Damla Su',
-      },
-      price: {
-         fullPrice: 62.4,
-         discount: {
-            status: false,
-            discountedPrice: 0,
-         },
-      },
-   },
-   {
-      productId: 6,
-      uniqueId: '1',
-      altCategoryId: 103,
-      productDetails: [
-         {
-            lan: 'tr',
-            text: 'Damla Cam Su',
-            description: '2 x 750ml',
-         },
-         {
-            lan: 'en',
-            text: 'Damla Glass Water',
-            description: '2 x 750ml',
-         },
-      ],
-      imageDetails: {
-         imageNormal: '/images/ProductsImages/Beverages/Water/3Normal.webp',
-         imageSmall: '/images/ProductsImages/Beverages/Water/3Small.webp',
-         alt: {
-            tr: '',
-            en: '',
-         },
-      },
-      brand: {
-         brandId: 1002,
-         brandName: 'Damla Su',
-      },
-      price: {
-         fullPrice: 22.4,
-         discount: {
-            status: false,
-            discountedPrice: 0,
-         },
-      },
-   },
 ]
-
 export type TProduct = {
    productId: number
    uniqueId: string
@@ -235,20 +128,16 @@ export type TProduct = {
       }
    }
 }
-
 export type TProductDetail = {
    lan: string
    text: string
    description: string
 }
-
 export type TProductImageDetail = {
-   imageNormal: string
-   imageSmall: string
+   image: StaticImageData
    alt: {
       tr: string
       en: string
    }
 }
-
 export type TProducts = TProduct[]
