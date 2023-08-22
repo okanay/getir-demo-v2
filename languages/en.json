@@ -337,30 +337,27 @@
          "PhoneNumberInput": {
             "placeholder": "Mobile Phone",
             "Errors": {
-               "Error100": "Bad Request",
-               "Error101": "Enter phone number.",
-               "Error102": "Enter phone number.",
-               "Error103": "Enter phone number."
+               "Error100": "Please double-check the information you've entered.",
+               "Error101": "Please enter a valid phone number."
             }
          },
          "NameInput": {
             "placeholder": "Name Surname",
             "Errors": {
-               "Error100": "Bad Request",
-               "Error101": "101",
-               "Error102": "102",
-               "Error103": "103",
-               "Error104": "104"
+               "Error100": "Please double-check the information you've entered.",
+               "Error101": "Your name can contain a maximum of 36 characters.",
+               "Error102": "Please enter your first name and last name.",
+               "Error103": "Your name should include your first name, middle name, and last name.",
+               "Error104": "Your name cannot contain special characters."
             }
          },
          "EmailInput": {
             "placeholder": "E-mail",
             "Errors": {
-               "Error100": "Bad Request",
-               "Error101": "101",
-               "Error102": "102",
-               "Error103": "103",
-               "Error104": "104"
+               "Error100": "Please double-check the information you've entered.",
+               "Error101": "Please provide a valid email address.",
+               "Error102": "Your email address should consist of up to 36 characters."
+
             }
          },
          "SelectAdsCampaign": {

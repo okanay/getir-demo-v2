@@ -337,31 +337,26 @@
          "PhoneNumberInput": {
             "placeholder": "Telefon Numarası",
             "Errors": {
-               "Error100": "Bir hata meydana geldi.",
-               "Error101": "Lütfen geçerli bir telefon numarası giriniz.",
-               "Error102": "Lütfen geçerli bir telefon numarası giriniz.",
-               "Error103": "Lütfen geçerli bir telefon numarası giriniz.",
-               "Error104": "Lütfen geçerli bir telefon numarası giriniz."
+               "Error100": "Lütfen girdiğiniz bilgileri tekrar kontrol edin.",
+               "Error101": "Lütfen geçerli bir telefon numarası giriniz."
             }
          },
          "NameInput": {
             "placeholder": "Ad Soyad",
             "Errors": {
-               "Error100": "Bir hata meydana geldi.",
-               "Error101": "101",
-               "Error102": "102",
-               "Error103": "103",
-               "Error104": "104"
+               "Error100": "Lütfen girdiğiniz bilgileri tekrar kontrol edin.",
+               "Error101": "Adınız en fazla 36 karakter içerebilir.",
+               "Error102": "Lütfen adınızı ve soyadınızı girin.",
+               "Error103": "İsminiz, adınızı, ikinci adınızı ve soyadınızı içermelidir.",
+               "Error104": "İsminiz özel karakterler içeremez."
             }
          },
          "EmailInput": {
             "placeholder": "E-Posta",
             "Errors": {
-               "Error100": "Bir hata meydana geldi.",
-               "Error101": "101",
-               "Error102": "102",
-               "Error103": "103",
-               "Error104": "104"
+               "Error100": "Lütfen girdiğiniz bilgileri tekrar kontrol edin.",
+               "Error101": "Lütfen geçerli bir e-posta adresi girin.",
+               "Error102": "E-posta adresiniz en fazla 36 karakterden oluşmalıdır."
             }
          },
          "SelectAdsCampaign": {

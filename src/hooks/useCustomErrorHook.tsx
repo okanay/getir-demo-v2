@@ -7,7 +7,10 @@ export const useCustomErrorHook = () => {
    })
 
    const setErrorWithZodValidationSchema = (schema: any) => {
-      setError({ status: true, message: schema.error?.formErrors?.formErrors[0] || 'Error100' })
+      setError({
+         status: true,
+         message: schema.error?.formErrors?.formErrors[0] || schema.formErrors.formErrors[0] || 'Error100',
+      })
    }
 
    const clearError = () => setError({ status: false, message: '' })

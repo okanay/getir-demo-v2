@@ -20,9 +20,10 @@ export const EmailInput = ({ email, setEmail }: Props) => {
    // Handle's
    const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>) => {
       const enteredEmail = event.target.value || ''
+      console.log('here')
 
       const isEnteredEmailValid = EmailSchemas.EmailSchema.safeParse(enteredEmail)
-      if (!isEnteredEmailValid.success) setErrorWithZodValidationSchema(isEnteredEmailValid.error)
+      if (!isEnteredEmailValid.success) setErrorWithZodValidationSchema(isEnteredEmailValid)
    }
 
    const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +31,7 @@ export const EmailInput = ({ email, setEmail }: Props) => {
       const isEnteredEmailValid = EmailSchemas.EmailSchemaRequiredLength.safeParse(enteredEmail)
 
       if (!isEnteredEmailValid.success && enteredEmail !== '') {
-         setErrorWithZodValidationSchema(isEnteredEmailValid.error)
+         setErrorWithZodValidationSchema(isEnteredEmailValid)
          return
       }
 
@@ -41,7 +42,7 @@ export const EmailInput = ({ email, setEmail }: Props) => {
    return (
       <CustomInput
          type={'email'}
-         name={'Email'}
+         name={'email'}
          value={email}
          errorStatus={error.status}
          errorMessage={error.message}
