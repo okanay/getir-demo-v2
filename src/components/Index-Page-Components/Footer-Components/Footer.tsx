@@ -9,7 +9,7 @@ export const Footer = () => {
    const t = useTranslations('Footer.Navigations')
 
    return (
-      <footer className={'h-fit w-full bg-white font-openSans'}>
+      <footer className={'relative z-[11] h-fit w-full bg-white font-openSans'}>
          <div className="mx-auto grid h-fit w-full max-w-7xl grid-cols-1 items-start gap-4 px-8 py-8 baseTablet:grid-cols-2 lgTablet:grid-cols-4 desktop:grid-cols-9">
             <div className={'flex h-full w-full flex-col items-start justify-start gap-4 desktop:col-span-2'}>
                <h4 className={'text-[18px] text-skin-theme-700'}>{t('0.title')}</h4>

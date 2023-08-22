@@ -10,13 +10,16 @@ export const CategoriesFooter = () => {
    return (
       <AnimatePresence>
          {isProductExistInShopList && (
-            <div className={'pointer-events-none fixed left-0 top-0 h-[100dvh] w-full font-openSans baseTablet:hidden'}>
+            <div
+               className={
+                  'pointer-events-none fixed left-0 top-0 z-[10] h-[100dvh] w-full font-openSans transition-all duration-300 baseTablet:hidden'
+               }>
                <motion.div
                   variants={buttonVariants}
                   initial={'initial'}
                   animate={'enter'}
                   exit={'exit'}
-                  className={'absolute bottom-0 mb-16 w-full px-6 standalone:mb-16'}>
+                  className={'absolute bottom-0 mb-8 w-full px-6 standalone:mb-12'}>
                   <GoShopListButton />
                </motion.div>
             </div>
