@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { BodyTypeElement } from '../../libs/types/types'
 
-export type MenuEnum = 'closed' | 'language' | 'login' | 'register'
+export type MenuEnum = 'closed' | 'language' | 'login' | 'register' | 'headerShopList'
 
 const initialState = {
    menu: 'closed' as MenuEnum,

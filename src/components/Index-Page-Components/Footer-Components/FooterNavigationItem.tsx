@@ -1,10 +1,13 @@
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+
+import Link from 'next/link'
+
+import { useEffect, useState } from 'react'
 import { useMediaQuery } from '@mantine/hooks'
 import { nanoid } from '@reduxjs/toolkit'
 import { useTranslations } from 'next-intl'
-import Link from 'next/link'
+
 import { FooterNavItems } from '../../../../libs/constants/FooterNavigationList'
 
 export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; index: number }) => {
@@ -39,8 +42,7 @@ export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; in
             <h4
                className={`w-full text-[18px] text-skin-theme-700 ${
                   isRight ? 'text-start baseTablet:text-end lgTablet:text-start' : 'text-start'
-               }`}
-            >
+               }`}>
                {t(data.title)}
             </h4>
             <button onClick={handleOnClick} className={'block rounded-lg bg-gray-100 p-1 baseTablet:hidden'}>
@@ -55,15 +57,13 @@ export const FooterNavigationItem = ({ data, index }: { data: FooterNavItems; in
             className={`relative flex w-full origin-top flex-col items-start gap-4 overflow-hidden text-start`}
             initial={{ height: initialState ? (isOpen ? 176 : 0) : 0 }}
             animate={{ height: isOpen ? 176 : 0 }}
-            transition={{ delay: 0, ease: 'linear', duration: initialState ? 0 : matches ? 0 : 0.4 }}
-         >
+            transition={{ delay: 0, ease: 'linear', duration: initialState ? 0 : matches ? 0 : 0.4 }}>
             {data.links.map(link => (
                <h6
                   key={nanoid()}
                   className={`w-full text-[14px] text-black ${
                      isRight ? 'text-start baseTablet:text-end lgTablet:text-start' : 'text-start'
-                  }`}
-               >
+                  }`}>
                   <Link href={link.url}>{t(link.languageCode)}</Link>
                </h6>
             ))}

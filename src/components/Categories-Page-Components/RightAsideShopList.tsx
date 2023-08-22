@@ -14,6 +14,7 @@ import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/react/20/solid'
 import { nanoid } from '@reduxjs/toolkit'
 import { useLocale } from 'next-intl'
 import { FormatPrice } from '../../../libs/helpers/LiraFormatedPrice'
+import { twMerge } from 'tailwind-merge'
 
 export const RightAsideShopList = () => {
    const { isProductExistInShopList } = useGetTotalPrice()
@@ -24,7 +25,7 @@ export const RightAsideShopList = () => {
             <div className={'flex-start flex h-full flex-shrink-0 flex-col gap-y-2'}>
                <h4 className={'text-[14px] font-semibold text-slate-900'}>Sepetim</h4>
                <div className={'min-w-[300px] rounded-lg border-2 border-amber-400 bg-white px-4'}>
-                  {!isProductExistInShopList ? <EmptyShopList /> : <ShopList />}
+                  {!isProductExistInShopList ? <EmptyShopList /> : <ShopList maxHeight={'max-h-[380px]'} />}
                </div>
             </div>
          </div>
@@ -32,7 +33,7 @@ export const RightAsideShopList = () => {
    )
 }
 
-function ShopList() {
+export function ShopList({ maxHeight }: { maxHeight: string }) {
    const { products } = useGetTotalPrice()
    const locale = useLocale()
 
@@ -41,7 +42,7 @@ function ShopList() {
    return (
       <div className={'flex h-full w-full flex-col items-center justify-center gap-8 pb-4 pt-2'}>
          <div className={'flex h-full w-full flex-col items-center justify-center gap-4 text-center'}>
-            <div className={'max-h-[380px] w-full flex-shrink-0 overflow-y-auto'}>
+            <div className={twMerge('w-full flex-shrink-0 overflow-y-auto', maxHeight)}>
                {products.map(p => (
                   <div key={nanoid()} className={'flex w-full items-center justify-between border-b border-gray-200 py-4'}>
                      <div className={'flex flex-col justify-start justify-items-start text-start text-[14px]'}>
