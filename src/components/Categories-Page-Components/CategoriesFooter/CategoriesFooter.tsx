@@ -16,7 +16,7 @@ export const CategoriesFooter = () => {
                   initial={'initial'}
                   animate={'enter'}
                   exit={'exit'}
-                  className={'absolute bottom-0 mb-6 w-full px-6 standalone:mb-14'}>
+                  className={'absolute bottom-0 mb-16 w-full px-6 standalone:mb-16'}>
                   <GoShopListButton />
                </motion.div>
             </div>

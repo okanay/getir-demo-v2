@@ -10,7 +10,7 @@ type Props = {
 }
 
 export const MenusCompound = ({ children }: Props) => {
-   return <div className={'bg-blue-400'}>{children}</div>
+   return children
 }
 
 MenusCompound.LanguageMenu = LanguageMenu
