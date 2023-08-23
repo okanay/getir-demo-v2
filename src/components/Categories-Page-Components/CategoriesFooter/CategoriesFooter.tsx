@@ -3,23 +3,34 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useGetTotalPrice } from '@/hooks/useGetTotalPrice'
 import { GoShopListButton } from '@/components/UI-Components/GoShopListButton'
+import { useCallback } from 'react'
+import { useRouter } from 'next/navigation'
 
 export const CategoriesFooter = () => {
    const { isProductExistInShopList } = useGetTotalPrice()
+
+   const router = useRouter()
+
+   const handleShopListButtonClick = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
+      event.preventDefault()
+
+      router.push('/payment')
+   }, [])
 
    return (
       <AnimatePresence>
          {isProductExistInShopList && (
             <div
                className={
-                  'pointer-events-none fixed left-0 top-0 z-[10] h-[100dvh] w-full font-openSans transition-all duration-300 baseTablet:hidden'
+                  'pointer-events-none fixed left-0 top-0 h-[100dvh] w-full transition-all duration-75 baseTablet:hidden'
                }>
                <motion.div
                   variants={buttonVariants}
                   initial={'initial'}
                   animate={'enter'}
                   exit={'exit'}
-                  className={'absolute bottom-0 mb-8 w-full px-6 standalone:mb-12'}>
+                  className={'absolute bottom-0 mb-4 w-full px-6 standalone:mb-12'}
+                  onClick={handleShopListButtonClick}>
                   <GoShopListButton />
                </motion.div>
             </div>

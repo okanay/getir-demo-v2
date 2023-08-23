@@ -1,4 +1,4 @@
-import { CategoryList } from '../../../../../libs/constants/CategoriesList'
+import { CategoryList } from '../../../../../../libs/constants/CategoriesList'
 import { redirect } from 'next/navigation'
 import { ProductItemsFetch } from '@/components/Categories-Page-Components/ProductItems/ProductItemsFetch'
 

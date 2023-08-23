@@ -1,3 +1,5 @@
+'use client'
+
 import { LanguageButtonCompound } from '@/components/UI-Components/LanguageMenuOpenButton/LanguageButtonCompound'
 import { useDispatch } from 'react-redux'
 import { setMenu } from '../../../../redux/slices/PopUpMenuSlice'

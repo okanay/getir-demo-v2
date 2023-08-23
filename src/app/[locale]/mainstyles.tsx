@@ -6,6 +6,6 @@ type TProps = {
    children: ReactNode
 }
 
-export const PageContainer = ({ children }: TProps) => {
+export const Mainstyles = ({ children }: TProps) => {
    return <main className={'h-full w-full bg-white font-openSans'}>{children}</main>
 }
