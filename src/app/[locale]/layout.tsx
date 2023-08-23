@@ -1,13 +1,12 @@
 import './globals.css'
+
 import type { Metadata } from 'next'
+import { ReactNode } from 'react'
 
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
-import { ReactNode } from 'react'
 import { Providers } from '@/app/[locale]/providers'
-import { Header } from '@/components/Index-Page-Components/Header-Components/Header'
-import { Footer } from '@/components/Index-Page-Components/Footer-Components/Footer'
-import { Mainstyles } from '@/app/[locale]/mainstyles'
+import { MenusManager } from '@/components/Menus-Components/MenusManager'
 
 export const metadata: Metadata = {
    title: 'Getir | Okan Ay',
@@ -207,7 +206,10 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
          <body style={{ WebkitTapHighlightColor: 'rgba(97, 62, 196, 0.1)' }}>
             <div className="standalone:fixed standalone:left-0 standalone:top-0 standalone:z-[999] standalone:h-11 standalone:w-full standalone:bg-skin-theme-800" />
             <NextIntlClientProvider locale={locale} messages={messages}>
-               <Providers>{children}</Providers>
+               <Providers>
+                  <MenusManager />
+                  {children}
+               </Providers>
             </NextIntlClientProvider>
          </body>
       </html>

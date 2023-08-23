@@ -1,7 +1,7 @@
 function PaymentPage() {
    return (
       <div className={'h-full flex-grow-0 bg-gray-50'}>
-         <div className="mx-auto flex h-full w-full max-w-5xl flex-col gap-4 px-8 py-4 baseTablet:flex-row">
+         <div className="mx-auto flex h-full w-full max-w-5xl flex-col gap-4 py-4 baseTablet:flex-row baseTablet:px-8">
             <div className={'flex h-full w-full flex-col'}>
                <div className={'h-fit w-full bg-rose-100'}>1</div>
                <div className={'h-full w-full bg-sky-100'}>2</div>

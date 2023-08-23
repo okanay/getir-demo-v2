@@ -7,7 +7,6 @@ export const Header = () => {
          <nav className={'w-full bg-skin-theme-800 standalone:mt-11'}>
             <NavigationBrands />
          </nav>
-         <MenusManager />
       </header>
    )
 }
